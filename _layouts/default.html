@@ -4,6 +4,7 @@
   - footer
 -->
 
+{% include JB/setup %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -18,29 +19,28 @@
     <![endif]-->
 
     <!-- Le styles -->
-    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/assets/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+    <link href="{{ BASE_PATH }}/{{ ASSET_PATH }}/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ BASE_PATH }}/{{ ASSET_PATH }}/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+
+    <script src="{{ BASE_PATH }}/{{ ASSET_PATH }}/js/jquery.js"></script>
+    <script src="{{ BASE_PATH }}/{{ ASSET_PATH }}/js/post.js"></script>
 
   </head>
 
-  <body data-spy="scroll" data-target="#navbar" data-offsett="0">
-
-    <div class="navbar">
+  <body data-spy="scroll" data-target="#navbar" data-offsett="10">
+    <div id="navbar" class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
-          <a class="brand" href="{{ HOME_PATH }}">WiS</a>
+          <a class="brand" href="{{ BASE_PATH }}">WiS</a>
           <ul class="nav">
-            <li class>
-              <a href="#welcome">Hello!</a>
-            </li>
-            <li>
-              <a href="#prospective">Prospective</a>
-            </li>
-            <li>
-              <a href="#employers">Suits</a>
-            </li>
-            <!--{% assign pages_list = site.pages %}
-            {% assign group = 'navigation' %}
+            {% for page in site.pages %}
+              {% if page.tags contains 'content' %}
+                <li><a href="#{{page.title}}">{{page.title}}</a></li>
+              {% endif %}
+            {% endfor %}
+
+            <!-- {% assign pages_list = site.pages %}
+            {% assign group = 'content' %}
             {% include JB/pages_list %} -->
           </ul>
         </div>
@@ -77,10 +77,21 @@
 
     <!-- scripts necessary for this page -->
      <script type="text/javascript">
-       //initialize the carousel
-       $(function(){
-        $('#navbar').scrollspy()
-       });
+      //initialize the carousel
+      $('#navbar').scrollspy()
     </script>
+    <!-- load rest of scripts here -->
+    <script src="{{ BASE_PATH }}/{{ ASSET_PATH }}/js/bootstrap-transition.js"></script>
+    <script src="{{ BASE_PATH }}/{{ ASSET_PATH }}/js/bootstrap-alert.js"></script>
+    <script src="{{ BASE_PATH }}/{{ ASSET_PATH }}/js/bootstrap-modal.js"></script>
+    <script src="{{ BASE_PATH }}/{{ ASSET_PATH }}/js/bootstrap-dropdown.js"></script>
+    <script src="{{ BASE_PATH }}/{{ ASSET_PATH }}/js/bootstrap-scrollspy.js"></script>
+    <script src="{{ BASE_PATH }}/{{ ASSET_PATH }}/js/bootstrap-tab.js"></script>
+    <script src="{{ BASE_PATH }}/{{ ASSET_PATH }}/js/bootstrap-tooltip.js"></script>
+    <script src="{{ BASE_PATH }}/{{ ASSET_PATH }}/js/bootstrap-popover.js"></script>
+    <script src="{{ BASE_PATH }}/{{ ASSET_PATH }}/js/bootstrap-button.js"></script>
+    <script src="{{ BASE_PATH }}/{{ ASSET_PATH }}/js/bootstrap-collapse.js"></script>
+    <script src="{{ BASE_PATH }}/{{ ASSET_PATH }}/js/bootstrap-carousel.js"></script>
+    <script src="{{ BASE_PATH }}/{{ ASSET_PATH }}/js/bootstrap-typeahead.js"></script> 
   </body>
 </html>
