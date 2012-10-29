@@ -23,39 +23,43 @@
 
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#navbar" data-offsett="0">
 
-    <!-- <div class="navbar">
+    <div class="navbar">
       <div class="navbar-inner">
         <div class="container">
-          <a class="brand" href="{{ HOME_PATH }}">{{ site.title }}</a>
+          <a class="brand" href="{{ HOME_PATH }}">WiS</a>
           <ul class="nav">
-            {% assign pages_list = site.pages %}
+            <li class>
+              <a href="#welcome">Hello!</a>
+            </li>
+            <li>
+              <a href="#prospective">Prospective</a>
+            </li>
+            <li>
+              <a href="#employers">Suits</a>
+            </li>
+            <!--{% assign pages_list = site.pages %}
             {% assign group = 'navigation' %}
-            {% include JB/pages_list %}
+            {% include JB/pages_list %} -->
           </ul>
         </div>
       </div>
-    </div> -->
-
-    <!--<div class="container">
-      <div class-"row">
-        <div class="span12">
-          <div class="hero-unit">
-            <h1>{{ site.title }}</h1>
-          </div>
-        </div>
-      </div>
-    </div> -->
+    </div>
 
     <div class="container">
       <div class="row">
         <div class="span12">
           <div class="hero-unit">
             <h1>{{ site.title }}</h1> <!-- references _config.yml -->
+            <p>That's a very good question.</p>
           </div>
-          <div class="content">
-            {{ content }} 
+          <div class="classcontent">
+            <div class="row">
+              <div class="span12">
+                {{ content }}
+              </div>
+            </div> 
           </div>
         </div>
       </div>
@@ -70,5 +74,13 @@
     </div> <!-- /container -->
 
     {% include JB/analytics %}
+
+    <!-- scripts necessary for this page -->
+     <script type="text/javascript">
+       //initialize the carousel
+       $(function(){
+        $('#navbar').scrollspy()
+       });
+    </script>
   </body>
 </html>

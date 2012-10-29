@@ -1,0 +1,13 @@
+---
+layout: default
+title: Hello!
+---
+{% include JB/setup %}
+
+{% for p in site.pages %}
+{% if p.tags contains 'content' %}
+<div class = {{p.title}}>
+	{{p.content}}
+</div>
+{% endif %}
+{% endfor %}
