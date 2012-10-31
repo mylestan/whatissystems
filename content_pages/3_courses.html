@@ -5,145 +5,527 @@ tags: content
 group: content
 ---
 {% include JB/setup %}
-<div id="{{ page.title }}" class="page-header">
-	<h1>Course Breakdown</h1>
+<div class="row">
+	<div class="span12">
+		<div id="{{ page.title }}" class="page-header">
+			<h1>Course Breakdown</h1>
+		</div>
+	</div>
 </div>
-<p>The purpose of an enginereing undergraduate degree (Bachelor of Applied Sciences, if you're in Canada) is to provide intensive exposure to engineering concepts, with an emphasis on practical application. An engineering program will include courseware covering a wide range of concepts related to your specific discipline of study.</p>
-<p>But you consider Systems Design Engineering as the study of how various engineering disciplines interact with each other, well, hopefully these re-arrangements and course breakdowns of our academic calendar cna help you understand what this all means.</p>
-<ul id="course-tabs" class="nav nav-tabs">
-	<li class="active"><a href="#course-normal" data-toggle="tab">Academic Calendar</a></li>
-	<li><a href="#course-theme" data-toggle="tab">By Subject</a></li>
-	<li><a href="#course-discipline" data-toggle="tab">By Discipline</a></li>
-</ul>
-<div id="courseTabContent" class="tab-content">
-	<div class="tab-pane fade active in" id="course-normal">
-		<table class="table">
-			<thead>
-				<th>In term...</th>
-				<th>You take...</th>
-				<th>Which is...</th>
-				<!-- add an AKA section with the course 'slang' names in it! Awesome! -->
-				<th>And has...</th>
-			</thead>
-			<tbody>
-				<tr>
-					<td>1A</td>
-					<td>SYDE111</td>
-					<td>Introduction to Systems Design Engineering</td>
-					<td>Seminar (1hr)</td>
-				</tr>
-					<td></td>
-					<td>SYDE101L</td>
-					<td>Graphics Labratory</td>
-					<td>lab (3hr)</td>
-				</tr></tr>
-					<td></td>
-					<td>SYDE111</td>
-					<td>Fundamental Engineering Math 1</td>
-					<td>Lec (3hr) & Tut (1hr)</td>
-				</tr>
-				</tr>
-					<td></td>
-					<td>SYDE113</td>
-					<td>Matrices and Linear Systems</td>
-					<td>Lec (3hr) & Tut (1hr)</td>
-				</tr>
-				</tr>
-					<td></td>
-					<td>SYDE121</td>
-					<td>Digital Computation</td>
-					<td>Lec (3hr) & Tut (1hr)</td>
-				</tr>
-				</tr>
-					<td></td>
-					<td>SYDE161</td>
-					<td>Introduction to Design</td>
-					<td>Lec (3hr) & Tut (1hr)</td>
-				</tr>
-				</tr>
-					<td></td>
-					<td>SYDE181</td>
-					<td>Physics (Statics)</td>
-					<td>Lec (3hr) & Tut (1hr)</td>
-				</tr>
-				<tr>
-					<td>1B</td>
-					<td>SYDE121</td>
-					<td>Professor Seminar</td>
-					<td>1hr Seminar</td>
-				</tr>	
-				<tr>
-					<td>2A</td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>2B</td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>3A</td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>3B</td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>4A</td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>4B</td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>		
-			</tbody>
-		</table>
+<div class="row">
+	<div class="span9">
+		<p>The purpose of an enginereing undergraduate degree (Bachelor of Applied Sciences, if you're in Canada) is to provide intensive exposure to engineering concepts, with an emphasis on practical application. An engineering program will include courseware covering a wide range of concepts related to your specific discipline of study.</p>
+		<p>But you consider Systems Design Engineering as the study of how various engineering disciplines interact with each other, well, hopefully these re-arrangements and course breakdowns of our academic calendar cna help you understand what this all means.</p>
 	</div>
-	<!-- I'm trying to sort these by 'theme', but I don't really know what that means. I think it may be more appropriate to assoiate it to high-school course topics, to make it more relatable to prospective students. List subject to change. -->
-	<div class="tab-pane fade" id="course-theme">
-		<table class="table">
-			<thead>
-				<th>Term</th>
-				<th>Course</th>
-				<th>Math?</th>
-				<th>Physics?</th>
-				<th>Chemistry?</th>
-				<th>Design?</th>
-				<th>Computer Science?</th>
-				<th>Art?</th>
-				<th>Detention?</th>
-			</thead>
-			<tbody>
-			</tbody>
-		</table>
+	<div class="span3">
+		<p>(link to actual uWaterloo site)</p>
 	</div>
-	<div class="tab-pane fade" id="course-discipline">
-		<table class="table">
-			<thead>
-				<th>Term</th>
-				<th>Course</th>
-				<th>SyDe</th>
-				<th>Mech</th>
-				<th>Chem</th>
-				<th>Tron</th>
-				<th>ECE</th>
-				<th>Comp</th>
-				<th>[general]</th>
-			</thead>
-			<tbody>
-			</tbody>
-		</table>>
+</div>
+<div class="row">
+	<div class="span12">
+		<ul id="course-tabs" class="nav nav-tabs">
+		<li class="active"><a href="#course-normal" data-toggle="tab">Academic Calendar</a></li>
+		<li><a href="#course-theme" data-toggle="tab">By Subject</a></li>
+		<li><a href="#course-discipline" data-toggle="tab">By Discipline</a></li>
+		</ul>
+		<div id="courseTabContent" class="tab-content">
+			<div class="tab-pane fade active in" id="course-normal">
+				<table class="table"> <!-- NORMAL ACADEMIC SCHEDULE -->
+					<thead>
+						<th>In term...</th>
+						<th>You take...</th>
+						<th>Which is...</th>
+						<!-- add an AKA section with the course 'slang' names in it! Awesome! -->
+						<th>Nicknamed...</th>
+						<th>And consists of...</th>
+					</thead>
+					<tbody>
+						<tr> <!-- 1A -->
+							<td>1A</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>SYDE 101</td>
+							<td>Introduction to Systems Design Engineering</td>
+							<td>?</td>
+							<td>Lec (3hr) & Tut (1hr)</td>
+						</tr>
+							<td></td>
+							<td>SYDE 101L</td>
+							<td>Graphics Labratory</td>
+							<td>Graphics</td>
+							<td>lab (3hr)</td>
+						</tr></tr>
+							<td></td>
+							<td>SYDE 111</td>
+							<td>Fundamental Engineering Math 1</td>
+							<td>Math</td>
+							<td>Lec (3hr) & Tut (1hr)</td>
+						</tr>
+						</tr>
+							<td></td>
+							<td>SYDE 113</td>
+							<td>Matrices and Linear Systems</td>
+							<td>Matrics</td>
+							<td>Lec (3hr) & Tut (1hr)</td>
+						</tr>
+						</tr>
+							<td></td>
+							<td>SYDE 121</td>
+							<td>Digital Computation</td>
+							<td>Programming</td>
+							<td>Lec (3hr) & Tut (1hr)</td>
+						</tr>
+						</tr>
+							<td></td>
+							<td>SYDE 161</td>
+							<td>Introduction to Design</td>
+							<td>Design</td>
+							<td>Lec (3hr) & Tut (1hr)</td>
+						</tr>
+						</tr>
+							<td></td>
+							<td>SYDE 181</td>
+							<td>Physics (Statics)</td>
+							<td>Physics</td>
+							<td>Lec (3hr) & Tut (1hr)</td>
+						</tr>
+						<tr> <!-- 1B -->
+							<td>1B</td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>SYDE 102</td>
+							<td>Seminar</td>
+							<td>1hr Seminar</td>
+						</tr>	
+						<tr>
+							<td></td>
+							<td>SYDE 112</td>
+							<td>Fundamental Engineering Math 2</td>
+							<td>L&T</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>SYDE 114</td>
+							<td>Numerical and Applied Calculus</td>
+							<td>L&T</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>SYDE 162</td>
+							<td>Human Factors in Design</td>
+							<td>L&T</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>SYDE 182</td>
+							<td>Physics (Dynamics)</td>
+							<td>L&T</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>SYDE 192</td>
+							<td>Digital Systems</td>
+							<td>L&T</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>SYDE 192L</td>
+							<td>Digital Systems Labratory</td>
+							<td>Lab (3hrs)</td>
+						</tr>
+						<tr> <!-- 2A -->
+							<td>2A</td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>SYDE 201</td>
+							<td>Seminar</td>
+							<td>Lec (1hr)</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>SYDE 211</td>
+							<td>Advanced Engineering Math 1</td>
+							<td>L&T</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>SYDE 223</td>
+							<td>Data Structures and Algorithms</td>
+							<td>L&T</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>SYDE 261</td>
+							<td>Design, Systems, and Society</td>
+							<td>L&T</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>SYDE 283</td>
+							<td>Electricity, Magnetism, and Optics</td>
+							<td>L&T</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>SYDE 285</td>
+							<td>Materials Chemistry</td>
+							<td>L&T</td>
+						</tr>
+						<tr> <!-- 2B -->
+							<td>2B</td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>SYDE 202</td>
+							<td>Seminar</td>
+							<td>Lec (1hr)</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>SYDE 212</td>
+							<td>Probability and Statistics</td>
+							<td>L&T</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>SYDE 252</td>
+							<td>Linear Systems and Signals</td>
+							<td>L&T</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>SYDE 262</td>
+							<td>Engineering Economics of Design</td>
+							<td>L&T</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>SYDE 286</td>
+							<td>Mechanics of Deformable Solids</td>
+							<td>L&T</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>SYDE 292</td>
+							<td>Circuits, Instrumentation, and Measurements</td>
+							<td>L&T</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>SYDE 292L</td>
+							<td>Circuits, Instrumentation, and Measurements Labratory</td>
+							<td>Lab (3hr)</td>
+						</tr>
+						<tr> <!-- 3A -->
+							<td>3A</td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>SYDE 301</td>
+							<td>Seminar</td>
+							<td>Lecture (1hr)</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>SYDE 311</td>
+							<td>Advanced Engineering Math 2</td>
+							<td>L&T</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>SYDE 351</td>
+							<td>System Models 1</td>
+							<td>L&T</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>SYDE 361</td>
+							<td>Engineering Design</td>
+							<td>L&T</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>SYDE 381</td>
+							<td>Thermodynamics</td>
+							<td>L&T</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>SYDE 383</td>
+							<td>Fluid Mechanics</td>
+							<td>L&T</td>
+						</tr>
+						<tr> <!-- 3B -->
+							<td>3B</td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>SYDE 302</td>
+							<td>Seminar</td>
+							<td>Lec (1hr)</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>SYDE 312</td>
+							<td>Applied Linear Algebra</td>
+							<td>L&T</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>SYDE 352</td>
+							<td>Introduction to Control Systems</td>
+							<td>L&T</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>SYDE 362</td>
+							<td>Systems Design Workshop 1</td>
+							<td>?</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>[Technical elective]</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>[Complimentary Studies Elective]</td>
+							<td></td>
+						</tr>
+						<tr> <!-- 4A -->
+							<td>4A</td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>SYDE 401</td>
+							<td>Seminar</td>
+							<td>Lec (1hr)</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>SYDE 411</td>
+							<td>Optimization and Numerical Methods</td>
+							<td>L&T</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>SYDE 461</td>
+							<td>Systems Design Workshop 2</td>
+							<td>?</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>[Technical Elective]</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>[Technical Elective[</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>[Complimentary Studies Elective]</td>
+							<td></td>
+						</tr>
+						<tr> <!-- 4B -->
+							<td>4B</td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>Syde 402</td>
+							<td>Seminar</td>
+							<td>Lec (1hr)</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>Syde 462</td>
+							<td>Systems Design Workshop 3</td>
+							<td>?</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>[Technical Elective]</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>[Technical Elective]</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>[Technical Elective]</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>[Complimentary Studies Elective]</td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!-- I'm trying to sort these by 'theme', but I don't really know what that means. I think it may be more appropriate to assoiate it to high-school course topics, to make it more relatable to prospective students. List subject to change. -->
+			<div class="tab-pane fade" id="course-theme"> <!-- BY THEME/HIGH SCHOOL -->
+				<div class="row">
+					<div class="span9">
+						<p>poop</p>
+					</div>
+					<div class="span3">
+						<div class="well well-small">
+							<p><span class="label label-definitely">This</span> means this subject is the main content of the course</p>
+							<p><span class="label label-kinda">This</span> means this course relies on content from this subject</p>
+						</div>
+					</div>
+				</div>
+				<table class="table">
+					<thead>
+						<th>Term</th>
+						<th>Course</th>
+						<th>Math?</th>
+						<th>Physics?</th>
+						<th>Chemistry?</th>
+						<th>Design?</th>
+						<th>Computer Science?</th>
+						<th>Art?</th>
+						<th>Detention?</th>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1A</td> <!-- term -->
+							<td>SYDE101</td> <!-- course -->
+							<td></td> <!-- math -->
+							<td></td> <!-- physics -->
+							<td></td> <!-- chem -->
+							<td><span class="label label-definitely">SYDE101</span></td> <!-- design -->
+							<td></td> <!-- comp sci -->
+							<td><span class="label label-kinda">SYDE101</span></td> <!-- art -->
+							<td><label class="label label-kinda">SYDE101</span></td> <!--detention -->
+						</tr>
+						<tr>
+							<td></td> <!-- term -->
+							<td>SYDE101L</td> <!-- course -->
+							<td></td> <!-- math -->
+							<td></td> <!-- physics -->
+							<td></td> <!-- chem -->
+							<td><span class="label label-definitely">SYDE101L</span></td> <!-- design -->
+							<td></td> <!-- comp sci -->
+							<td><span class="label label-definitely">SYDE101L</span></td> <!-- art -->
+							<td></td> <!--detention -->
+						</tr>
+						<tr>
+							<td></td> <!-- term -->
+							<td>SYDE111</td> <!-- course -->
+							<td><span class="label label-definitely">SYDE111</span></td> <!-- math -->
+							<td></td> <!-- physics -->
+							<td></td> <!-- chem -->
+							<td></td> <!-- design -->
+							<td></td> <!-- comp sci -->
+							<td></td> <!-- art -->
+							<td></td> <!--detention -->
+						</tr>
+						<tr>
+							<td></td> <!-- term -->
+							<td>SYDE113</td> <!-- course -->
+							<td><span class="label label-definitely">SYDE113</span></td> <!-- math -->
+							<td></td> <!-- physics -->
+							<td></td> <!-- chem -->
+							<td></td> <!-- design -->
+							<td></td> <!-- comp sci -->
+							<td></td> <!-- art -->
+							<td></td> <!--detention -->
+						</tr>
+						<tr>
+							<td></td> <!-- term -->
+							<td>SYDE121</td> <!-- course -->
+							<td><span class="label label-kinda">SYDE121</span></td> <!-- math -->
+							<td><span class="label label-kinda">SYDE121</span></td> <!-- physics -->
+							<td></td> <!-- chem -->
+							<td></td> <!-- design -->
+							<td><span class="label label-definitely">SYDE121</span></td> <!-- comp sci -->
+							<td></td> <!-- art -->
+							<td></td> <!--detention -->
+						</tr>
+						<tr>
+							<td></td> <!-- term -->
+							<td>SYDE161</td> <!-- course -->
+							<td></td> <!-- math -->
+							<td></td> <!-- physics -->
+							<td></td> <!-- chem -->
+							<td><span class="label label-definitely">SYDE161</span></td> <!-- design -->
+							<td></td> <!-- comp sci -->
+							<td></td> <!-- art -->
+							<td></td> <!--detention -->
+						</tr>
+						<tr>
+							<td></td> <!-- term -->
+							<td>SYDE181</td> <!-- course -->
+							<td><span class="label label-kinda">SYDE181</span></td> <!-- math -->
+							<td><span class="label label-definitely">SYDE181</span></td> <!-- physics -->
+							<td></td> <!-- chem -->
+							<td></td> <!-- design -->
+							<td></td> <!-- comp sci -->
+							<td></td> <!-- art -->
+							<td></td> <!--detention -->
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="tab-pane fade" id="course-discipline">
+				<table class="table">
+					<thead>
+						<th>Term</th>
+						<th>Course</th>
+						<th>General</th>
+						<th>Specifc to SyDe</th>
+						<th>Mech</th>
+						<th>Chem</th>
+						<th>Tron</th>
+						<th>ECE</th>
+						<th>Comp</th>
+					</thead>
+					<tbody>
+					</tbody>
+				</table>>
+			</div>
+		</div>
 	</div>
 </div>

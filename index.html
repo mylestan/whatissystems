@@ -7,7 +7,9 @@ title: Hello!
 {% for p in site.pages %}
 {% if p.tags contains 'content' %}
 <div class='{{p.title}}'>
-	{{p.content}}
+	<div class="container">
+		{{p.content}}
+	</div>
 </div>
 {% endif %}
 {% endfor %}
