@@ -12,3 +12,19 @@
 .table tbody tr.term td {
   background-color: #fff;
 }
+
+.syde-math {
+	color: #f66;
+}
+
+.syde-comp{
+	color: #696;
+}
+
+.syde-design{
+	color: #96c;
+}
+
+.syde-physics{
+	color: #36c;
+}
