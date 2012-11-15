@@ -8,6 +8,45 @@
   background-color: #66CC66;
 }
 
+.label-math-definitely {
+	background-color: #3c3;
+}
+
+.label-math-kinda {
+	background-color:  #9c9;
+}
+
+.label-art-definitely {
+	background-color: #c36;
+}
+
+.label-art-kinda {
+	background-color: #c99;
+}
+
+.label-physics-definitely {
+	background-color: #33f;
+}
+
+.label-physics-kinda {
+	background-color: #99f;
+}
+
+.label-chemistry-definitely {
+	background-color: #f93;
+}
+
+.label-chemistry-kinda {
+	background-color:  #fc9;
+}
+
+.label-compsci-definitely {
+	background-color: #96f;
+}
+
+.label-compsci-kinda {
+	background-color:  #c9f;
+}
 
 .table tbody tr.term td {
   background-color: #fff;

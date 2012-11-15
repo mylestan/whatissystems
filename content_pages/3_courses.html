@@ -25,8 +25,8 @@ group: content
 	<div class="span12">
 		<ul id="course-tabs" class="nav nav-tabs">
 		<li class="active"><a href="#course-normal" data-toggle="tab">Academic Calendar</a></li>
-		<li><a href="#course-theme" data-toggle="tab">By Subject</a></li>
-		<li><a href="#course-discipline" data-toggle="tab">By Discipline</a></li>
+		<li><a href="#course-theme" data-toggle="tab">Like high school?</a></li>
+		<li><a href="#course-discipline" data-toggle="tab">Course Subjects</a></li>
 		</ul>
 		<div id="courseTabContent" class="tab-content">
 			<div class="tab-pane fade active in" id="course-normal">
@@ -355,7 +355,7 @@ group: content
 						<tr>
 							<td></td>
 							<td></td>
-							<td>[Technical Elective[</td>
+							<td>[Technical Elective]</td>
 							<td>3hrs lecture, 1hr tutorial</td>
 						</tr>
 						<tr>
@@ -419,7 +419,7 @@ group: content
 			<div class="tab-pane fade" id="course-theme"> <!-- BY THEME/HIGH SCHOOL -->
 				<div class="row">
 					<div class="span9">
-						<p>poop</p>
+						<p>One of the easist ways to understand whether or not you'll enjoy a program is to look at the course load and see if the courses in the program, and see whether they soudns interesting to you. This can be tough, particularly when you don't know what half of the words in the course description mean. This breakdown tries to give you a sense of how relevant each course is to one that you might have encountered in high school, based on the course content.</p>
 					</div>
 					<div class="span3">
 						<div class="well well-small">
@@ -429,28 +429,33 @@ group: content
 					</div>
 				</div>
 				<table class="table">
-					<thead> <!-- Math, physics, chemistry, biology, computer science, art & design -->
+					<thead> <!-- Math, physics, chemistry, biology, computer science, art & design. To add?: social science, engligh, computer engineering -->
 						<th>Term</th>
 						<th>Course</th>
 						<th>Math?</th>
 						<th>Physics?</th>
 						<th>Chemistry?</th>
-						<th>Design?</th>
 						<th>Computer Science?</th>
-						<th>Art?</th>
-						<th>Detention?</th>
+						<th>Art & Design?</th>
 					</thead>
 					<tbody>
-						<tr>
+						<tr> <!-- 1A -->
 							<td>1A</td> <!-- term -->
+							<td></td> <!-- course -->
+							<td><span class="label label-math-definitely">definitely</span><span class="label label-math-kinda">kinda</span></td> <!-- math -->
+							<td><span class="label label-physics-definitely">definitely</span><span class="label label-physics-kinda">kinda</span></td> <!-- physics -->
+							<td><span class="label label-chemistry-definitely">definitely</span><span class="label label-chemistry-kinda">kinda</span></td> <!-- chem -->
+							<td><span class="label label-compsci-definitely">definitely</span><span class="label label-compsci-kinda">kinda</span></td> <!-- comp sci -->
+							<td><span class="label label-art-definitely">definintely</span><span class="label label-art-kinda">kinda</span></td> <!-- art -->
+						</tr>
+						<tr>
+							<td></td> <!-- term -->
 							<td>SYDE101</td> <!-- course -->
 							<td></td> <!-- math -->
 							<td></td> <!-- physics -->
 							<td></td> <!-- chem -->
-							<td><span class="label label-definitely">SYDE101</span></td> <!-- design -->
 							<td></td> <!-- comp sci -->
 							<td><span class="label label-kinda">SYDE101</span></td> <!-- art -->
-							<td><label class="label label-kinda">SYDE101</span></td> <!--detention -->
 						</tr>
 						<tr>
 							<td></td> <!-- term -->
@@ -458,43 +463,35 @@ group: content
 							<td></td> <!-- math -->
 							<td></td> <!-- physics -->
 							<td></td> <!-- chem -->
-							<td><span class="label label-definitely">SYDE101L</span></td> <!-- design -->
 							<td></td> <!-- comp sci -->
-							<td><span class="label label-definitely">SYDE101L</span></td> <!-- art -->
-							<td></td> <!--detention -->
+							<td><span class="label label-art-definitely">definitely</span></td> <!-- art -->
 						</tr>
 						<tr>
 							<td></td> <!-- term -->
 							<td>SYDE111</td> <!-- course -->
-							<td><span class="label label-definitely">SYDE111</span></td> <!-- math -->
+							<td><span class="label label-math-definitely">definitely</span></td> <!-- math -->
 							<td></td> <!-- physics -->
 							<td></td> <!-- chem -->
-							<td></td> <!-- design -->
 							<td></td> <!-- comp sci -->
 							<td></td> <!-- art -->
-							<td></td> <!--detention -->
 						</tr>
 						<tr>
 							<td></td> <!-- term -->
 							<td>SYDE113</td> <!-- course -->
-							<td><span class="label label-definitely">SYDE113</span></td> <!-- math -->
+							<td><span class="label label-math-definitely">definitely</span></td> <!-- math -->
 							<td></td> <!-- physics -->
 							<td></td> <!-- chem -->
-							<td></td> <!-- design -->
 							<td></td> <!-- comp sci -->
 							<td></td> <!-- art -->
-							<td></td> <!--detention -->
 						</tr>
 						<tr>
 							<td></td> <!-- term -->
 							<td>SYDE121</td> <!-- course -->
-							<td><span class="label label-kinda">SYDE121</span></td> <!-- math -->
-							<td><span class="label label-kinda">SYDE121</span></td> <!-- physics -->
+							<td><span class="label label-math-kinda">kinda</span></td> <!-- math -->
+							<td><span class="label label-physics-kinda">kinda</span></td> <!-- physics -->
 							<td></td> <!-- chem -->
-							<td></td> <!-- design -->
-							<td><span class="label label-definitely">SYDE121</span></td> <!-- comp sci -->
+							<td><span class="label label-compsci-definitely">definitely</span></td> <!-- comp sci -->
 							<td></td> <!-- art -->
-							<td></td> <!--detention -->
 						</tr>
 						<tr>
 							<td></td> <!-- term -->
@@ -502,41 +499,437 @@ group: content
 							<td></td> <!-- math -->
 							<td></td> <!-- physics -->
 							<td></td> <!-- chem -->
-							<td><span class="label label-definitely">SYDE161</span></td> <!-- design -->
 							<td></td> <!-- comp sci -->
-							<td></td> <!-- art -->
-							<td></td> <!--detention -->
+							<td><span class="label label-art-definitely">definitely</span></td> <!-- art -->
 						</tr>
 						<tr>
 							<td></td> <!-- term -->
 							<td>SYDE181</td> <!-- course -->
-							<td><span class="label label-kinda">SYDE181</span></td> <!-- math -->
-							<td><span class="label label-definitely">SYDE181</span></td> <!-- physics -->
+							<td><span class="label label-math-kinda">definitely</span></td> <!-- math -->
+							<td><span class="label label-physics-definitely">definitely</span></td> <!-- physics -->
 							<td></td> <!-- chem -->
-							<td></td> <!-- design -->
 							<td></td> <!-- comp sci -->
 							<td></td> <!-- art -->
-							<td></td> <!--detention -->
+						</tr>
+						<tr> <!-- 1B -->
+							<td>1B</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td> <!-- term -->
+							<td>SYDE102</td> <!-- course -->
+							<td></td> <!-- math -->
+							<td></td> <!-- physics -->
+							<td></td> <!-- chem -->
+							<td></td> <!-- comp sci -->
+							<td></td> <!-- art -->
+						</tr>
+						<tr>
+							<td></td> <!-- term -->
+							<td>SYDE112</td> <!-- course -->
+							<td><span class="label label-definitely">SYDE112</span></td> <!-- math -->
+							<td></td> <!-- physics -->
+							<td></td> <!-- chem -->
+							<td></td> <!-- comp sci -->
+							<td></td> <!-- art -->
+						</tr>
+						<tr>
+							<td></td> <!-- term -->
+							<td>SYDE114</td> <!-- course -->
+							<td><span class="label label-definitely">SYDE114</span></td> <!-- math -->
+							<td></td> <!-- physics -->
+							<td></td> <!-- chem -->
+							<td></td> <!-- comp sci -->
+							<td></td> <!-- art -->
+						</tr>
+						<tr>
+							<td></td> <!-- term -->
+							<td>SYDE162</td> <!-- course -->
+							<td></td> <!-- math -->
+							<td></td> <!-- physics -->
+							<td></td> <!-- chem -->
+							<td></td> <!-- comp sci -->
+							<td><span class="label label-definitely">SYDE162</span></td> <!-- art -->
+						</tr>
+						<tr>
+							<td></td> <!-- term -->
+							<td>SYDE182</td> <!-- course -->
+							<td></td> <!-- math -->
+							<td><span class="label label-definitely">SYDE182</span></td> <!-- physics -->
+							<td></td> <!-- chem -->
+							<td></td> <!-- comp sci -->
+							<td></td> <!-- art -->
+						</tr>
+						<tr>
+							<td></td> <!-- term -->
+							<td>SYDE192</td> <!-- course -->
+							<td><span class="label label-kinda">SYDE192</span></td> <!-- math -->
+							<td></td> <!-- physics -->
+							<td></td> <!-- chem -->
+							<td><span class="label label-kinda">SYDE192</span></td> <!-- comp sci -->
+							<td></td> <!-- art -->
+						</tr>
+						<tr>
+							<td></td> <!-- term -->
+							<td>SYDE192L</td> <!-- course -->
+							<td><span class="label label-kinda">SYDE192L</span></td> <!-- math -->
+							<td></td> <!-- physics -->
+							<td></td> <!-- chem -->
+							<td><span class="label label-definitely">SYDE192L</span></td> <!-- comp sci -->
+							<td></td> <!-- art -->
+						</tr>
+						<tr> <!-- 2A -->
+							<td>2A</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td> <!-- term -->
+							<td>SYDE201</td> <!-- course -->
+							<td></td> <!-- math -->
+							<td></td> <!-- physics -->
+							<td></td> <!-- chem -->
+							<td></td> <!-- comp sci -->
+							<td></td> <!-- art -->
+						</tr>
+						<tr>
+							<td></td> <!-- term -->
+							<td>SYDE211</td> <!-- course -->
+							<td><span class="label label-definitely">SYDE211</span></td> <!-- math -->
+							<td></td> <!-- physics -->
+							<td></td> <!-- chem -->
+							<td></td> <!-- comp sci -->
+							<td></td> <!-- art -->
+						</tr>
+						<tr>
+							<td></td> <!-- term -->
+							<td>SYDE223</td> <!-- course -->
+							<td><span class="label label-definitely">SYDE223</span></td> <!-- math -->
+							<td></td> <!-- physics -->
+							<td></td> <!-- chem -->
+							<td><span class="label label-definitely">SYDE223</span></td> <!-- comp sci -->
+							<td></td> <!-- art -->
+						</tr>
+						<tr>
+							<td></td> <!-- term -->
+							<td>SYDE261</td> <!-- course -->
+							<td></td> <!-- math -->
+							<td></td> <!-- physics -->
+							<td></td> <!-- chem -->
+							<td></td> <!-- comp sci -->
+							<td></td> <!-- art -->
+						</tr>
+						<tr>
+							<td></td> <!-- term -->
+							<td>SYDE283</td> <!-- course -->
+							<td><span class="label label-definitely">SYDE283</span></td> <!-- math -->
+							<td><span class="label label-definitely">SYDE283</span></td> <!-- physics -->
+							<td></td> <!-- chem -->
+							<td></td> <!-- comp sci -->
+							<td></td> <!-- art -->
+						</tr>
+						<tr>
+							<td></td> <!-- term -->
+							<td>SYDE285</td> <!-- course -->
+							<td></td> <!-- math -->
+							<td><span class="label label-definitely">SYDE285</span></td> <!-- physics -->
+							<td><span class="label label-definitely">SYDE285</span></td> <!-- chem -->
+							<td></td> <!-- comp sci -->
+							<td></td> <!-- art -->
+						</tr>
+						<tr> <!-- 2B -->
+							<td>2B</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td> <!-- term -->
+							<td>SYDE202</td> <!-- course -->
+							<td></td> <!-- math -->
+							<td></td> <!-- physics -->
+							<td></td> <!-- chem -->
+							<td></td> <!-- comp sci -->
+							<td></td> <!-- art -->
+						</tr>
+						<tr>
+							<td></td> <!-- term -->
+							<td>SYDE212</td> <!-- course -->
+							<td><span class="label label-definitely">SYDE212</span></td> <!-- math -->
+							<td></td> <!-- physics -->
+							<td></td> <!-- chem -->
+							<td></td> <!-- comp sci -->
+							<td></td> <!-- art -->
+						</tr>
+						<tr>
+							<td></td> <!-- term -->
+							<td>SYDE252</td> <!-- course -->
+							<td><span class="label label-definitely">SYDE223</span></td> <!-- math -->
+							<td></td> <!-- physics -->
+							<td></td> <!-- chem -->
+							<td><span class="label label-definitely">SYDE223</span></td> <!-- comp sci -->
+							<td></td> <!-- art -->
+						</tr>
+						<tr>
+							<td></td> <!-- term -->
+							<td>SYDE262</td> <!-- course -->
+							<td><span class="label label-kinda">SYDE262</span></td> <!-- math -->
+							<td></td> <!-- physics -->
+							<td></td> <!-- chem -->
+							<td></td> <!-- comp sci -->
+							<td></td> <!-- art -->
+						</tr>
+						<tr>
+							<td></td> <!-- term -->
+							<td>SYDE286</td> <!-- course -->
+							<td></td> <!-- math -->
+							<td><span class="label label-definitely">SYDE283</span></td> <!-- physics -->
+							<td></td> <!-- chem -->
+							<td></td> <!-- comp sci -->
+							<td></td> <!-- art -->
+						</tr>
+						<tr>
+							<td></td> <!-- term -->
+							<td>SYDE292</td> <!-- course -->
+							<td></td> <!-- math -->
+							<td><span class="label label-definitely">SYDE292</span></td> <!-- physics -->
+							<td></td> <!-- chem -->
+							<td></td> <!-- comp sci -->
+							<td></td> <!-- art -->
+						</tr>
+						<tr>
+							<td></td> <!-- term -->
+							<td>SYDE292L</td> <!-- course -->
+							<td></td> <!-- math -->
+							<td><span class="label label-definitely">SYDE292L</span></td> <!-- physics -->
+							<td></td> <!-- chem -->
+							<td></td> <!-- comp sci -->
+							<td></td> <!-- art -->
+						</tr>
+						<tr>
+							<td></td> <!-- term -->
+							<td>[CSE]</td> <!-- course -->
+							<td></td> <!-- math -->
+							<td></td> <!-- physics -->
+							<td></td> <!-- chem -->
+							<td></td> <!-- comp sci -->
+							<td></td> <!-- art -->
+						</tr>
+						<tr> <!-- 3A -->
+							<td>3A</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td> <!-- term -->
+							<td>SYDE301</td> <!-- course -->
+							<td></td> <!-- math -->
+							<td></td> <!-- physics -->
+							<td></td> <!-- chem -->
+							<td></td> <!-- comp sci -->
+							<td></td> <!-- art -->
+						</tr>
+						<tr>
+							<td></td> <!-- term -->
+							<td>SYDE311</td> <!-- course -->
+							<td><span class="label label-definitely">SYDE311</span></td> <!-- math -->
+							<td></td> <!-- physics -->
+							<td></td> <!-- chem -->
+							<td></td> <!-- comp sci -->
+							<td></td> <!-- art -->
+						</tr>
+						<tr>
+							<td></td> <!-- term -->
+							<td>SYDE351</td> <!-- course -->
+							<td><span class="label label-definitely">SYDE351</span></td> <!-- math -->
+							<td></td> <!-- physics -->
+							<td></td> <!-- chem -->
+							<td></td> <!-- comp sci -->
+							<td></td> <!-- art -->
+						</tr>
+						<tr>
+							<td></td> <!-- term -->
+							<td>SYDE361</td> <!-- course -->
+							<td></td> <!-- math -->
+							<td></td> <!-- physics -->
+							<td></td> <!-- chem -->
+							<td></td> <!-- comp sci -->
+							<td><span class="label label-definitely">SYDE361</span></td> <!-- art -->
+						</tr>
+						<tr>
+							<td></td> <!-- term -->
+							<td>SYDE381</td> <!-- course -->
+							<td></td> <!-- math -->
+							<td><span class="label label-definitely">SYDE381</span></td> <!-- physics -->
+							<td></td> <!-- chem -->
+							<td></td> <!-- comp sci -->
+							<td></td> <!-- art -->
+						</tr>
+						<tr>
+							<td></td> <!-- term -->
+							<td>SYDE383</td> <!-- course -->
+							<td></td> <!-- math -->
+							<td><span class="label label-definitely">SYDE383</span></td> <!-- physics -->
+							<td></td> <!-- chem -->
+							<td></td> <!-- comp sci -->
+							<td></td> <!-- art -->
+						</tr>
+						<tr> <!-- 3B -->
+							<td>3B</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td> <!-- term -->
+							<td>SYDE302</td> <!-- course -->
+							<td></td> <!-- math -->
+							<td></td> <!-- physics -->
+							<td></td> <!-- chem -->
+							<td></td> <!-- comp sci -->
+							<td></td> <!-- art -->
+						</tr>
+						<tr>
+							<td></td> <!-- term -->
+							<td>SYDE312</td> <!-- course -->
+							<td></td> <!-- math -->
+							<td></td> <!-- physics -->
+							<td></td> <!-- chem -->
+							<td></td> <!-- comp sci -->
+							<td></td> <!-- art -->
+						</tr>
+						<tr>
+							<td></td> <!-- term -->
+							<td>SYDE352</td> <!-- course -->
+							<td></td> <!-- math -->
+							<td></td> <!-- physics -->
+							<td></td> <!-- chem -->
+							<td></td> <!-- comp sci -->
+							<td></td> <!-- art -->
+						</tr>
+						<tr>
+							<td></td> <!-- term -->
+							<td>[TE]</td> <!-- course -->
+							<td></td> <!-- math -->
+							<td></td> <!-- physics -->
+							<td></td> <!-- chem -->
+							<td></td> <!-- comp sci -->
+							<td></td> <!-- art -->
+						</tr>
+						<tr>
+							<td></td> <!-- term -->
+							<td>[CSE]</td> <!-- course -->
+							<td></td> <!-- math -->
+							<td></td> <!-- physics -->
+							<td></td> <!-- chem -->
+							<td></td> <!-- comp sci -->
+							<td></td> <!-- art -->
+						</tr>
+						<tr>
+							<td></td> <!-- term -->
+							<td>SYDE362</td> <!-- course -->
+							<td></td> <!-- math -->
+							<td><td> <!-- physics -->
+							<td></td> <!-- chem -->
+							<td></td> <!-- comp sci -->
+							<td></td> <!-- art -->
 						</tr>
 					</tbody>
 				</table>
 			</div>
 			<div class="tab-pane fade" id="course-discipline">
-				<table class="table">
-					<thead>
-						<th>Term</th>
-						<th>Course</th>
-						<th>General</th>
-						<th>Specifc to SyDe</th>
-						<th>Mech</th>
-						<th>Chem</th>
-						<th>Tron</th>
-						<th>ECE</th>
-						<th>Comp</th>
-					</thead>
-					<tbody>
-					</tbody>
-				</table>>
+				<div class="row">
+					<div class="span8">
+						<h2>Courses by Topic</h2>
+						<p>Systems Design Engineering program's core courses are organized into six main segments, which is displayed in each course's course code. Understanding these groupings is a great way to understand the main components of a Systems Design Engineering degree, and determine whether you think this program is right for you.</p>
+					</div>
+					<div class="span4">
+						<h4>How course codes work</h4>
+						<h5>SYDE XYZ</h5>
+						<div class="row"><div class="span1"><p>SYDE</p></div><div class="span3"><p>Department Code</p></div></div>
+						<div class="row"><div class="span1"><p>X</p></div><div class="span3"><p>Year of Study the course is taken</p></div></div>
+						<div class="row"><div class="span1"><p>Y</p></div><div class="span3"><p>Represent the course topic group</p></div></div>
+						<div class="row"><div class="span1"><p>Z</p></div><div class="span3"><p>Term the course is taken in that year (odd = 1st term, even - 2nd term</p></div></div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="span12">
+						<h3>General/Seminar Courses <small>( SYDE _0_ )</small></h3>
+						<p>There one seminar course every term, and they are used to provide miscalleneous information which doesn't really fit into any other course. This includes information with regards to Administrative issues, co-op, school services, etc. Seminar time is usualyl quite structured in first and second year, with lots of important information to cover. In upper years, seminar time becomes more flexible in terms of content, with students usually deciding what they'd like to see, such as learning about grad school, bringing in past graduates, etc.</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="span12">
+						<table class="table">
+							<thead>
+								<th>Course Code</th>
+								<th>year</th>
+								<th>Name</th>
+							</thead>
+							<tbody>
+								<tr>
+									<td>SYDE 101</td>
+									<td>1A</td>
+									<td>Seminar</td>
+								</tr>
+								<tr>
+									<td>SYDE 102</td>
+									<td>1B</td>
+									<td>Seminar</td>
+								</tr>
+								<tr>
+									<td>SYDE 201</td>
+									<td>2A</td>
+									<td>Seminar</td>
+								</tr>
+								<tr>
+									<td>SYDE 202</td>
+									<td>2B</td>
+									<td>Seminar</td>
+								</tr>
+								<tr>
+									<td>SYDE 301</td>
+									<td>3A</td>
+									<td>Seminar</td>
+								</tr>
+								<tr>
+									<td>SYDE 302</td>
+									<td>3B</td>
+									<td>Seminar</td>
+								</tr>
+								<tr>
+									<td>SYDE 401</td>
+									<td>4A</td>
+									<td>Seminar</td>
+								</tr>
+								<tr>
+									<td>SYDE 402</td>
+									<td>4B</td>
+									<td>Seminar</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
