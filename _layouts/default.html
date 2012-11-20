@@ -24,8 +24,8 @@
 
     <script src="{{ BASE_PATH }}/{{ ASSET_PATH }}/js/jquery.js"></script>
     <script src="{{ BASE_PATH }}/{{ ASSET_PATH }}/js/post.js"></script>
-
   </head>
+
 
   <body data-spy="scroll" data-target="#navbar" data-offsett="10">
     <div id="navbar" class="navbar navbar-fixed-top">
@@ -38,40 +38,24 @@
                 <li><a href="#{{page.title}}">{{page.title}}</a></li>
               {% endif %}
             {% endfor %}
-
-            <!-- {% assign pages_list = site.pages %}
-            {% assign group = 'content' %}
-            {% include JB/pages_list %} -->
           </ul>
         </div>
       </div>
     </div>
-
-    <!-- <header class="jumbotron subhead" id="overview">
-      <div class="container">
-        <h1>{{ site.title }}</h1>
-        <p>That's a very good question.</p>
-      </div>
-    </header> -->
     <div class="hero-unit" id="header"> <!-- set background for this -->
       <h1>What is Systems Design Engineering?</h1>
     </div>
-
     <!-- ALL THE CONTENT GOES HERE! -->
     <!-- Basically, index.html uses this page as it's template, and everything within the index.html file gets placed here -->
     {{ content }}
-
     <div class="container">
       <footer>
-        <p>&copy; {{ site.author.name }} 2012 <!-- references _config.yml -->
-          with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
-          , <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>, and <a href="http://balsamiq.com">Balsamiq</a>.
+        <p>Brought to you by {{ site.author.name }}, with help from <a href="http://jekyllbootstrap.com" target="_blank">Jekyll Bootstrap</a>, <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>, <a href="http://balsamiq.com">Balsamiq</a>, and coffee.
         </p>
       </footer>
     </div>
 
     {% include JB/analytics %}
-
     <!-- scripts necessary for this page -->
      <script type="text/javascript">
       //initialize the carousel
