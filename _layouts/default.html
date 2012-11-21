@@ -39,6 +39,18 @@
               {% endif %}
             {% endfor %}
           </ul>
+          <ul class="nav pull-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" id="dlabel" role="button" data-toggle="dropdown" data-target="#" href="{{ BASE_PATH }}/index.html">
+                Contact
+                <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                <li>whatissystems@gmail.com</li>
+              </ul>
+            </li>
+          </ul>
+
         </div>
       </div>
     </div>
@@ -47,7 +59,10 @@
     </div>
     <!-- ALL THE CONTENT GOES HERE! -->
     <!-- Basically, index.html uses this page as it's template, and everything within the index.html file gets placed here -->
-    {{ content }}
+    <div class="content">
+      {{ content }}
+    </div>
+
     <div class="container">
       <footer>
         <p>Brought to you by {{ site.author.name }}, with help from <a href="http://jekyllbootstrap.com" target="_blank">Jekyll Bootstrap</a>, <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>, <a href="http://balsamiq.com">Balsamiq</a>, and coffee.
@@ -60,6 +75,7 @@
      <script type="text/javascript">
       //initialize the carousel
       $('#navbar').scrollspy()
+      $('.dropdown-toggle').dropdown()
     </script>
     <!-- load rest of scripts here -->
     <script src="{{ BASE_PATH }}/{{ ASSET_PATH }}/js/bootstrap-transition.js"></script>
