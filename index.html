@@ -4,6 +4,10 @@ title: Hello!
 ---
 {% include JB/setup %}
 
+{% comment %}
+Index just compiles all the 'pages' aka sections into a list and displays them
+{% endcomment %}
+
 {% for p in site.pages %}
 {% if p.tags contains 'content' %}
 <div class='{{p.title}}'>
