@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: post
 title: Courses
 tags: content
 group: content
@@ -12,6 +12,8 @@ group: content
 		</div>
 	</div>
 </div>
+
+
 <div class="row">
 	<div class="span9">
 		<p>The purpose of an enginereing undergraduate degree (Bachelor of Applied Sciences, if you're in Canada) is to provide intensive exposure to engineering concepts, with an emphasis on practical application. An engineering program will include courseware covering a wide range of concepts related to your specific discipline of study.</p>
@@ -21,6 +23,8 @@ group: content
 		<p>(link to actual uWaterloo site)</p>
 	</div>
 </div>
+
+
 <div class="row">
 	<div class="span12">
 		<ul id="course-tabs" class="nav nav-tabs">
@@ -29,18 +33,20 @@ group: content
 		<li><a href="#course-discipline" data-toggle="tab">Course Subjects</a></li>
 		</ul>
 		<div id="courseTabContent" class="tab-content">
+
+			{% comment %} The purpose of this section is simply to show the academic schedule. I realize that it is pretty much the same as the one on the uwaterloo site, so I'm considering whether it's worth keeping. One thing I do like is that I've put each CSE/TSE on it's own line, which gives you an accurate gage of courseload each term. {% endcomment %}
 			<div class="tab-pane fade active in" id="course-normal">
-				<table class="table"> <!-- NORMAL ACADEMIC SCHEDULE -->
+				<table class="table">
+
 					<thead>
 						<th>In term...</th>
 						<th>You take...</th>
 						<th>Which is...</th>
-						<!-- add an AKA section with the course 'slang' names in it! Awesome! -->
-						<!--<th>Nicknamed...</th>-->
 						<th>And consists of...</th>
 					</thead>
+
 					<tbody>
-						<tr class="term"> <!-- 1A -->
+						<tr class="term">
 							<td>1A</td>
 							<td></td>
 							<td></td>
@@ -51,50 +57,44 @@ group: content
 							<td></td>
 							<td>SYDE 101</td>
 							<td>Introduction to Systems Design Engineering</td>
-							<!--<td>'Intro'</td>-->
 							<td>1hr seminar</td>
 						</tr>
 							<td></td>
 							<td>SYDE 101L</td>
 							<td>Graphics Labratory</td>
-							<!--<td>'Graphics'</td>-->
 							<td>3hr lab</td>
 						</tr></tr>
 							<td></td>
 							<td>SYDE 111</td>
 							<td>Fundamental Engineering Math 1</td>
-							<!--<td>'Math'</td>-->
 							<td>3hrs lecture, 1hr tutorial</td>
 						</tr>
 						</tr>
 							<td></td>
 							<td>SYDE 113</td>
 							<td>Matrices and Linear Systems</td>
-							<!--<td>'Matrices'</td>-->
 							<td>3hrs lecture, 1hr tutorial</td>
 						</tr>
 						</tr>
 							<td></td>
 							<td>SYDE 121</td>
 							<td>Digital Computation</td>
-							<!--<td>'Programming'</td>-->
 							<td>3hrs lecture, 1hr tutorial</td>
 						</tr>
 						</tr>
 							<td></td>
 							<td>SYDE 161</td>
 							<td>Introduction to Design</td>
-							<!--<td>'Design'</td>-->
 							<td>3hrs lecture, 1hr tutorial</td>
 						</tr>
 						</tr>
 							<td></td>
 							<td>SYDE 181</td>
 							<td>Physics (Statics)</td>
-							<!--<td>'Physics'</td>-->
 							<td>3hrs lecture, 1hr tutorial</td>
 						</tr>
-						<tr class="term"> <!-- 1B -->
+
+						<tr class="term">
 							<td>1B</td>
 							<td></td>
 							<td></td>
@@ -148,7 +148,8 @@ group: content
 							<td>[Complimentary Studies Elective]</td>
 							<td>3hrs lecture, 1hr tutorial</td>
 						</tr>
-						<tr class="term"> <!-- 2A -->
+
+						<tr class="term">
 							<td>2A</td>
 							<td></td>
 							<td></td>
@@ -190,7 +191,8 @@ group: content
 							<td>Materials Chemistry</td>
 							<td>3hrs lecture, 1hr tutorial</td>
 						</tr>
-						<tr class="term"> <!-- 2B -->
+
+						<tr class="term"> 
 							<td>2B</td>
 							<td></td>
 							<td></td>
@@ -244,7 +246,8 @@ group: content
 							<td>[Complimentary Studies Elective]</td>
 							<td>3hrs lecture, 1hr tutorial</td>
 						</tr>
-						<tr class="term"> <!-- 3A -->
+
+						<tr class="term">
 							<td>3A</td>
 							<td></td>
 							<td></td>
@@ -286,7 +289,8 @@ group: content
 							<td>Fluid Mechanics</td>
 							<td>3hrs lecture, 1hr tutorial</td>
 						</tr>
-						<tr class="term"> <!-- 3B -->
+
+						<tr class="term">
 							<td>3B</td>
 							<td></td>
 							<td></td>
@@ -328,7 +332,8 @@ group: content
 							<td>Systems Design Workshop 1</td>
 							<td>1hr Professor Meeting (?)</td>
 						</tr>
-						<tr class="term"> <!-- 4A -->
+
+						<tr class="term">
 							<td>4A</td>
 							<td></td>
 							<td></td>
@@ -370,7 +375,8 @@ group: content
 							<td>Systems Design Workshop 2</td>
 							<td>1hr Professor meeting (?)</td>
 						</tr>
-						<tr class="term"> <!-- 4B -->
+
+						<tr class="term">
 							<td>4B</td>
 							<td></td>
 							<td></td>
@@ -415,12 +421,16 @@ group: content
 					</tbody>
 				</table>
 			</div>
-			<!-- I'm trying to sort these by 'theme', but I don't really know what that means. I think it may be more appropriate to assoiate it to high-school course topics, to make it more relatable to prospective students. List subject to change. -->
-			<div class="tab-pane fade" id="course-theme"> <!-- BY THEME/HIGH SCHOOL -->
+
+
+			{% comment %} I'm trying to sort these by 'theme', but I don't really know what that means. I think it may be more appropriate to assoiate it to high-school course topics, to make it more relatable to prospective students. List subject to change. Also debating the usefulness of this page.{% endcomment %}
+			<div class="tab-pane fade" id="course-theme"> 
 				<div class="row">
+
 					<div class="span9">
 						<p>One of the easist ways to understand whether or not you'll enjoy a program is to look at the course load and see if the courses in the program, and see whether they soudns interesting to you. This can be tough, particularly when you don't know what half of the words in the course description mean. This breakdown tries to give you a sense of how relevant each course is to one that you might have encountered in high school, based on the course content.</p>
 					</div>
+
 					<div class="span3">
 						<div class="well well-small">
 							<p><span class="label label-definitely">This</span> means this subject is the main content of the course</p>
@@ -428,8 +438,9 @@ group: content
 						</div>
 					</div>
 				</div>
+
 				<table class="table">
-					<thead> <!-- Math, physics, chemistry, biology, computer science, art & design. To add?: social science, engligh, computer engineering -->
+					<thead>
 						<th>Term</th>
 						<th>Course</th>
 						<th>Math?</th>
@@ -438,6 +449,7 @@ group: content
 						<th>Computer Science?</th>
 						<th>Art & Design?</th>
 					</thead>
+
 					<tbody>
 						<tr> <!-- 1A -->
 							<td>1A</td> <!-- term -->
@@ -856,12 +868,16 @@ group: content
 					</tbody>
 				</table>
 			</div>
+
+
+			{% comment %} This section breaks down the courses by their section course code. I think this might really help prospective students understand where the program emphasis lies, based on where the volume of courses lies, by topic. {% endcomment %}
 			<div class="tab-pane fade" id="course-discipline">
 				<div class="row">
 					<div class="span6">
 						<h3>Courses by Topic</h3>
 						<p>Systems Design Engineering program's core courses are organized into six main segments, which is displayed in each course's course code. Understanding these groupings is a great way to understand the main components of a Systems Design Engineering degree, and determine whether you think this program is right for you.</p>
 					</div>
+
 					<div class="span6">
 						<div class="well">
 							<h4>How do course codes work?</h4>
@@ -873,12 +889,14 @@ group: content
 						</div>
 					</div>
 				</div>
+
 				<div class="row">
 					<div class="span12">
 						<h4>Seminars <small>( SYDE _0_ )</small></h4>
 						<p>There one seminar course every term, and they are used to provide miscalleneous information which doesn't really fit into any other course. This includes information with regards to Administrative issues, co-op, school services, etc. Seminar time is usualyl quite structured in first and second year, with lots of important information to cover. In upper years, seminar time becomes more flexible in terms of content, with students usually deciding what they'd like to see, such as learning about grad school, bringing in past graduates, etc.</p>
 					</div>
 				</div>
+
 				<div class="row">
 					<div class="span12">
 						<table class="table">
@@ -936,7 +954,8 @@ group: content
 							</tbody>
 						</table>
 					</div>
-				</div> <!-- end of section -->
+				</div>
+
 				<div class="row">
 					<div class="span12">
 						<h4>Math Courses<small>( SYDE _1_ )</small></h4>
@@ -1000,7 +1019,8 @@ group: content
 							</tbody>
 						</table>
 					</div>
-				</div> <!-- end of section -->
+				</div>
+
 				<div class="row">
 					<div class="span12">
 						<h4>Computer Science Courses<small>( SYDE _2_ )</small></h4>
@@ -1029,7 +1049,8 @@ group: content
 							</tbody>
 						</table>
 					</div>
-				</div> <!-- end of section -->
+				</div>
+
 				<div class="row">
 					<div class="span12">
 						<h4>Systems Engineering Courses<small>( SYDE _5_ )</small></h4>
@@ -1063,7 +1084,8 @@ group: content
 							</tbody>
 						</table>
 					</div>
-				</div> <!-- end of section -->
+				</div>
+
 				<div class="row">
 					<div class="span12">
 						<h4>Design Courses<small>( SYDE _6_ )</small></h4>
@@ -1122,7 +1144,8 @@ group: content
 							</tbody>
 						</table>
 					</div>
-				</div> <!-- end of section -->
+				</div>
+
 				<div class="row">
 					<div class="span12">
 						<h4>Physics Courses<small>( SYDE _8_ )</small></h4>
@@ -1166,7 +1189,8 @@ group: content
 							</tbody>
 						</table>
 					</div>
-				</div> <!-- end of section -->
+				</div>
+
 				<div class="row">
 					<div class="span12">
 						<h4>Circuits and Electronics Courses<small>( SYDE _9_ )</small></h4>
@@ -1205,7 +1229,8 @@ group: content
 							</tbody>
 						</table>
 					</div>
-				</div> <!-- end of section -->
+				</div>
+
 				<div class="row">
 					<div class="span12">
 						<h4>Electives</h4>
@@ -1279,7 +1304,8 @@ group: content
 								</tr>
 						</table>
 					</div>
-				</div> <!-- end of content -->
+				</div>
+
 			</div>
 		</div>
 	</div>
