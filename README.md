@@ -23,12 +23,27 @@ If you're interested, we'll:
 - We'll introduce you to any other team members or mentors on the team that you want to work with. It'll help with the whole 'learning' thing, if that's what youre into, and making sure you're talking to other people keeps things running smoothly around here. If you're an independant person, that's totally cool, but some communication is necessary, to make sure we keep things under control.
 - From there, you should be able to start making a difference!
 
+## Getting Started with GitHub
+Once we've made you a collaborator on the project, getting started is super simple. If you're new to GitHub, there are some great resources you should check out to get yourself started
+- [GitHiub's guide to seeting up Git](https://help.github.com/articles/set-up-git)
+- [GitHub's guide to creating a repo](https://help.github.com/articles/create-a-repo). We already have one, but this practice will help you understand what's going on.
+- [Git's guide on creating your own copy of a repo](http://git-scm.com/book/en/Git-Basics-Getting-a-Git-Repository). Follow this to create a local copy of the whatissystems repo for you to work on.
+
+As for references and cheatsheets:
+- [Naked Startup's daily git workflow](http://nakedstartup.com/2010/04/simple-daily-git-workflow) (half way down).
+
+## Getting started with Jekyll
+The whatissystems site uses [jekyll](https://github.com/mojombo/jekyll) to manage and generate our pages. Basically, Jekyll lets you use templates and configurations to lower make maintaining the site easier. We try to keep the code well commented, so by looking through it you might get an idea of what's going on. It's pretty easy to understand and very helpful once you get the hang of it.
+
+## Getting started with Twitter Bootstrap
+We currently use Twitter Bootstrap as our CSS and Javascript framework for developing basic functionality. As the site grows we are giving it it's own elegant design, but you should familiarize yourself with [Twitter Bootstrap](http://twitter.github.com/bootstrap/) components to understand how the site is set up.
+
 
 # Contact
 Feel free to message/get in touch with any of the contributors, or email whatissystems@gmail.com.
 
 
-# Contributors:
+# Collaborators:
 - [mylestan](https://github.com/mylestan)
 - [joshuroy](https://github.com/joshuroy)
 
