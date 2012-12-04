@@ -25,7 +25,7 @@ If you're interested, we'll:
 
 ## Getting Started with GitHub
 Once we've made you a collaborator on the project, getting started is super simple. If you're new to GitHub, there are some great resources you should check out to get yourself started
-- [GitHiub's guide to seeting up Git](https://help.github.com/articles/set-up-git)
+- [GitHiub's guide to setting up Git](https://help.github.com/articles/set-up-git)
 - [GitHub's guide to creating a repo](https://help.github.com/articles/create-a-repo). We already have one, but this practice will help you understand what's going on.
 - [Git's guide on creating your own copy of a repo](http://git-scm.com/book/en/Git-Basics-Getting-a-Git-Repository). Follow this to create a local copy of the whatissystems repo for you to work on.
 
