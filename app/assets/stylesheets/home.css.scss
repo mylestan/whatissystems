@@ -1,0 +1,30 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// Import Bourbon sass library: http://bourbon.io/
+@import "bourbon";
+
+// Variables: values frequently used across the entire site
+// Declaration: '$variable-name: value;'
+// Usage: 'attribute: $variable-name;'
+$text-color: #000;
+$link-color: #000;
+$link-hover-color: #000;
+$title-color: #000;
+
+
+body {
+  color: $text-color;
+}
+
+a {
+  color: $link-color;
+  &:hover {
+    color: $link-hover-color;
+    text-decoration: none;
+  }
+  &:visited { color: $link-color; }
+}
+
+ul { list-style: none; }

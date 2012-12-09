@@ -1,0 +1,17 @@
+/ Default app page
+!!!
+%html
+  %head
+    %title Whatissystems
+
+    / Manifest css file, see app/assets/stylesheets/application.css
+    = stylesheet_link_tag    "application", :media => "all"
+
+    / Manifest js file, see app/assets/javascripts/application.js
+    = javascript_include_tag "application"
+
+    = csrf_meta_tags
+
+  / Content will be injected here
+  %body
+    = yield
