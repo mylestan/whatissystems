@@ -5,6 +5,12 @@ body{
  	background-repeat:no-repeat;
  	font: 12px "Courier New", "Courier New", monospace;
 }
+
+a{
+	color:#ffffff;
+	text-decoration:none;
+}
+
 #window{
 	width:800px;
 	height:600px;
