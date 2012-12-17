@@ -1,9 +1,11 @@
 Whatissystems::Application.routes.draw do
-  get "home/index"
-  get "coming_here/index"
-  get "the_experience/index"
-  get "systems_plus_world/index"
-  get "about/index"
+  root :to => 'high_voltage/pages#show', id: 'home'
+
+  match '/home' => 'high_voltage/pages#show', id: 'home'
+  match '/coming-here' => 'high_voltage/pages#show', id: 'coming-here'
+  match '/the-experience' => 'high_voltage/pages#show', id: 'the-experience'
+  match '/systems-plus-world' => 'high_voltage/pages#show', id: 'systems-plus-world'
+  match '/about' => 'high_voltage/pages#show', id: 'about'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -53,8 +55,7 @@ Whatissystems::Application.routes.draw do
   #   end
 
   # You can have the root of your site routed with "root"
-  # just remember to delete public/index.html.
-  root :to => 'home#index'
+  # just remember to delete public/show.html.
 
   # See how all your routes lay out with "rake routes"
 

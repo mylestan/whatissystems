@@ -15,9 +15,12 @@ $title-color: #363636;
 $bg: "debut_light.png";
 
 
-html, body { height: 100%; }
+html, body{ height: 100%; }
 
-body {
+h1{ font-size: 25px; }
+h2{ font-size: 20px; }
+
+body{
   min-height: 100%;
   margin: 0;
   padding: 0;
@@ -27,14 +30,14 @@ body {
   p{ font-size: 13px; }
 }
 
-a {
+a{
   color: $link-color;
   text-decoration: none;
-  &:hover {
+  &:hover{
     color: $link-hover-color;
     text-decoration: none;
   }
-  &:visited { color: $link-color; }
+  &:visited{ color: $link-color; }
 }
 
 ul { list-style: none; }
@@ -84,11 +87,15 @@ ul { list-style: none; }
   }
 }
 
-#content { margin: 15px; }
+#content {
+  margin: 15px;
+  text-align: center;
+}
 
 .tile{
   @include border-radius( 3px );
   @include box-shadow( 2px 2px 3px rgb(206, 206, 206) );
+  text-align: left;
   h1{ font-size: 22px; }
 }
 

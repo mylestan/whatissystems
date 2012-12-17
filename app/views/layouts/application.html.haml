@@ -15,16 +15,16 @@
   %body
     #header
       #title
-        = link_to "What is Systems?", root_path
+        = link_to "What is Systems?", page_path("home")
       #top-nav
         .nav-link
-          = link_to "COMING HERE", coming_here_index_path
+          = link_to "COMING HERE", page_path("coming-here")
         .nav-link
-          = link_to "THE EXPERIENCE", the_experience_index_path
+          = link_to "THE EXPERIENCE", page_path("the-experience")
         .nav-link
-          = link_to "SYSTEMS + WORLD", systems_plus_world_index_path
+          = link_to "SYSTEMS + WORLD", page_path("systems-plus-world")
         .nav-link
-          = link_to "ABOUT", about_index_path
+          = link_to "ABOUT", page_path(id: "about")
 
 
     / Content will be injected here

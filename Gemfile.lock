@@ -48,6 +48,7 @@ GEM
       activesupport (~> 3.0)
       haml (~> 3.0)
       railties (~> 3.0)
+    high_voltage (1.2.1)
     hike (1.2.1)
     i18n (0.6.1)
     journey (1.0.4)
@@ -116,6 +117,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   haml
   haml-rails
+  high_voltage
   jquery-rails
   pg
   rails (= 3.2.8)
