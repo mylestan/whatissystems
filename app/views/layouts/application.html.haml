@@ -1,8 +1,8 @@
 / Default app page
 !!!
-%html
+%html(ng-app)
   %head
-    %title Whatissystems
+    %title What is Systems?
 
     / Manifest css file, see app/assets/stylesheets/application.css
     = stylesheet_link_tag    "application", :media => "all"
@@ -12,6 +12,21 @@
 
     = csrf_meta_tags
 
-  / Content will be injected here
   %body
-    = yield
+    #header
+      #title
+        = link_to "What is Systems?", root_path
+      #top-nav
+        .nav-link
+          = link_to "COMING HERE", coming_here_index_path
+        .nav-link
+          = link_to "THE EXPERIENCE", the_experience_index_path
+        .nav-link
+          = link_to "SYSTEMS + WORLD", systems_plus_world_index_path
+        .nav-link
+          = link_to "ABOUT", about_index_path
+
+
+    / Content will be injected here
+    #content
+      = yield

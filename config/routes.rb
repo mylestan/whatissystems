@@ -1,5 +1,9 @@
 Whatissystems::Application.routes.draw do
   get "home/index"
+  get "coming_here/index"
+  get "the_experience/index"
+  get "systems_plus_world/index"
+  get "about/index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
