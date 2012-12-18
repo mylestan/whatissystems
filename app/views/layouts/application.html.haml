@@ -17,14 +17,14 @@
       #title
         = link_to "What is Systems?", page_path("home")
       #top-nav
-        .nav-link
-          = link_to "COMING HERE", page_path("coming-here")
-        .nav-link
-          = link_to "THE EXPERIENCE", page_path("the-experience")
-        .nav-link
-          = link_to "SYSTEMS + WORLD", page_path("systems-plus-world")
-        .nav-link
-          = link_to "ABOUT", page_path(id: "about")
+        = link_to page_path("coming-here") do
+          .nav-link COMING HERE
+        = link_to page_path("the-experience") do
+          .nav-link THE EXPERIENCE
+        = link_to page_path("systems-plus-world") do
+          .nav-link SYSTEMS + WORLD
+        = link_to page_path(id: "about") do
+          .nav-link ABOUT
 
 
     / Content will be injected here

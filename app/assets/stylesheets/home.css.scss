@@ -9,7 +9,7 @@
 // Declaration: '$variable-name: value;'
 // Usage: 'attribute: $variable-name;'
 $text-color: #000;
-$link-color: #000;
+$link-color: #777;
 $link-hover-color: #000;
 $title-color: #363636;
 $bg: "debut_light.png";
@@ -77,14 +77,13 @@ ul { list-style: none; }
   &:hover{
     cursor: pointer;
     background: #f3f3f3;
-    a{ color: #000; }//#001eb9; }
+    color: $link-hover-color;
   }
-  a{
-    color: #777;
-    line-height: 50px;
-    font-size: 15px;
-    font-weight: 300;
-  }
+  &:visited{ color: $link-color; }
+  color: $link-color;
+  line-height: 50px;
+  font-size: 15px;
+  font-weight: 300;
 }
 
 #content {
