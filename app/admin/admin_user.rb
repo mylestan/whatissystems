@@ -1,13 +1,16 @@
 ActiveAdmin.register AdminUser do
+  menu label: "Admin"
+  config.filters = false
+
   index do
     column :email
-    column :current_sign_in_at
+    # column :current_sign_in_at
     column :last_sign_in_at
     column :sign_in_count
     default_actions
   end
 
-  filter :email
+  # filter :email
 
   form do |f|
     f.inputs "Admin Details" do
