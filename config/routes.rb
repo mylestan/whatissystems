@@ -1,6 +1,12 @@
 Whatissystems::Application.routes.draw do
+
+  ActiveAdmin.routes(self)
+  devise_for :admin_users, ActiveAdmin::Devise.config
+
+  # Site root
   root :to => 'high_voltage/pages#show', id: 'home'
 
+  # Main routing
   match '/home' => 'high_voltage/pages#show', id: 'home'
   match '/coming-here' => 'high_voltage/pages#show', id: 'coming-here'
   match '/the-experience' => 'high_voltage/pages#show', id: 'the-experience'
