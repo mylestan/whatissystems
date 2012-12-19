@@ -1,4 +1,4 @@
-ActiveAdmin.register Feeds do
+ActiveAdmin.register Feed do
   filter :name
   filter :id
 

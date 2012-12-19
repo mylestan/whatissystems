@@ -1,6 +1,6 @@
-class CreateQandAs < ActiveRecord::Migration
+class CreateQAndAs < ActiveRecord::Migration
   def change
-    create_table :qand_as do |t|
+    create_table :q_and_as do |t|
       t.text :question
       t.text :answer
 

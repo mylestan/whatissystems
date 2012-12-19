@@ -8,11 +8,10 @@
   width: 29%;
   min-height: 150px;
   background: rgba(0, 0, 0, 0.1);
-  margin: 0 -1px;
+  margin: 0;
   padding: 10px;
   vertical-align: middle;
   h1{
-    //margin: 0.8em 0;
     color: rgba(255, 255, 255, 0.9);
     margin: 0;
     font-size: 40px;
@@ -28,7 +27,7 @@
 
 #aboutthis{
   display: inline-block;
-  width: 92%;
+  width: 93%;
   height: 250px;
   background: rgba(255, 255, 255, 0.7);
   h1{

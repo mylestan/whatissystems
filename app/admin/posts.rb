@@ -1,4 +1,4 @@
-ActiveAdmin.register Posts do
+ActiveAdmin.register Post do
   filter :title
   filter :author
 end

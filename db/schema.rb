@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121218032748) do
+ActiveRecord::Schema.define(:version => 20121219223329) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -52,12 +52,41 @@ ActiveRecord::Schema.define(:version => 20121218032748) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "feeds_tags", :id => false, :force => true do |t|
+    t.integer "feed_id"
+    t.integer "tag_id"
+  end
+
+  add_index "feeds_tags", ["feed_id"], :name => "index_feeds_tags_on_feed_id"
+  add_index "feeds_tags", ["tag_id"], :name => "index_feeds_tags_on_tag_id"
+
   create_table "posts", :force => true do |t|
     t.string   "title"
     t.string   "author"
+    t.text     "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
-    t.text     "description"
+  end
+
+  create_table "posts_tags", :id => false, :force => true do |t|
+    t.integer "post_id"
+    t.integer "tag_id"
+  end
+
+  add_index "posts_tags", ["post_id"], :name => "index_posts_tags_on_post_id"
+  add_index "posts_tags", ["tag_id"], :name => "index_posts_tags_on_tag_id"
+
+  create_table "q_and_as", :force => true do |t|
+    t.text     "question"
+    t.text     "answer"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "tags", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end
