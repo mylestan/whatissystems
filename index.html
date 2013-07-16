@@ -118,7 +118,16 @@ p{
 	background-color: rgba(0,0,0,0.5);
 }
 
-.tile h3{
+.tile-full{
+	position: relative;
+	height: 520px;
+	width: 940px;
+	margin: 10px 10px;
+	float: left;
+	background-color: rgba(0,0,0,0.5);
+}
+
+.tile h3, .tile-full h3{
 	position: absolute;
 	bottom: 0px;
 	left: 0px;
@@ -217,14 +226,9 @@ p{
 	<div class="page" id="work">
 		<div class="content">
 			<h2 id="content-title">About jobs</h2>
-			<div class="tile">
-				<h3>Test</h3>
+			<div class="tile-full" id="map-canvas">
+				<h3>Map!</h3>
 			</div>
-			<div class="tile"></div>
-			<div class="tile"></div>
-			<div class="tile"></div>
-			<div class="tile"></div>
-			<div class="tile"></div>
 		</div>
 	</div> <!-- #about -->
 	<div class="clear"></div>
@@ -238,6 +242,7 @@ p{
 	<!-- Script. Because screw multiple pages -->
 	<!-- Need jquery, etc. -->
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
 	<script type="text/javascript" src="res/jquery.scrollTo-1.4.3.1.js"></script>
 	<script type="text/javascript" src="res/jquery.localscroll-1.2.7.js"></script>
 	<script type="text/javascript">
@@ -258,6 +263,13 @@ p{
 		$(window).resize(function(){
 			scrollBG();
 		});
+
+		var mapOptions = {
+		    zoom: 14,
+		    center: new google.maps.LatLng(43.4722,-80.5472),
+		    mapTypeId: google.maps.MapTypeId.ROADMAP
+  		};
+  		map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
 	});
 
