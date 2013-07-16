@@ -53,6 +53,7 @@ p{
 	background-color: gray;
 	position: absolute;
 	top: 100%;
+	z-index: 100;
 }
 
 #nav-content{
@@ -61,13 +62,43 @@ p{
 	margin: 0 auto;
 }
 
+#nav-content ul{
+	margin-top: 12px;
+}
+
+#nav-content a{
+	font-size: 1.5em;
+}
+
+#nav-content a:link{
+	color: #DDD;
+	text-decoration: none;
+}
+
+#nav-content a:visited{
+	color: #DDD;
+	text-decoration: none;
+}
+
+#nav-content a:hover{
+	color: #EEE;
+	text-decoration: none;
+}
+
+#nav-content a:active{
+	color: #FFF;
+	text-decoration: none;
+}
+
 #title{
 	width: 50%;
 	float:left;
 }
 
 #title p{
-	margin-top: 10px;
+	margin-top: 12px;
+	font-size: 1.5em;
+	color: #FFF;
 }
 
 #links{
@@ -182,7 +213,7 @@ p{
 	<div id="nav">
 		<div id="nav-content">
 			<div id="title">
-				<P>WHAT THE FUCK IS SYSTEMS?!</p>
+				<P>What is Systems</p>
 			</div>
 			<div id="links">
 				<ul>
@@ -197,7 +228,7 @@ p{
 	<!-- #page -->
 	<div class="page" id="about">
 		<div class="content">
-			<h2 id="content-title">About Shit</h2>
+			<h2 id="content-title">About</h2>
 			<div class="tile">
 				<h3>Test</h3>
 			</div>
@@ -211,7 +242,7 @@ p{
 	<div class="clear"></div>
 	<div class="page" id="experience">
 		<div class="content">
-			<h2 id="content-title">About Experience</h2>
+			<h2 id="content-title">Experience</h2>
 			<div class="tile">
 				<h3>Test</h3>
 			</div>
@@ -225,7 +256,7 @@ p{
 	<div class="clear"></div>
 	<div class="page" id="work">
 		<div class="content">
-			<h2 id="content-title">About jobs</h2>
+			<h2 id="content-title">Work</h2>
 			<div class="tile-full" id="map-canvas">
 				<h3>Map!</h3>
 			</div>
