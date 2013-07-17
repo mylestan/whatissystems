@@ -16,7 +16,7 @@ p{
 
 #background{
 	background: url(http://placehold.it/150x150);
-	background-repeat: repeat-x repeat-y;
+	background-repeat: repeat;
 	background-position: 0px 0px;
 	background-attachment: fixed;
 	position: relative;
@@ -149,6 +149,24 @@ p{
 	background-color: rgba(0,0,0,0.5);
 }
 
+.tile-tall{
+	position: relative;
+	height: 520px;
+	width: 300px;
+	margin: 10px 10px;
+	float: left;
+	background-color: rgba(0,0,0,0.5);
+}
+
+.tile-wide{
+	position: relative;
+	height: 250px;
+	width: 620px;
+	margin: 10px 10px;
+	float: left;
+	background-color: rgba(0,0,0,0.5);
+}
+
 .tile-full{
 	position: relative;
 	height: 520px;
@@ -158,7 +176,7 @@ p{
 	background-color: rgba(0,0,0,0.5);
 }
 
-.tile h3, .tile-full h3{
+.tile h3, .tile-tall h3, .tile-wide h3, .tile-full h3{
 	position: absolute;
 	bottom: 0px;
 	left: 0px;
@@ -228,35 +246,43 @@ p{
 	<!-- #page -->
 	<div class="page" id="about">
 		<div class="content">
-			<h2 id="content-title">About</h2>
-			<div class="tile">
-				<h3>Test</h3>
+			<h2 id="content-title">Systems design engineers use a design-oriented and interdisciplinary method to solve large and complex problems.</h2>
+			<div class="tile-tall">
+				<h3>What the School Says</h3>
 			</div>
-			<div class="tile"></div>
-			<div class="tile"></div>
-			<div class="tile"></div>
-			<div class="tile"></div>
-			<div class="tile"></div>
+			<div class="tile">
+				<h3>Initiatives</h3>
+			</div>
+			<div class="tile">
+				<h3>SYDE v.s. The Rest</h3>
+			</div>
+			<div class="tile-wide">
+				<h3>Design Projects</h3>
+			</div>
 		</div>
 	</div> <!-- #about -->
 	<div class="clear"></div>
 	<div class="page" id="experience">
 		<div class="content">
-			<h2 id="content-title">Experience</h2>
-			<div class="tile">
-				<h3>Test</h3>
+			<h2 id="content-title">You'll have a blast here.</h2>
+			<div class="tile-wide">
+				<h3>The 6th Floor of E5</h3>
 			</div>
-			<div class="tile"></div>
-			<div class="tile"></div>
-			<div class="tile"></div>
-			<div class="tile"></div>
-			<div class="tile"></div>
+			<div class="tile">
+				<h3>Coffehouse</h3>
+			</div>
+			<div class="tile">
+				<h3>All Systems Go</h3>
+			</div>
+			<div class="tile-wide">
+				<h3>Iron Ring Festivities</h3>
+			</div>
 		</div>
 	</div> <!-- #about -->
 	<div class="clear"></div>
 	<div class="page" id="work">
 		<div class="content">
-			<h2 id="content-title">Work</h2>
+			<h2 id="content-title">We build the world.</h2>
 			<div class="tile-full" id="map-canvas">
 				<h3>Map!</h3>
 			</div>
