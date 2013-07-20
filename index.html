@@ -31,7 +31,6 @@ p{
 	background-color: gray;	
 	width: 100%;
 	height: 100%;
-	display: inline-block;
 
 	z-index: 1000;
 }
@@ -194,10 +193,10 @@ p{
 	background: rgba(0,0,0,0.5);
 }
 
-#footer p{
+#footer p, #footer a{
 	color: #fff;
 	height: 100%;
-	margin: 0px 10px;
+	margin: 5px 10px;
 }
 
 #left{
@@ -249,6 +248,8 @@ p{
 	float: left;
 	width: 900px;
 	padding: 10px;
+	margin: 0;
+	font-size: 1.5em;
 
 }
 
@@ -260,11 +261,8 @@ p{
 	float: right;
 	width: 30px;
 	padding: 10px 10px 0 0;
-
-}
-
-#popup-exit h2{
-	margin: 0;
+	margin: 0px;
+	font-size: 1.5em;
 }
 
 
@@ -301,16 +299,16 @@ p{
 	<div class="page" id="about">
 		<div class="content">
 			<h2 id="content-title">Systems design engineers use a design-oriented and interdisciplinary method to solve large and complex problems.</h2>
-			<div class="tile tile-tall" id="what-the-school-says">
+			<div class="tile tile-tall" id="what-the-school-says" onclick="showPopup('what-the-school-says')">
 				<h3>What the School Says</h3>
 			</div>
-			<div class="tile tile-square" id="initiatives">
+			<div class="tile tile-square" id="initiatives" onclick="showPopup('initiatives')">
 				<h3>Initiatives</h3>
 			</div>
-			<div class="tile tile-square" id="syde-vs-the-rest">
+			<div class="tile tile-square" id="syde-vs-the-rest" onclick="showPopup('syde-vs-the-rest')">
 				<h3>SYDE v.s. The Rest</h3>
 			</div>
-			<div class="tile tile-wide" id="design-projects">
+			<div class="tile tile-wide" id="design-projects" onclick="showPopup('design-projects')">
 				<h3>Design Projects</h3>
 			</div>
 		</div>
@@ -319,16 +317,16 @@ p{
 	<div class="page" id="experience">
 		<div class="content">
 			<h2 id="content-title">You'll have a blast here.</h2>
-			<div class="tile tile-wide" id="the-6th-floor-of-e5">
+			<div class="tile tile-wide" id="the-6th-floor-of-e5" onclick="showPopup('the-6th-floor-of-e5')">
 				<h3>The 6th Floor of E5</h3>
 			</div>
-			<div class="tile tile-square" id="coffeehouse">
+			<div class="tile tile-square" id="coffeehouse" onclick="showPopup('coffeehouse')">
 				<h3>Coffeehouse</h3>
 			</div>
-			<div class="tile tile-square" id="all-systems-go">
+			<div class="tile tile-square" id="all-systems-go" onclick="showPopup('all-systems-go')">
 				<h3>All Systems Go</h3>
 			</div>
-			<div class="tile tile-wide" id="iron-ring-festivities">
+			<div class="tile tile-wide" id="iron-ring-festivities" onclick="showPopup('iron-ring-festivities')">
 				<h3>Iron Ring Festivities</h3>
 			</div>
 		</div>
@@ -346,22 +344,18 @@ p{
 	<div id="footer">
 		<div id="footer-content">
 			<p id="left">Made by students, for prospective students.</p>
-			<p id="right">Contact</p>
+			<a href="mailto:whatissystems@gmail.com" id="right" target="_blank">Contact</a>
 		</div>
 	</div>
 
 	<!-- the popup that will store the content -->
 	<div id="popup-background"></div>
 	<div id="popup">
-		<div id="popup-title">
-			<h2>Popup Title</h2>
-		</div>
-		<div id="popup-exit">
-			<h2>x</h2>
-		</div>
+		<h2 id="popup-title">[header]</h2>
+		<h2 id="popup-exit">x</h2>
 		<div class="clear"></div>
 		<div id="popup-content">
-			<p>Gangsta.</p>
+			<p>[content]</p>
 		</div>
 	</div>
 
@@ -379,21 +373,27 @@ p{
 
 		// Add event Listeners
 		// attach events to tiles!
-		var tilesArray = document.getElementsByClassName('tile');
-		for(var i=0; i<tilesArray.length; i++){
-			var cssId = String(tilesArray[i].id);
-			if(content.hasOwnProperty(cssId)){
-				console.log("Content found for " + cssId + ", adding event listener.");
-				tilesArray[i].addEventListener("click", function(){String(tilesArray[i].id)}, false);
-			} else {
-				console.log("Could not find content for " + cssId +", :(");
-			}
-		}
+		// var tilesArray = document.getElementsByClassName('tile');
+		// for(var i=0; i<tilesArray.length; i++){
+		// 	var cssId = String(tilesArray[i].id);
+		// 	if(content.hasOwnProperty(cssId)){
+		// 		console.log("Content found for " + cssId + ", adding event listener.");
+		// 		tilesArray[i].addEventListener("click", function(){String(tilesArray[i].id)}, false);
+		// 	} else {
+		// 		console.log("Could not find content for " + cssId +", :(");
+		// 	}
+		// }
 
+		// Popup stuff
 		var pbg = document.getElementById('popup-background');
 		pbg.addEventListener("click", function(){hidePopup()}, false);
 		var p = document.getElementById('popup-exit');
 		p.addEventListener("click", function(){hidePopup()}, false);
+		$(document).keyup(function(evt){
+			if(evt.keyCode == 27){
+				hidePopup();
+			}
+		});
 
 		// Set LocalSroll
 		$("#splash").localScroll();
