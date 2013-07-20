@@ -32,6 +32,8 @@ p{
 	width: 100%;
 	height: 100%;
 	display: inline-block;
+
+	z-index: 1000;
 }
 
 #splash h1{
@@ -53,7 +55,7 @@ p{
 	background-color: rgba(0,0,0,0.2);
 	position: absolute;
 	top: 100%;
-	z-index: 100;
+	z-index: 800;
 }
 
 #nav-content{
@@ -140,31 +142,27 @@ p{
 	padding: 10px 10px 0px 10px;
 }
 
+/* To loop through all tile elements */
 .tile{
 	position: relative;
-	height: 250px;
-	width: 300px;
 	margin: 10px 10px;
 	float: left;
 	background-color: rgba(0,0,0,0.5);
+}
+
+.tile-square{
+	height: 250px;
+	width: 300px;
 }
 
 .tile-tall{
-	position: relative;
 	height: 520px;
 	width: 300px;
-	margin: 10px 10px;
-	float: left;
-	background-color: rgba(0,0,0,0.5);
 }
 
 .tile-wide{
-	position: relative;
 	height: 250px;
 	width: 620px;
-	margin: 10px 10px;
-	float: left;
-	background-color: rgba(0,0,0,0.5);
 }
 
 .tile-full{
@@ -214,6 +212,62 @@ p{
 	clear:both;
 }
 
+#popup-background{
+	display: none;
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+
+	background-color: rgba(0,0,0,0.5);
+	z-index: 400;
+}
+
+#popup{
+	display: none;
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	height: 580px;
+	width: 960px;
+	margin:75px auto 0 auto;
+
+	background-color: #fff;
+	z-index: 600;
+}
+
+#popup-content{
+	height: 560px;
+	width: 940px;
+	padding: 10px 10px;
+}
+
+#popup-title{
+	float: left;
+	width: 900px;
+	padding: 10px;
+
+}
+
+#popup-title h2 {
+	margin: 0px;
+}
+
+#popup-exit{
+	float: right;
+	width: 30px;
+	padding: 10px 10px 0 0;
+
+}
+
+#popup-exit h2{
+	margin: 0;
+}
+
+
 </style>
 
 </head>
@@ -247,16 +301,16 @@ p{
 	<div class="page" id="about">
 		<div class="content">
 			<h2 id="content-title">Systems design engineers use a design-oriented and interdisciplinary method to solve large and complex problems.</h2>
-			<div class="tile-tall">
+			<div class="tile tile-tall" id="what-the-school-says">
 				<h3>What the School Says</h3>
 			</div>
-			<div class="tile">
+			<div class="tile tile-square" id="initiatives">
 				<h3>Initiatives</h3>
 			</div>
-			<div class="tile">
+			<div class="tile tile-square" id="syde-vs-the-rest">
 				<h3>SYDE v.s. The Rest</h3>
 			</div>
-			<div class="tile-wide">
+			<div class="tile tile-wide" id="design-projects">
 				<h3>Design Projects</h3>
 			</div>
 		</div>
@@ -265,16 +319,16 @@ p{
 	<div class="page" id="experience">
 		<div class="content">
 			<h2 id="content-title">You'll have a blast here.</h2>
-			<div class="tile-wide">
+			<div class="tile tile-wide" id="the-6th-floor-of-e5">
 				<h3>The 6th Floor of E5</h3>
 			</div>
-			<div class="tile">
-				<h3>Coffehouse</h3>
+			<div class="tile tile-square" id="coffeehouse">
+				<h3>Coffeehouse</h3>
 			</div>
-			<div class="tile">
+			<div class="tile tile-square" id="all-systems-go">
 				<h3>All Systems Go</h3>
 			</div>
-			<div class="tile-wide">
+			<div class="tile tile-wide" id="iron-ring-festivities">
 				<h3>Iron Ring Festivities</h3>
 			</div>
 		</div>
@@ -296,16 +350,50 @@ p{
 		</div>
 	</div>
 
+	<!-- the popup that will store the content -->
+	<div id="popup-background"></div>
+	<div id="popup">
+		<div id="popup-title">
+			<h2>Popup Title</h2>
+		</div>
+		<div id="popup-exit">
+			<h2>x</h2>
+		</div>
+		<div class="clear"></div>
+		<div id="popup-content">
+			<p>Gangsta.</p>
+		</div>
+	</div>
+
 	<!-- Script. Because screw multiple pages -->
 	<!-- Need jquery, etc. -->
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
 	<script type="text/javascript" src="res/jquery.scrollTo-1.4.3.1.js"></script>
 	<script type="text/javascript" src="res/jquery.localscroll-1.2.7.js"></script>
+	<script type="text/javascript" src="res/page-content.js"></script>
 	<script type="text/javascript">
 
 	// Ready function
 	$(document).ready(function(){
+
+		// Add event Listeners
+		// attach events to tiles!
+		var tilesArray = document.getElementsByClassName('tile');
+		for(var i=0; i<tilesArray.length; i++){
+			var cssId = String(tilesArray[i].id);
+			if(content.hasOwnProperty(cssId)){
+				console.log("Content found for " + cssId + ", adding event listener.");
+				tilesArray[i].addEventListener("click", function(){String(tilesArray[i].id)}, false);
+			} else {
+				console.log("Could not find content for " + cssId +", :(");
+			}
+		}
+
+		var pbg = document.getElementById('popup-background');
+		pbg.addEventListener("click", function(){hidePopup()}, false);
+		var p = document.getElementById('popup-exit');
+		p.addEventListener("click", function(){hidePopup()}, false);
 
 		// Set LocalSroll
 		$("#splash").localScroll();
@@ -343,6 +431,25 @@ p{
 		//repositions the nav.
 		$("#nav").css("top", String(Math.max(height, pos) + "px"));
 	}
+
+	// Populate the popup with the right content and show it.
+	function showPopup(cssId){
+		console.log("show popup called on " + cssId);
+		//populate the popup with the info
+		document.getElementById("popup-title").innerHTML = content[cssId].detailTitle;
+		document.getElementById("popup-content").innerHTML = content[cssId].detailContent;
+		//show the popup
+		document.getElementById("popup-background").style.display = "inline-block";
+		document.getElementById("popup").style.display = "inline-block";
+	}
+
+	// Hide the popup divs
+	function hidePopup(){
+		console.log("hide popup called");
+		document.getElementById("popup-background").style.display = "none";
+		document.getElementById("popup").style.display = "none";
+	}
+
 	</script>
 </body>
 </html>
