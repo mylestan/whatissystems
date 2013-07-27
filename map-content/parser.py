@@ -74,24 +74,34 @@ while 1:
 					# Degree
 					# Field of Study
 					valid = False
+					pullThisEd = False
 					educations = profileJson['content']['TopCard']['educationsMpr'].get('topEducations') + profileJson['content']['TopCard']['educationsMpr'].get('moreEducations')
 					for education in educations:
 						if (education.get('schoolName') == "University of Waterloo"): # Went to Waterloo?
 							if ('degree' in education):
 								if(education.get('degree').find('Systems Design Engineering') >= 0): # SYDE mention in degree?
 									valid = True
+									pullThisEd = True
 							if('fieldOfStudy' in education):
 								if(education.get('fieldOfStudy').find('Systems Design Engineering') >= 0): # SYDE mention in FoS?
 									valid = True
+									pullThisEd = True
+							if pullThisEd:
+								 profile['school'] = education['schoolName']
+								 profile['degree'] = education['degree'] if ('degree' in education) else None
+								 profile['fieldOfStudy'] = education['fieldOfStudy'] if ('fieldOfStudy' in education) else None
+								 pullThisEd = False
+
+
 
 					# If profile is valid, we start looking for info
 					if valid:
 						record('Profile is valid SYDE.')
 
 						# Get school info...just 'cause
-						profile['school'] = educations[0]['schoolName'] if ('school' in educations[0]) else None
-						profile['degree'] = educations[0]['degree'] if ('degree' in educations[0]) else None
-						profile['fieldOfStudy'] = educations[0]['fieldOfStudy'] if ('fieldOfStudy' in educations[0]) else None
+						# profile['school'] = educations[0]['schoolName'] if ('school' in educations[0]) else None
+						# profile['degree'] = educations[0]['degree'] if ('degree' in educations[0]) else None
+						# profile['fieldOfStudy'] = educations[0]['fieldOfStudy'] if ('fieldOfStudy' in educations[0]) else None
 
 						# Name
 						profile['name'] = profileJson['content']['BasicInfo']['basic_info'].get('fullname')
@@ -162,5 +172,7 @@ scraperData.close()
 output.close()
 log.close()
 
-# TODO TopCard
+# TODO non-TopCard support
 # TODO Duplicate entries
+# Convert to utf-8
+# Where the fuck are all the school names?
