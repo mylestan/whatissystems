@@ -7,7 +7,7 @@ html, body {
 	width: 100%;
 	height: 100%;
 	margin: 0px;
-	font: 12px "Courier New", "Courier New", monospace;
+	font: 12px "Century Gothic", "Arial", monospace;
 }
 
 p{
@@ -51,7 +51,7 @@ p{
 #nav{
 	width: 100%;
 	height: 50px;
-	background-color: rgba(0,0,0,0.2);
+	background-color: rgb(0,0,0);
 	position: absolute;
 	top: 100%;
 	z-index: 800;
@@ -230,7 +230,7 @@ p{
 	left: 0;
 	right: 0;
 	top: 0;
-	height: 580px;
+	height: 500px;
 	width: 960px;
 	margin:75px auto 0 auto;
 
@@ -283,7 +283,7 @@ p{
 	<div id="nav">
 		<div id="nav-content">
 			<div id="title">
-				<P>What is Systems</p>
+				<P>What is Systems?</p>
 			</div>
 			<div id="links">
 				<ul>
@@ -300,16 +300,19 @@ p{
 		<div class="content">
 			<h2 id="content-title">Systems design engineers use a design-oriented and interdisciplinary method to solve large and complex problems.</h2>
 			<div class="tile tile-tall" id="what-the-school-says" onclick="showPopup('what-the-school-says')">
+				<img src="res/school_logo.jpg">
 				<h3>What the School Says</h3>
 			</div>
 			<div class="tile tile-square" id="initiatives" onclick="showPopup('initiatives')">
 				<h3>Initiatives</h3>
 			</div>
-			<div class="tile tile-square" id="syde-vs-the-rest" onclick="showPopup('syde-vs-the-rest')">
-				<h3>SYDE v.s. The Rest</h3>
-			</div>
-			<div class="tile tile-wide" id="design-projects" onclick="showPopup('design-projects')">
+			<div class="tile tile-square" id="design-projects" onclick="showPopup('design-projects')">
+				<img src="res/design_symposium.jpg">
 				<h3>Design Projects</h3>
+			</div>
+			<div class="tile tile-wide" id="syde-vs-the-rest" onclick="showPopup('syde-vs-the-rest')">
+				<img src="res/systems_design_logo.png">
+				<h3>SYDE v.s. The Rest</h3>
 			</div>
 		</div>
 	</div> <!-- #about -->
