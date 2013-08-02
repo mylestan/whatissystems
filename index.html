@@ -362,15 +362,30 @@ p{
 	<!-- Script. Because screw multiple pages -->
 	<!-- Need jquery, etc. -->
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=visualization&sensor=false"></script>
 	<script type="text/javascript" src="res/jquery.scrollTo-1.4.3.1.js"></script>
 	<script type="text/javascript" src="res/jquery.localscroll-1.2.7.js"></script>
 	<script type="text/javascript" src="res/page-content.js"></script>
+	<!--<script type="text/javascript" src="map-content/output.js"></script>-->
 	<script type="text/javascript">
 
 	// Ready function
 	$(document).ready(function(){
-
+		$.ajax({
+			url: "map-content/profiles.txt",
+			isLocal: true,
+			dataType: "json"
+		})
+		.done(function(data){
+			console.log("AJAX Success!");
+			console.log(data);
+			makeMap(data);
+			populateMap(data);
+		})
+		.fail(function(data){
+			console.log("AJAX Fail!");
+			console.log(data);
+		})
 		// Add event Listeners
 		// attach events to tiles!
 		// var tilesArray = document.getElementsByClassName('tile');
@@ -408,15 +423,18 @@ p{
 		$(window).resize(function(){
 			scrollBG();
 		});
+  		// populateMap();
+	});
 
+	function makeMap(mapData){
 		var mapOptions = {
-		    zoom: 14,
+		    zoom: 8,
 		    center: new google.maps.LatLng(43.4722,-80.5472),
-		    mapTypeId: google.maps.MapTypeId.ROADMAP
+		    mapTypeId: google.maps.MapTypeId.SATELLITE
   		};
   		map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-
-	});
+  		populateMap(map, mapData);
+	}
 
 	// This function moves the backgroud and repositions the splash header to ensure it stays at the top of the page.
 	function scrollBG(){
@@ -448,6 +466,36 @@ p{
 		console.log("hide popup called");
 		document.getElementById("popup-background").style.display = "none";
 		document.getElementById("popup").style.display = "none";
+	}
+
+	// This function populates the map...hopefully
+	function populateMap(map, mapData){
+		var latlngs = new Array();
+		for(profile in mapData){
+			if(mapData.hasOwnProperty(profile)){
+				if (mapData[profile].hasOwnProperty('mapLocation')){
+					latlngs.push(new google.maps.LatLng(mapData[profile].mapLocation.lat,mapData[profile].mapLocation.lng));
+					var marker = new google.maps.Marker({
+						position: new google.maps.LatLng(mapData[profile].mapLocation.lat,mapData[profile].mapLocation.lng),
+						map: map,
+						title: mapData[profile].headline
+	  				});
+					var contentString = "<div class='info-window'>" + "<h1>" + mapData[profile].headline + "</h1>" + "<p>" + mapData[profile].industry + "</p>" + "</div>";
+					var infoWindow = new google.maps.InfoWindow({
+						content: contentString
+					});
+					google.maps.event.addListener(marker, 'click', function() {
+						infoWindow.open(map,marker);
+					});
+				} else {
+					console.log('Point did not have map location :(');
+				}
+			}
+		}
+		var heatmap = new google.maps.visualization.HeatmapLayer({
+			data: latlngs
+		});
+		heatmap.setMap(map);
 	}
 
 	</script>
