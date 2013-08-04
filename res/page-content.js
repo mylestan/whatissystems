@@ -46,5 +46,11 @@ var content = {
 		'cssId' : 'iron-ring-festivities',
 		'detailTitle' : 'Iron Ring Festivities',
 		'detailContent' : '<p>To celebrate receiving the coveted iron ring and 5 years of blood, sweat, and tears, systems graduates pull off pranks on the 6th floor of E5. (Images)</p>'
+	},
+	'thanks-to' : {
+		'section' : 'footer',
+		'cssId' : 'thanks-to',
+		'detailTitle' : 'Hey, thanks!',
+		'detailContent' : '<p>Thanks to <a href="http://www.balsamiq.com" target="_blank">Balsamiq</a> for giving us their amazing mockup software for free.</p><p>Thanks to <a href="http://favicons.com" target="_blank">Favicons</a> for making great icons.</p><p>Thanks to Ahmed and Owen for dev help.</p><p>Thanks to Dana and Russ for their input and guidance.</p><p>Thanks to the SYDE student body for their input and constructive criticism.</p><br/><p> - Myles & Josh</p>'
 	}
 }

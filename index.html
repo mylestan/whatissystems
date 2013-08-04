@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>What is Systems?</title>
+<link rel="icon" type="img/png" href="res/img/icons/glyphicons_064_lightbulb.ico"/>
 <!-- Syles. Because screw multiple pages -->
 <style type="text/css">
 html, body {
@@ -67,27 +69,32 @@ p{
 	margin-top: 12px;
 }
 
-#nav-content a{
+.nav-link{
 	font-size: 1.5em;
 }
 
-#nav-content a:link{
-	color: #DDD;
+.nav-link:link{
+	color: #CCC;
 	text-decoration: none;
 }
 
-#nav-content a:visited{
-	color: #DDD;
+.nav-link:visited{
+	color: #CCC;
 	text-decoration: none;
 }
 
-#nav-content a:hover{
-	color: #EEE;
-	text-decoration: none;
-}
-
-#nav-content a:active{
+.nav-link:hover{
 	color: #FFF;
+	text-decoration: none;
+}
+
+.nav-link:active{
+	color: #FFF;
+	text-decoration: none;
+}
+
+.nav-link-active{
+	color: #FFF !important;
 	text-decoration: none;
 }
 
@@ -139,6 +146,7 @@ p{
 	height: 30px;
 	margin: 0px;
 	padding: 10px 10px 0px 10px;
+	font-weight: normal;
 }
 
 /* To loop through all tile elements */
@@ -181,6 +189,7 @@ p{
 	margin: 0px 0px;
 	padding: 10px 10px;
 	background-color: rgba(0,0,0,0.5);
+	font-weight: normal;
 
 	color: #FFF;
 	font-size: 1.5em;
@@ -193,17 +202,28 @@ p{
 	background: rgba(0,0,0,0.5);
 }
 
-#footer p, #footer a{
+#footer p{
 	color: #fff;
 	height: 100%;
 	margin: 5px 10px;
 }
 
-#left{
+#footer a{
+	color: #CCC;
+	height: 100%;
+	margin: 5px 10px;
+	text-decoration: none;
+
+}
+#footer a:hover{
+	color: #FFF;
+}
+
+.left{
 	float: left;
 }
 
-#right{
+.right{
 	float: right;
 }
 
@@ -263,9 +283,8 @@ p{
 	padding: 10px 10px 0 0;
 	margin: 0px;
 	font-size: 1.5em;
+	cursor: pointer;
 }
-
-
 </style>
 
 </head>
@@ -273,7 +292,7 @@ p{
 	<!-- Splash -->
 	<div class="page" id="splash">
 		<div id="text">
-			<h1>What is Systems?</h1>
+			<h1>What is Systems Design Engineering?</h1>
 			<a href="#about">Find out</a>
 		</div>
 	</div> <!-- .splash -->
@@ -287,9 +306,9 @@ p{
 			</div>
 			<div id="links">
 				<ul>
-					<li><a href="#about">About</a></li>
-					<li><a href="#experience">Experience</a></li>
-					<li><a href="#work">Work</a></li>
+					<li><a class="nav-link" id="about-link" href="file://localhost/Users/mylestan/Git/whatissystems/index.html#about">About</a></li>
+					<li><a class="nav-link" id="experience-link" href="file://localhost/Users/mylestan/Git/whatissystems/index.html#experience">Experience</a></li>
+					<li><a class="nav-link" id="work-link" href="file://localhost/Users/mylestan/Git/whatissystems/index.html#work">Work</a></li>
 				</ul>
 			</div>
 		</div>
@@ -298,7 +317,7 @@ p{
 	<!-- #page -->
 	<div class="page" id="about">
 		<div class="content">
-			<h2 id="content-title">Systems design engineers use a design-oriented and interdisciplinary method to solve large and complex problems.</h2>
+			<h2 id="content-title">Systems design engineers use a design-oriented, interdisciplinary method to solve large, complex problems.</h2>
 			<div class="tile tile-tall" id="what-the-school-says" onclick="showPopup('what-the-school-says')">
 				<img src="res/school_logo.jpg">
 				<h3>What the School Says</h3>
@@ -346,8 +365,9 @@ p{
 	<div class="clear"></div>
 	<div id="footer">
 		<div id="footer-content">
-			<p id="left">Made by students, for prospective students.</p>
-			<a href="mailto:whatissystems@gmail.com" id="right" target="_blank">Contact</a>
+			<p class="left">Made by students, for prospective students.</p>
+			<a href="mailto:whatissystems@gmail.com" class="right" target="_blank">Contact</a>
+			<a class="right" id="thanks-to">Thanks</a>
 		</div>
 	</div>
 
@@ -369,11 +389,11 @@ p{
 	<script type="text/javascript" src="res/jquery.scrollTo-1.4.3.1.js"></script>
 	<script type="text/javascript" src="res/jquery.localscroll-1.2.7.js"></script>
 	<script type="text/javascript" src="res/page-content.js"></script>
-	<!--<script type="text/javascript" src="map-content/output.js"></script>-->
 	<script type="text/javascript">
 
 	// Ready function
 	$(document).ready(function(){
+		// Load user data
 		$.ajax({
 			url: "map-content/profiles.txt",
 			isLocal: true,
@@ -389,22 +409,27 @@ p{
 			console.log("AJAX Fail!");
 			console.log(data);
 		})
-		// Add event Listeners
-		// attach events to tiles!
-		// var tilesArray = document.getElementsByClassName('tile');
-		// for(var i=0; i<tilesArray.length; i++){
-		// 	var cssId = String(tilesArray[i].id);
-		// 	if(content.hasOwnProperty(cssId)){
-		// 		console.log("Content found for " + cssId + ", adding event listener.");
-		// 		tilesArray[i].addEventListener("click", function(){String(tilesArray[i].id)}, false);
-		// 	} else {
-		// 		console.log("Could not find content for " + cssId +", :(");
-		// 	}
-		// }
 
-		// Popup stuff
+		// Hover for content tiles
+		$('.tile').hover(function(){
+			// Hover in
+			console.log('hover in: ' + $(this));
+			$(this).fadeTo(0);
+		}, function(){
+			// Hover out
+			console.log('hover out: ' + $(this));
+			$(this).fadeTo(1);
+		});
+
+		// Event listener for pop-ups
 		var pbg = document.getElementById('popup-background');
 		pbg.addEventListener("click", function(){hidePopup()}, false);
+
+		// Event listener for thank you link
+		document.getElementById('thanks-to').addEventListener("click", function(){
+			showPopup('thanks-to');
+		});
+
 		var p = document.getElementById('popup-exit');
 		p.addEventListener("click", function(){hidePopup()}, false);
 		$(document).keyup(function(evt){
@@ -449,8 +474,33 @@ p{
 		// Scroll background
 		$("#background").css("background-position", "0px " + String(-pos*intertia) + "px");
 
-		//repositions the nav.
+		// Repositions the nav.
 		$("#nav").css("top", String(Math.max(height, pos) + "px"));
+
+		// ScrollSpy
+		// Note: there's probably a cleaner way to do this.
+		var posmid = pos + $(window).height()/2;
+		if($('#about').offset().top < posmid && posmid < ($('#about').offset().top + $('#about').height())) {
+			// console.log('about active!' + ($('#about').offset().top).toString() + ' ' + (posmid).toString() + ' ' + ($('#about').offset().top + $('#about').height()).toString());
+			$('#about-link').addClass('nav-link-active');
+		} else {
+			// console.log('about not active');
+			$('#about-link').removeClass('nav-link-active');
+		}
+		if($('#experience').offset().top < posmid && posmid < ($('#experience').offset().top + $('#experience').height())) {
+			// console.log('about active!' + ($('#about').offset().top).toString() + ' ' + (posmid).toString() + ' ' + ($('#about').offset().top + $('#about').height()).toString());
+			$('#experience-link').addClass('nav-link-active');
+		} else {
+			// console.log('about not active');
+			$('#experience-link').removeClass('nav-link-active');
+		}
+		if($('#work').offset().top < posmid && posmid < ($('#work').offset().top + $('#work').height())) {
+			// console.log('about active!' + ($('#about').offset().top).toString() + ' ' + (posmid).toString() + ' ' + ($('#about').offset().top + $('#about').height()).toString());
+			$('#work-link').addClass('nav-link-active');
+		} else {
+			// console.log('about not active');
+			$('#work-link').removeClass('nav-link-active');
+		}
 	}
 
 	// Populate the popup with the right content and show it.
@@ -460,15 +510,17 @@ p{
 		document.getElementById("popup-title").innerHTML = content[cssId].detailTitle;
 		document.getElementById("popup-content").innerHTML = content[cssId].detailContent;
 		//show the popup
-		document.getElementById("popup-background").style.display = "inline-block";
-		document.getElementById("popup").style.display = "inline-block";
+		$('#popup-background').fadeIn(200);
+		$('#popup').fadeIn(200);
+		$('body').css({'overflow':'hidden'});
 	}
 
 	// Hide the popup divs
 	function hidePopup(){
 		console.log("hide popup called");
-		document.getElementById("popup-background").style.display = "none";
-		document.getElementById("popup").style.display = "none";
+		$('#popup-background').fadeOut(200);
+		$('#popup').fadeOut(200);
+		$('body').css({'overflow':'auto'});
 	}
 
 	// This function populates the map...hopefully
@@ -500,7 +552,6 @@ p{
 		});
 		heatmap.setMap(map);
 	}
-
 	</script>
 </body>
 </html>

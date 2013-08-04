@@ -11,7 +11,7 @@ def record(string):
 
 # Files
 dataFile = open('items.txt', 'r')
-profilesFile = open('profiles.js', 'r')
+profilesFile = open('profiles.txt', 'r')
 logFile = open('log.txt', 'w')
 
 # get profiles, put them in an object. if DNE create
@@ -182,7 +182,7 @@ record('Full Profiles: ' + repr(fullProfiles))
 record('Map Requests Made: ' + repr(mapRequestsMade))
 record('Map Requests Successful: ' + repr(mapRequestsSuccessful))
 
-profilesFile = open('profiles.js', 'w')
+profilesFile = open('profiles.txt', 'w')
 profilesFile.write(json.dumps(profiles))
 profilesFile.close()
 
