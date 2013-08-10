@@ -88,11 +88,6 @@ p{
 	text-decoration: none;
 }
 
-.nav-link:active{
-	color: #FFF;
-	text-decoration: none;
-}
-
 .nav-link-active{
 	color: #FFF !important;
 	text-decoration: none;
@@ -140,13 +135,41 @@ p{
 	background-color: rgba(0,0,0,0.5);
 	display: block;
 }
-.content h2{
-	width: 100%;
+.content-title{
 	color: #FFF;
 	height: 30px;
 	margin: 0px;
 	padding: 10px 10px 0px 10px;
 	font-weight: normal;
+}
+
+.content-controls{
+	height: 30px;
+	margin: 0px;
+	padding: 10px 10px 0px 0px;
+	font-weight: normal;
+	display: inline-block;
+}
+
+.content-controls a, .content-controls p{
+	font-size: 18px;
+	color: #CCC;
+}
+
+.content-controls a:link{
+	color: #CCC;
+}
+
+.content-controls a:visited{
+	color: #CCC;
+}
+
+.content-controls a:hover{
+	color: #FFF;
+}
+
+.content-controls a:active{
+	color: #CCC;
 }
 
 /* To loop through all tile elements */
@@ -285,6 +308,10 @@ p{
 	font-size: 1.5em;
 	cursor: pointer;
 }
+
+.info-window h1{
+	font-size: 1.5em;
+}
 </style>
 
 </head>
@@ -306,9 +333,9 @@ p{
 			</div>
 			<div id="links">
 				<ul>
-					<li><a class="nav-link" id="about-link" href="file://localhost/Users/mylestan/Git/whatissystems/index.html#about">About</a></li>
-					<li><a class="nav-link" id="experience-link" href="file://localhost/Users/mylestan/Git/whatissystems/index.html#experience">Experience</a></li>
-					<li><a class="nav-link" id="work-link" href="file://localhost/Users/mylestan/Git/whatissystems/index.html#work">Work</a></li>
+					<li><a class="nav-link" id="about-link" href="#about">About</a></li>
+					<li><a class="nav-link" id="experience-link" href="#experience">Experience</a></li>
+					<li><a class="nav-link" id="work-link" href="#work">Work</a></li>
 				</ul>
 			</div>
 		</div>
@@ -317,7 +344,7 @@ p{
 	<!-- #page -->
 	<div class="page" id="about">
 		<div class="content">
-			<h2 id="content-title">Systems design engineers use a design-oriented, interdisciplinary method to solve large, complex problems.</h2>
+			<h2 class="content-title">Systems design engineers use a design-oriented, interdisciplinary method to solve large, complex problems.</h2>
 			<div class="tile tile-tall" id="what-the-school-says" onclick="showPopup('what-the-school-says')">
 				<img src="res/school_logo.jpg">
 				<h3>What the School Says</h3>
@@ -338,7 +365,7 @@ p{
 	<div class="clear"></div>
 	<div class="page" id="experience">
 		<div class="content">
-			<h2 id="content-title">You'll have a blast here.</h2>
+			<h2 class="content-title">You'll have a blast here.</h2>
 			<div class="tile tile-wide" id="the-6th-floor-of-e5" onclick="showPopup('the-6th-floor-of-e5')">
 				<h3>The 6th Floor of E5</h3>
 			</div>
@@ -356,7 +383,12 @@ p{
 	<div class="clear"></div>
 	<div class="page" id="work">
 		<div class="content">
-			<h2 id="content-title">We build the world.</h2>
+			<div class="left">
+				<h2 class="content-title">We build the world.</h2>
+			</div>
+			<div class="right content-controls" style="">
+				<p><a>All</a> | <a>Co-op</a></p>
+			</div>
 			<div class="tile-full" id="map-canvas">
 				<h3>Map!</h3>
 			</div>
@@ -526,22 +558,22 @@ p{
 	// This function populates the map...hopefully
 	function populateMap(map, mapData){
 		var latlngs = new Array();
+		var thisProfile;
 		for(profile in mapData){
 			if(mapData.hasOwnProperty(profile)){
 				if (mapData[profile].hasOwnProperty('mapLocation')){
-					latlngs.push(new google.maps.LatLng(mapData[profile].mapLocation.lat,mapData[profile].mapLocation.lng));
-					var marker = new google.maps.Marker({
-						position: new google.maps.LatLng(mapData[profile].mapLocation.lat,mapData[profile].mapLocation.lng),
+					thisProfile = mapData[profile];
+					latlngs.push(new google.maps.LatLng(thisProfile.mapLocation.lat,thisProfile.mapLocation.lng));
+					thisProfile.marker = new google.maps.Marker({
+						position: new google.maps.LatLng(thisProfile.mapLocation.lat,thisProfile.mapLocation.lng),
 						map: map,
-						title: mapData[profile].headline
+						title: thisProfile.headline
 	  				});
-					var contentString = "<div class='info-window'>" + "<h1>" + mapData[profile].headline + "</h1>" + "<p>" + mapData[profile].industry + "</p>" + "</div>";
-					var infoWindow = new google.maps.InfoWindow({
-						content: contentString
+					thisProfile.contentString = "<div class='info-window'>" + "<h1>" + thisProfile.headline + "</h1>" + "<p>Industry: " + thisProfile.industry + "</p>" + "<p>name: " + thisProfile.name + "</p>" + "<p>Location: " + thisProfile.location + "</p>" + "</div>";
+					thisProfile.infoWindow = new google.maps.InfoWindow({
+						content: thisProfile.contentString
 					});
-					google.maps.event.addListener(marker, 'click', function() {
-						infoWindow.open(map,marker);
-					});
+					google.maps.event.addListener(thisProfile.marker, 'click', makeInfoWindow(thisProfile, map));
 				} else {
 					console.log('Point did not have map location :(');
 				}
@@ -551,6 +583,12 @@ p{
 			data: latlngs
 		});
 		heatmap.setMap(map);
+	}
+
+	function makeInfoWindow(profile, map){
+		return function(){
+			profile.infoWindow.open(map, profile.marker);
+		}
 	}
 	</script>
 </body>

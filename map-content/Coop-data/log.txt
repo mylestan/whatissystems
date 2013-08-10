@@ -1,0 +1,301 @@
+reading file: Systems Design Class of 2014 - Employment - Winter 2010 (1A).csv
+Ensuring that our info lines up. If the following dont align, theres an issue:
+name	Name	
+termNumber	Term Number	
+isWorking	Working	Are you working Next Term? (Yes/No)
+title	Job Title	
+employer	Employer	
+jobPrevious	Previous Job	Did you work this job in a previous term?
+employerPrevious	Previous 	Did you work at this company in a previous term?
+latlng	long / lat [ 0.000N 0.000E ]	
+city	City	
+province	Province/State	
+country	Country	
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading file: Systems Design Class of 2014 - Employment - Fall 2010 (1B).csv
+Ensuring that our info lines up. If the following dont align, theres an issue:
+name	Name	
+termNumber	Term Number	
+isWorking	Are you working Next Term? (Yes/No)	
+title	Job Title	
+employer	Employer	
+jobPrevious	Did you work this job in a previous term?	
+employerPrevious	Did you work at this company in a previous term?	
+latlng	long / lat [ 0.000N 0.000E ]	
+city	City	
+province	Province/State	
+country	Country	
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading file: Systems Design Class of 2014 - Employment - Summer 2011 (2A).csv
+Ensuring that our info lines up. If the following dont align, theres an issue:
+name	Name	
+termNumber	Term Number	
+isWorking	Are you working Next Term? (Yes/No)	
+title	Job Title	
+employer	Employer	
+jobPrevious	Did you work this job in a previous term?	
+employerPrevious	Did you work at this company in a previous term?	
+latlng	long / lat [ 0.000N 0.000E ]	
+city	City	
+province	Province/State	
+country	Country	
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading file: Systems Design Class of 2014 - Employment - Winter 2012 (2B).csv
+Ensuring that our info lines up. If the following dont align, theres an issue:
+name	Name	
+termNumber	Term Number	
+isWorking	Are you working Next Term? (Yes/No)	
+title	Job Title	
+employer	Employer	
+jobPrevious	Did you work this job in a previous term?	
+employerPrevious	Did you work at this company in a previous term?	
+latlng	long / lat [ 0.000N 0.000E ]	
+city	City	
+province	Province/State	
+country	Country	
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading file: Systems Design Class of 2014 - Employment - Fall 2012 (3A).csv
+Ensuring that our info lines up. If the following dont align, theres an issue:
+name	Name	
+termNumber	Term Number	
+isWorking	Are you working Next Term? (Yes/No)	
+title	Job Title	
+employer	Employer	
+jobPrevious	Did you work this job in a previous term?	
+employerPrevious	Did you work at this company in a previous term?	
+latlng	long / lat [ 0.000N 0.000E ]	
+city	City	
+province	Province/State	
+country	Country	
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading file: Systems Design Class of 2014 - Employment - Summer 2013 (3B).csv
+Ensuring that our info lines up. If the following dont align, theres an issue:
+name	Name	
+termNumber	Term Number	
+isWorking	Are you working Next Term? (Yes/No)	
+title	Job Title	
+employer	Employer	
+jobPrevious	Did you work this job in a previous term?	
+employerPrevious	Did you work at this company in a previous term?	
+latlng	long / lat / alt [ 0.000N 0.000E 0m ]	
+city	City	
+province	Province/State	
+country	Country	
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
+reading a new line
