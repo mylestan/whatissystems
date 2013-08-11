@@ -3,6 +3,8 @@ import simplejson as json
 from urllib2 import urlopen
 import csv
 
+
+
 # methods
 # logging function that writes to a log file and optionally to console
 def rec(msg, printInConsole = False):
@@ -13,16 +15,46 @@ def rec(msg, printInConsole = False):
 # function which handles map requests for the given string, and returns the object
 def mapsRequest(string):
 	rec('gmaps request for string: ' + string + '\n')
-	request = url % searchString.replace(' ', '+')
+	request = url % string.replace(' ', '+')
 	rec('request string: ' + request + '\n')
 	response = urlopen(request)
 	return json.load(response)
+
+# function to return the map-location object for a co-op term, given the company and the location. keep this logic out of the main loop
+def getLocation(city, prov, country, company = None):
+	rec('getting map location\n')
+	if company:
+		rec('\tcompany: ' + company + '\n')
+	rec ('\tlocation: ' + ', '.join([city,prov,country]) + '\n')
+
+	# First we try to locate the company in the area
+	reqString = ', '.join([company, city, prov, country]) if company else ', '.join([city, prov, country])
+	response = mapsRequest(reqString)
+
+	status = response['status']
+	if status == 'OK':
+		rec('\tresponse OK\n')
+		# Take the first one. FAITH IN THE GOOGLES!
+		first = response['results'][0]
+		location = {}
+		location['name'] = first['name']
+		location['address'] = first['formatted_address']
+		location['lat'] = first['geometry']['location']['lat']
+		location['lng'] = first['geometry']['location']['lng']
+		return location
+	elif status == "ZERO_RESULTS":
+		rec('\tresponse no results, trying again for location\n')
+		return getLocation(city, prov, country)
+	else:
+		return None
+		rec('\tresponse error: ' + status + '\n')
+
+
 
 
 # vars
 url = 'https://maps.googleapis.com/maps/api/place/textsearch/json?query=%s&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk'
 
-# Open all of the co-op data files
 fileNames = []
 fileNames.append("Systems Design Class of 2014 - Employment - Winter 2010 (1A).csv")
 fileNames.append("Systems Design Class of 2014 - Employment - Fall 2010 (1B).csv")
@@ -31,11 +63,10 @@ fileNames.append("Systems Design Class of 2014 - Employment - Winter 2012 (2B).c
 fileNames.append("Systems Design Class of 2014 - Employment - Fall 2012 (3A).csv")
 fileNames.append("Systems Design Class of 2014 - Employment - Summer 2013 (3B).csv")
 
-# Open others
-log = open("log.txt", 'w')
 
-# Open our end result data file
-pf = open('coop-profiles.txt', 'r')
+
+# Open log
+log = open("log.txt", 'w')
 
 # Read the result data into an object
 with open('coop-profiles.txt') as pf:
@@ -43,13 +74,16 @@ with open('coop-profiles.txt') as pf:
 	if not profiles:
 		profiles = {}
 
+
+
+# THE FUN BEGINS HERE!!!
 # Iterate through the co-op data files
 for f in range(len(fileNames)):
 	rec('reading file: ' + fileNames[f] + '\n', True)
 	with open(fileNames[f]) as csvFile:
 		fileReader = csv.reader(csvFile)
 		# Read first line, and print to confirm that these match:
-		cols = ['name', 'termNumber', 'isWorking', 'title', 'employer', 'jobPrevious', 'employerPrevious', 'latlng', 'city', 'province', 'country']
+		cols = ['name', 'termNumber', 'isWorking', 'title', 'employer', 'jobPrevious', 'employerPrevious', 'latlng', 'city', 'province', 'country', 'typeOfWork', 'industry', 'sector']
 		fileCols = fileReader.next()
 		# rec('file columns: ' + fileCols + '\n')
 		# fileColsArray = fileCols.split(',')
@@ -69,7 +103,7 @@ for f in range(len(fileNames)):
 
 		# Iterate through every line in the data file
 		for infoArray in fileReader:
-			rec('reading a new line\n', True)
+			rec('reading a new line\n')
 
 			# Turn the CSV line into an array
 			name = infoArray[0]
@@ -92,7 +126,7 @@ for f in range(len(fileNames)):
 				profiles[name][termNo] = {}
 
 			# Add the info. Overwrite in this case
-			profiles[name][termNo]['woring'] = working
+			profiles[name][termNo]['working'] = working
 			profiles[name][termNo]['title'] = title
 			profiles[name][termNo]['employer'] = employer
 			profiles[name][termNo]['jobPrevious'] = jobPrevious
@@ -103,27 +137,10 @@ for f in range(len(fileNames)):
 
 			# if map-location doesn't exist, write it
 			if not 'map-location' in profiles[name][termNo]:
+				location = getLocation(city, prov, country, employer)
+				if location:
+					profiles[name][termNo]['mapLocation'] = location
 
-				searchString = (employer + ', ' + ', '.join([city, prov, country]))
-				responseObject = mapsRequest(searchString)
-				status = responseObject['status']
-				if status == 'OK':
-					rec('gmaps request successful.\n')
-					# Make the map location object
-					profiles[name][termNo]['mapLocation'] = {}
-
-					# Take the first one. FAITH IN THE GOOGLES!
-					first = responseObject['results'][0]
-					profiles[name][termNo]['mapLocation']['name'] = first['name']
-					profiles[name][termNo]['mapLocation']['address'] = first['formatted_address']
-					profiles[name][termNo]['mapLocation']['lat'] = first['geometry']['location']['lat']
-					profiles[name][termNo]['mapLocation']['lng'] = first['geometry']['location']['lng']
-				elif status == 'ZERO_RESULTS':
-					# The company wasn't found. So we just look at the location
-
-				else:
-					rec('gmaps request failed. reason: \n' + status)
-				# End of Status elif chain
 			# End of if map-location
 		# End of infoArray in fileReader
 	# End of with statement for csv
@@ -132,9 +149,8 @@ for f in range(len(fileNames)):
 
 # Report some figures
 # Open result data file, write, Close
-pf = open('coop-profiles.txt', 'w')
-pf.write(json.dumps(profiles))
-pf.close()
+with open('coop-profiles.txt', 'w') as pf:
+	pf.write(json.dumps(profiles))
 
 log.close()
 
@@ -142,6 +158,3 @@ log.close()
 # PROFIT
 
 # TODO
-# use csv.reader....I don't think it's recognizing null csv spaces
-# What if no results are returned? Can we just search location in that situation?
-# make a function that encapsulates the smarts of the maps request. RECURSION LIKE ITS HOT
