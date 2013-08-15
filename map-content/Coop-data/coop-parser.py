@@ -3,7 +3,8 @@ import simplejson as json
 from urllib2 import urlopen
 import csv
 
-
+# Open log
+log = open("log.txt", 'w')
 
 # methods
 # logging function that writes to a log file and optionally to console
@@ -46,8 +47,8 @@ def getLocation(city, prov, country, company = None):
 		rec('\tresponse no results, trying again for location\n')
 		return getLocation(city, prov, country)
 	else:
-		return None
 		rec('\tresponse error: ' + status + '\n')
+		return None
 
 
 
@@ -62,11 +63,6 @@ fileNames.append("Systems Design Class of 2014 - Employment - Summer 2011 (2A).c
 fileNames.append("Systems Design Class of 2014 - Employment - Winter 2012 (2B).csv")
 fileNames.append("Systems Design Class of 2014 - Employment - Fall 2012 (3A).csv")
 fileNames.append("Systems Design Class of 2014 - Employment - Summer 2013 (3B).csv")
-
-
-
-# Open log
-log = open("log.txt", 'w')
 
 # Read the result data into an object
 with open('coop-profiles.txt') as pf:
@@ -127,6 +123,7 @@ for f in range(len(fileNames)):
 
 			# Add the info. Overwrite in this case
 			profiles[name][termNo]['working'] = working
+			profiles[name][termNo]['termNumber'] = termNo
 			profiles[name][termNo]['title'] = title
 			profiles[name][termNo]['employer'] = employer
 			profiles[name][termNo]['jobPrevious'] = jobPrevious
