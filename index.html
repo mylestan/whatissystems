@@ -12,6 +12,10 @@ html, body {
 	font: 12px "Century Gothic", "Arial", monospace;
 }
 
+body{
+	overflow: hidden;
+}
+
 p{
 	margin: 0px;
 }
@@ -24,6 +28,7 @@ p{
 	position: relative;
 }
 
+/***** Splash page *****/
 #splash{
 	background: url(res/blurred_background_web.JPG);
 	background-repeat: no-repeat;
@@ -46,10 +51,26 @@ p{
 }
 
 #splash #text{
-	margin: 20% auto;
+	margin-top: 20%;
+	margin-left: auto;
+	margin-right: auto;
 	width: 50%;
 }
 
+#beta-link{
+	padding-top: 10px;
+	color: #fff;
+}
+
+#beta-login{
+	display: none;
+	margin-top: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+}
+
+/***** NAV *****/
 #nav{
 	width: 100%;
 	height: 50px;
@@ -329,12 +350,21 @@ p{
 
 </head>
 <body id="background">
+	<!-- beta login -->
+
 	<!-- Splash -->
 	<div class="page" id="splash">
 		<div id="text">
 			<h1>What is Systems Design Engineering?</h1>
-			<a href="#about">Find out</a>
+			<p><a href="#about">Find out</a><p>
+			<p id='beta-link' onclick='showBetaLogin()'>(beta)</p>
 		</div>
+		<div id='beta-login'>
+		<form id='beta-login-form' action="" onsubmit="return tryBetaLogin(this)">
+			<input id="beta-password" type="password" name="pass"><br>
+			<input type="submit" value="Go!">
+		</form>
+	</div>
 	</div> <!-- .splash -->
 	<div class="clear"></div>
 
@@ -524,6 +554,27 @@ p{
   		// populateMap();
 	});
 
+	function showBetaLogin(){
+		document.getElementById('beta-login').style.display = 'block';
+		document.getElementById('beta-link').onclick = function(){hideBetaLogin()};
+	}
+
+	function hideBetaLogin(){
+		document.getElementById('beta-login').style.display = 'none';
+		document.getElementById('beta-link').onclick = function(){showBetaLogin()};
+	}
+
+	function tryBetaLogin(form){
+		//Fine, look at the code and cheat, why don't you. We're just trying to make it less public as we get initial feedback.
+		if($('#beta-password').val() == "idon'tknow"){
+			document.body.style.overflow = 'visible';
+			$.scrollTo("#about", 500);
+		} else {
+			console.log('wrong pass');
+		}
+		return false;
+	}
+
 	function makeMap(){
 		var mapOptions = {
 		    zoom: 8,
@@ -620,10 +671,6 @@ p{
 				}
 			}
 		}
-		// var heatmap = new google.maps.visualization.HeatmapLayer({
-		// 	data: latlngs
-		// });
-		// heatmap.setMap(map);
 	}
 
 	function showLinkedInMap(){

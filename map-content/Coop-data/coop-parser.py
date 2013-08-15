@@ -146,8 +146,9 @@ for f in range(len(fileNames)):
 
 # Report some figures
 # Open result data file, write, Close
-with open('coop-profiles.txt', 'w') as pf:
-	pf.write(json.dumps(profiles))
+pf = open('coop-profiles.txt', 'w')
+pf.write(json.dumps(profiles))
+pf.close()
 
 log.close()
 
