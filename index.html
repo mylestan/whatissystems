@@ -305,7 +305,7 @@ p{
 	left: 0;
 	right: 0;
 	top: 0;
-	height: 500px;
+	height: 580px;
 	width: 960px;
 	margin:75px auto 0 auto;
 
@@ -346,6 +346,10 @@ p{
 .info-window h1{
 	font-size: 1.5em;
 }
+
+.location-text{
+	color: #CCC;
+}
 </style>
 
 </head>
@@ -356,7 +360,7 @@ p{
 	<div class="page" id="splash">
 		<div id="text">
 			<h1>What is Systems Design Engineering?</h1>
-			<p><a href="#about">Find out</a><p>
+			<p><a href="">Coming Soon!</a><p> <!-- should link to #about, title is 'find out' -->
 			<p id='beta-link' onclick='showBetaLogin()'>(beta)</p>
 		</div>
 		<div id='beta-login'>
@@ -418,7 +422,10 @@ p{
 			<div class="tile tile-square" id="all-systems-go" onclick="showPopup('all-systems-go')">
 				<h3>All Systems Go</h3>
 			</div>
-			<div class="tile tile-wide" id="iron-ring-festivities" onclick="showPopup('iron-ring-festivities')">
+			<div class="tile tile-square" id="exchange" onclick="showPopup('exchange')">
+				<h3>Exchange</h3>
+			</div>
+			<div class="tile tile-square" id="iron-ring-festivities" onclick="showPopup('iron-ring-festivities')">
 				<h3>Iron Ring Festivities</h3>
 			</div>
 		</div>
@@ -551,7 +558,6 @@ p{
 		$(window).resize(function(){
 			scrollBG();
 		});
-  		// populateMap();
 	});
 
 	function showBetaLogin(){
@@ -566,7 +572,7 @@ p{
 
 	function tryBetaLogin(form){
 		//Fine, look at the code and cheat, why don't you. We're just trying to make it less public as we get initial feedback.
-		if($('#beta-password').val() == "idon'tknow"){
+		if($('#beta-password').val() == "findoutnow"){
 			document.body.style.overflow = 'visible';
 			$.scrollTo("#about", 500);
 		} else {
@@ -577,9 +583,9 @@ p{
 
 	function makeMap(){
 		var mapOptions = {
-		    zoom: 8,
+		    zoom: 2,
 		    center: new google.maps.LatLng(43.4722,-80.5472),
-		    mapTypeId: google.maps.MapTypeId.SATELLITE
+		    mapTypeId: google.maps.MapTypeId.MAP
   		};
   		map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions); // map is global?
   		// populateMap(map, mapData);
@@ -648,13 +654,19 @@ p{
 	function populateLinkedInData(){
 		// var latlngs = new Array();
 		var thisProfile;
+		var latlngs = new Array();
 		for(profile in linkedInData){
 			if(linkedInData.hasOwnProperty(profile)){
 				if (linkedInData[profile].hasOwnProperty('mapLocation')){
 					thisProfile = linkedInData[profile];
-					// latlngs.push(new google.maps.LatLng(thisProfile.mapLocation.lat,thisProfile.mapLocation.lng));
+					var thisLocation = new Array(thisProfile.mapLocation.lat, thisProfile.mapLocation.lng);
+					if(containsLocation(latlngs, thisLocation)){
+						thisLocation = offset(thisLocation); //TODO make function
+					} else{
+						latlngs.push(thisLocation);
+					}
 					thisProfile.marker = new google.maps.Marker({
-						position: new google.maps.LatLng(thisProfile.mapLocation.lat,thisProfile.mapLocation.lng),
+						position: new google.maps.LatLng(thisLocation[0],thisLocation[1]),
 						map: map,
 						title: thisProfile.headline,
 						animation: google.maps.Animation.DROP
@@ -690,6 +702,7 @@ p{
 	function populateCoopData(){
 		// var latlngs = new Array();
 		var thisProfile;
+		var latlngs = new Array();
 		// For each profile
 		for (p in coopData){
 			if(coopData.hasOwnProperty(p)){
@@ -699,15 +712,21 @@ p{
 					if(profile.hasOwnProperty(term)){
 						if(profile[term].hasOwnProperty('mapLocation')){
 							thisProfile = profile[term];
+							var thisLocation = new Array(thisProfile.mapLocation.lat,thisProfile.mapLocation.lng)
+							if(containsLocation(latlngs, thisLocation)){
+								thisLocation = offset(thisLocation); //TODO make function
+							} else{
+								latlngs.push(thisLocation);
+							}
 							//make point
 							thisProfile.marker = new google.maps.Marker({
-								position: new google.maps.LatLng(thisProfile.mapLocation.lat,thisProfile.mapLocation.lng),
+								position: new google.maps.LatLng(thisLocation[0],thisLocation[1]),
 								map: map,
 								title: thisProfile.headline,
 								animation: google.maps.Animation.DROP
 			  				});
 			  				thisProfile.marker.setVisible(false);
-			  				thisProfile.contentString = "<div class='info-window'>" + "<h1>" + thisProfile.title + "</h1>" + "<p>Industry: " + thisProfile.employer + "</p>" + "<p>name: " + p + "</p>" + "<p>Location: " + thisProfile.city + ', ' + thisProfile.province + ', ' + thisProfile.country + "</p>" + "</div>";
+			  				thisProfile.contentString = "<div class='info-window'>" + "<h1>" + thisProfile.title + "</h1>" + "<p>" + thisProfile.employer + "</p>" + "<p class='location-text'>" + thisProfile.city + ', ' + thisProfile.province + ', ' + thisProfile.country + "</p>" + "</div>";
 			  				thisProfile.infoWindow = new google.maps.InfoWindow({
 								content: thisProfile.contentString
 							});
@@ -742,6 +761,37 @@ p{
 			profile.infoWindow.open(map, profile.marker);
 		}
 	}
+
+	function containsLocation(array, location){
+		for(var i = 0; i < array.length; i++){
+			if (isEqual(array[i], location)){
+				return true;
+			}
+		}
+		return false;
+	}
+
+	function isEqual(one, two){
+		if(one.length !== two.length){
+			return false;
+		}
+		for(var i = 0; i < one.length; i++){
+			if(one[i] !== two[i]){
+				return false;
+			}
+		}
+		return true;
+	}
+
+	function offset(location){
+		var offset = 0.01;
+		var newLocation = new Array();
+		for(var i = 0; i < location.length; i++){
+			newLocation[i] = location[i] + ((offset*Math.random())-(offset/2));
+		}
+		return newLocation;
+	}
+
 	</script>
 </body>
 </html>
