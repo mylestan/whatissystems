@@ -9,7 +9,7 @@ var content = {
 		'section' : 'about',
 		'cssId' : "initiatives",
 		'detailTitle' : 'Initiatives',
-		'detailContent': '<p>The program\'s innovative culture breeds entrepreneurs looking to make a dent in the world. Check out these cool companies started by systems graduates! (Infographic)</p>'
+		'detailContent': '<p>The Systems Design Engineering program tends to attract innovative thinkers with a desire to make a dent in the world. Th eprogram\' on high-level thinking while allowing students to customize it to their interests accelerates their ability to follow their passions and make an impact. (Infographic)</p><h2>Janna Systems</h2><p>abt Janna</p><h2>Desire2Learn</h2><p>abt d2l</p><h2>NexJ Systems</h2><p>abt nexj</h2>'
 	},
 	'syde-vs-the-rest' : {
 		'section' : 'about',
@@ -46,6 +46,12 @@ var content = {
 		'cssId' : 'iron-ring-festivities',
 		'detailTitle' : 'Iron Ring Festivities',
 		'detailContent' : '<p>To celebrate receiving the coveted iron ring and 5 years of blood, sweat, and tears, systems graduates pull off pranks on the 6th floor of E5. (Images)</p>'
+	},
+	'exchange' : {
+		'section' : 'experience',
+		'cssId' : 'exchange',
+		'detailTitle' : 'Go Experience the World',
+		'detailContent' : '<p>Exchange is a strong aspect of the University of Waterloo\'s Engineering Program. We have exchange partnerships with over 70 schools worldwide. Systems Design Engineering consistently sends the most students by percentage on exchange out of all the engineering departments. If you are looking to grow your perspectives on the world and gain life-changing experiences, Systems Design Engineering is filled with people like you.'
 	},
 	'thanks-to' : {
 		'section' : 'footer',

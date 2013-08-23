@@ -133,7 +133,7 @@ for f in range(len(fileNames)):
 			profiles[name][termNo]['country'] = country
 
 			# if map-location doesn't exist, write it
-			if not 'map-location' in profiles[name][termNo]:
+			if not 'mapLocation' in profiles[name][termNo]:
 				location = getLocation(city, prov, country, employer)
 				if location:
 					profiles[name][termNo]['mapLocation'] = location

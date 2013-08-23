@@ -38,7 +38,7 @@ with open('Systems Design Exchange Locations (Responses) - Form Responses.csv') 
 			profile = {}
 			profile['school'] = line[3]
 			profile['country'] = line[4]
-			profile['year'] = unicodeline[2]
+			profile['year'] = line[2]
 			profile['term'] = line[5]
 
 			profiles[name] = profile
@@ -56,7 +56,7 @@ with open('Systems Design Exchange Locations (Responses) - Form Responses.csv') 
 				location['address'] = first['formatted_address']
 				location['lat'] = first['geometry']['location']['lat']
 				location['lng'] = first['geometry']['location']['lng']
-				profile[name]['mapLocation'] = location
+				profiles[name]['mapLocation'] = location
 
 			elif response['status'] == 'OVER_QUERY_LIMIT':
 				print 'over query limit :('
