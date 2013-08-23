@@ -1,29 +1,796 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
-	<head>
-		<title>Good question...shall we?</title>
-		<link rel="stylesheet" type="text/css" href="css/index.css"/>
-		<script type="text/javascript">
-  			var _gaq = _gaq || [];
-  			_gaq.push(['_setAccount', 'UA-31570718-1']);
-  			_gaq.push(['_trackPageview']);
-  			(function() {
-    			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  			})();
-		</script>
-	</head>
+<head>
+<title>What is Systems?</title>
+<link rel="icon" type="img/png" href="res/img/icons/glyphicons_064_lightbulb.ico"/>
+<!-- Syles. Because screw multiple pages -->
+<style type="text/css">
+html, body {
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+	font: 12px "Century Gothic", "Arial", monospace;
+}
 
-	<body>
+body{
+	overflow: hidden;
+}
 
-		<div id="window">
-			<div id="header">
-				<text>What is Systems Design Engineering?</text>
+p{
+	margin: 0px;
+}
+
+#background{
+	background: url(http://placehold.it/150x150);
+	background-repeat: repeat;
+	background-position: 0px 0px;
+	background-attachment: fixed;
+	position: relative;
+}
+
+/***** Splash page *****/
+#splash{
+	background: url(res/blurred_background_web.JPG);
+	background-repeat: no-repeat;
+	position: top left;
+	background-size: 100% 110%;
+
+	background-color: gray;	
+	width: 100%;
+	height: 100%;
+
+	z-index: 1000;
+}
+
+#splash h1{
+	color: #fff;
+}
+
+#splash a{
+	color: #fff;
+}
+
+#splash #text{
+	margin-top: 20%;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+}
+
+#beta-link{
+	padding-top: 10px;
+	color: #fff;
+}
+
+#beta-login{
+	display: none;
+	margin-top: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+}
+
+/***** NAV *****/
+#nav{
+	width: 100%;
+	height: 50px;
+	background-color: rgb(0,0,0);
+	position: absolute;
+	top: 100%;
+	z-index: 800;
+}
+
+#nav-content{
+	width: 960px;
+	height: 100%;
+	margin: 0 auto;
+}
+
+#nav-content ul{
+	margin-top: 12px;
+}
+
+.nav-link{
+	font-size: 1.5em;
+}
+
+.nav-link:link{
+	color: #CCC;
+	text-decoration: none;
+}
+
+.nav-link:visited{
+	color: #CCC;
+	text-decoration: none;
+}
+
+.nav-link:hover{
+	color: #FFF;
+	text-decoration: none;
+}
+
+.nav-link-active{
+	color: #FFF !important;
+	text-decoration: none;
+}
+
+#title{
+	width: 50%;
+	float:left;
+}
+
+#title p{
+	margin-top: 12px;
+	font-size: 1.5em;
+	color: #FFF;
+}
+
+#links{
+	width: 50%;
+	float:right;
+}
+
+#links ul{
+	list-style-type: none;
+	float:right;
+}
+
+#links li{
+	display: table-cell;
+	padding: 0px 10px;
+}
+
+.page{
+	width: 100%;
+	height: 100%;
+	min-height: 700px; /* height of content + content top margin */
+	min-width: 960px;
+	background:transparent;
+	display: inline-block;
+}
+
+.content{
+	height: 580px;
+	width: 960px;
+	margin:75px auto 0 auto;
+	background-color: rgba(0,0,0,0.5);
+	display: block;
+}
+.content-title{
+	color: #FFF;
+	height: 30px;
+	margin: 0px;
+	padding: 10px 10px 0px 10px;
+	font-weight: normal;
+}
+
+.content-controls{
+	height: 30px;
+	margin: 0px;
+	padding: 10px 10px 0px 0px;
+	font-weight: normal;
+	display: inline-block;
+}
+
+.content-controls{
+	font-size: 18px;
+	color: #CCC;
+}
+
+.content-controls a:link{
+	color: #CCC;
+}
+
+.content-controls a:visited{
+	color: #CCC;
+}
+
+.content-controls a:hover{
+	color: #FFF;
+}
+
+.content-controls a:active{
+	color: #CCC;
+}
+
+.toggle{
+	color: #CCC;
+}
+
+.toggle-active{
+	color: #FFF;
+}
+
+/* To loop through all tile elements */
+.tile{
+	position: relative;
+	margin: 10px 10px;
+	float: left;
+	background-color: rgba(0,0,0,0.5);
+}
+
+.tile-square{
+	height: 250px;
+	width: 300px;
+}
+
+.tile-tall{
+	height: 520px;
+	width: 300px;
+}
+
+.tile-wide{
+	height: 250px;
+	width: 620px;
+}
+
+.tile-full{
+	position: relative;
+	height: 520px;
+	width: 940px;
+	margin: 10px 10px;
+	float: left;
+	background-color: rgba(0,0,0,0.5);
+}
+
+.tile h3, .tile-tall h3, .tile-wide h3, .tile-full h3{
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	overflow: hidden;
+	margin: 0px 0px;
+	padding: 10px 10px;
+	background-color: rgba(0,0,0,0.5);
+	font-weight: normal;
+
+	color: #FFF;
+	font-size: 1.5em;
+}
+
+/****** Footer *****/
+#footer{
+	width: 960px;
+	height: 25px;
+	margin: 100px auto 0 auto;
+	background: rgba(0,0,0,0.5);
+}
+
+#footer p{
+	color: #fff;
+	height: 100%;
+	margin: 5px 10px;
+}
+
+#footer a{
+	color: #CCC;
+	height: 100%;
+	margin: 5px 10px;
+	text-decoration: none;
+
+}
+#footer a:hover{
+	color: #FFF;
+}
+
+/***** Utility *****/
+.left{
+	float: left;
+}
+
+.right{
+	float: right;
+}
+
+.clear{
+	clear:both;
+}
+
+/***** popup ******/
+#popup-background{
+	display: none;
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+
+	background-color: rgba(0,0,0,0.5);
+	z-index: 400;
+}
+
+#popup{
+	display: none;
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	height: 580px;
+	width: 960px;
+	margin:75px auto 0 auto;
+
+	background-color: #fff;
+	z-index: 600;
+}
+
+#popup-content{
+	height: 560px;
+	width: 940px;
+	padding: 10px 10px;
+}
+
+#popup-title{
+	float: left;
+	width: 900px;
+	padding: 10px;
+	margin: 0;
+	font-size: 1.5em;
+
+}
+
+#popup-title h2 {
+	margin: 0px;
+}
+
+#popup-exit{
+	float: right;
+	width: 30px;
+	padding: 10px 10px 0 0;
+	margin: 0px;
+	font-size: 1.5em;
+	cursor: pointer;
+}
+
+
+/***** Map Stuff *****/
+.info-window h1{
+	font-size: 1.5em;
+}
+
+.location-text{
+	color: #CCC;
+}
+</style>
+
+</head>
+<body id="background">
+	<!-- beta login -->
+
+	<!-- Splash -->
+	<div class="page" id="splash">
+		<div id="text">
+			<h1>What is Systems Design Engineering?</h1>
+			<p><a href="">Coming Soon!</a><p> <!-- should link to #about, title is 'find out' -->
+			<p id='beta-link' onclick='showBetaLogin()'>(beta)</p>
+		</div>
+		<div id='beta-login'>
+		<form id='beta-login-form' action="" onsubmit="return tryBetaLogin(this)">
+			<input id="beta-password" type="password" name="pass"><br>
+			<input type="submit" value="Go!">
+		</form>
+	</div>
+	</div> <!-- .splash -->
+	<div class="clear"></div>
+
+	<!-- Nav -->
+	<div id="nav">
+		<div id="nav-content">
+			<div id="title">
+				<P>What is Systems?</p>
 			</div>
-			<div id="main">
-				<p>Hmm, that's a good question, coming soon.</p><p>Still curious? Check out the university's <a href="https://uwaterloo.ca/systems-design-engineering/">explanation</a> of the program.</p>
+			<div id="links">
+				<ul>
+					<li><a class="nav-link" id="about-link" href="#about">About</a></li>
+					<li><a class="nav-link" id="experience-link" href="#experience">Experience</a></li>
+					<li><a class="nav-link" id="work-link" href="#work">Work</a></li>
+				</ul>
 			</div>
-	</body>
+		</div>
+	</div>
+	<div class="clear"></div>
+	<!-- #page -->
+	<div class="page" id="about">
+		<div class="content">
+			<h2 class="content-title">Systems design engineers use a design-oriented, interdisciplinary method to solve large, complex problems.</h2>
+			<div class="tile tile-tall" id="what-the-school-says" onclick="showPopup('what-the-school-says')">
+				<img src="res/school_logo.jpg">
+				<h3>What the School Says</h3>
+			</div>
+			<div class="tile tile-square" id="initiatives" onclick="showPopup('initiatives')">
+				<h3>Initiatives</h3>
+			</div>
+			<div class="tile tile-square" id="design-projects" onclick="showPopup('design-projects')">
+				<img src="res/design_symposium.jpg">
+				<h3>Design Projects</h3>
+			</div>
+			<div class="tile tile-wide" id="syde-vs-the-rest" onclick="showPopup('syde-vs-the-rest')">
+				<img src="res/systems_design_logo.png">
+				<h3>SYDE v.s. The Rest</h3>
+			</div>
+		</div>
+	</div> <!-- #about -->
+	<div class="clear"></div>
+	<div class="page" id="experience">
+		<div class="content">
+			<h2 class="content-title">You'll have a blast here.</h2>
+			<div class="tile tile-wide" id="the-6th-floor-of-e5" onclick="showPopup('the-6th-floor-of-e5')">
+				<h3>The 6th Floor of E5</h3>
+			</div>
+			<div class="tile tile-square" id="coffeehouse" onclick="showPopup('coffeehouse')">
+				<h3>Coffeehouse</h3>
+			</div>
+			<div class="tile tile-square" id="all-systems-go" onclick="showPopup('all-systems-go')">
+				<h3>All Systems Go</h3>
+			</div>
+			<div class="tile tile-square" id="exchange" onclick="showPopup('exchange')">
+				<h3>Exchange</h3>
+			</div>
+			<div class="tile tile-square" id="iron-ring-festivities" onclick="showPopup('iron-ring-festivities')">
+				<h3>Iron Ring Festivities</h3>
+			</div>
+		</div>
+	</div> <!-- #about -->
+	<div class="clear"></div>
+	<div class="page" id="work">
+		<div class="content">
+			<div class="left">
+				<h2 class="content-title">We build the world.</h2>
+			</div>
+			<div class="right content-controls" style="">
+				<p><a class="toggle-active" id="linkedin-data" onclick="hideCoopMap();showLinkedInMap();">All</a> | <a class="toggle" id="coop-data" onclick="hideLinkedInMap();showCoopMap();">Co-op</a></p>
+			</div>
+			<div class="tile-full" id="map-canvas">
+			</div>
+		</div>
+	</div> <!-- #about -->
+	<div class="clear"></div>
+	<div id="footer">
+		<div id="footer-content">
+			<p class="left">Made by students, for prospective students.</p>
+			<a href="mailto:whatissystems@gmail.com" class="right" target="_blank">Contact</a>
+			<a class="right" id="thanks-to">Thanks</a>
+		</div>
+	</div>
+
+	<!-- the popup that will store the content -->
+	<div id="popup-background"></div>
+	<div id="popup">
+		<h2 id="popup-title">[header]</h2>
+		<h2 id="popup-exit">x</h2>
+		<div class="clear"></div>
+		<div id="popup-content">
+			<p>[content]</p>
+		</div>
+	</div>
+
+	<!-- Script. Because screw multiple pages -->
+	<!-- Need jquery, etc. -->
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=visualization&sensor=false"></script>
+	<script type="text/javascript" src="res/jquery.scrollTo-1.4.3.1.js"></script>
+	<script type="text/javascript" src="res/jquery.localscroll-1.2.7.js"></script>
+	<script type="text/javascript" src="res/page-content.js"></script>
+	<script type="text/javascript">
+
+	// Globals :(
+	var coopData = {};
+	var linkedInData = {};
+	var coopArray = new Array();
+	var linkedInArray = new Array();
+
+	// Ready function
+	$(document).ready(function(){
+		makeMap();
+
+		$.ajax({
+			url: "map-content/linkedin-data/profiles.txt",
+			isLocal: true,
+			dataType: "json"
+		})
+		.done(function(data){
+			console.log("AJAX for linkedIn profiles - Success!");
+			console.log(data);
+			linkedInData = data;
+			populateLinkedInData();
+			showLinkedInMap();
+		})
+		.fail(function(data){
+			console.log("AJAX for linkedIn profiles - Fail!");
+			console.log(data);
+		})
+
+		// Load co-op data
+		$.ajax({
+			url: "map-content/coop-data/coop-profiles.txt",
+			isLocal: true,
+			dataType: "json"
+		})
+		.done(function(data){
+			console.log("AJAX for co-op profiles - Success!");
+			console.log(data);
+			coopData = data;
+			populateCoopData();
+		})
+		.fail(function(data){
+			console.log("AJAX for co-op profiles - Fail!");
+			console.log(data);
+		})
+
+		// Hover for content tiles
+		$('.tile').hover(function(){
+			// Hover in
+			console.log('hover in: ' + $(this));
+			$(this).fadeTo(0);
+		}, function(){
+			// Hover out
+			console.log('hover out: ' + $(this));
+			$(this).fadeTo(1);
+		});
+
+		// Event listener for pop-ups
+		var pbg = document.getElementById('popup-background');
+		pbg.addEventListener("click", function(){hidePopup()}, false);
+
+		// Event listener for thank you link
+		document.getElementById('thanks-to').addEventListener("click", function(){
+			showPopup('thanks-to');
+		});
+
+		var p = document.getElementById('popup-exit');
+		p.addEventListener("click", function(){hidePopup()}, false);
+		$(document).keyup(function(evt){
+			if(evt.keyCode == 27){
+				hidePopup();
+			}
+		});
+
+		// Set LocalSroll
+		$("#splash").localScroll();
+		$("#nav").localScroll();
+
+		// When the user scrolls, we run the scrollBG function
+		$(window).bind('scroll', function(){
+			scrollBG();
+		});
+
+		// Similar story for a window resize
+		$(window).resize(function(){
+			scrollBG();
+		});
+	});
+
+	function showBetaLogin(){
+		document.getElementById('beta-login').style.display = 'block';
+		document.getElementById('beta-link').onclick = function(){hideBetaLogin()};
+	}
+
+	function hideBetaLogin(){
+		document.getElementById('beta-login').style.display = 'none';
+		document.getElementById('beta-link').onclick = function(){showBetaLogin()};
+	}
+
+	function tryBetaLogin(form){
+		//Fine, look at the code and cheat, why don't you. We're just trying to make it less public as we get initial feedback.
+		if($('#beta-password').val() == "findoutnow"){
+			document.body.style.overflow = 'visible';
+			$.scrollTo("#about", 500);
+		} else {
+			console.log('wrong pass');
+		}
+		return false;
+	}
+
+	function makeMap(){
+		var mapOptions = {
+		    zoom: 2,
+		    center: new google.maps.LatLng(43.4722,-80.5472),
+		    mapTypeId: google.maps.MapTypeId.MAP
+  		};
+  		map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions); // map is global?
+  		// populateMap(map, mapData);
+	}
+
+	// This function moves the backgroud and repositions the splash header to ensure it stays at the top of the page.
+	function scrollBG(){
+		// vars
+		var pos = $(window).scrollTop();
+		var height = $("#splash").height();
+		var intertia = 0.2;
+
+		// Scroll background
+		$("#background").css("background-position", "0px " + String(-pos*intertia) + "px");
+
+		// Repositions the nav.
+		$("#nav").css("top", String(Math.max(height, pos) + "px"));
+
+		// ScrollSpy
+		// Note: there's probably a cleaner way to do this.
+		var posmid = pos + $(window).height()/2;
+		if($('#about').offset().top < posmid && posmid < ($('#about').offset().top + $('#about').height())) {
+			// console.log('about active!' + ($('#about').offset().top).toString() + ' ' + (posmid).toString() + ' ' + ($('#about').offset().top + $('#about').height()).toString());
+			$('#about-link').addClass('nav-link-active');
+		} else {
+			// console.log('about not active');
+			$('#about-link').removeClass('nav-link-active');
+		}
+		if($('#experience').offset().top < posmid && posmid < ($('#experience').offset().top + $('#experience').height())) {
+			// console.log('about active!' + ($('#about').offset().top).toString() + ' ' + (posmid).toString() + ' ' + ($('#about').offset().top + $('#about').height()).toString());
+			$('#experience-link').addClass('nav-link-active');
+		} else {
+			// console.log('about not active');
+			$('#experience-link').removeClass('nav-link-active');
+		}
+		if($('#work').offset().top < posmid && posmid < ($('#work').offset().top + $('#work').height())) {
+			// console.log('about active!' + ($('#about').offset().top).toString() + ' ' + (posmid).toString() + ' ' + ($('#about').offset().top + $('#about').height()).toString());
+			$('#work-link').addClass('nav-link-active');
+		} else {
+			// console.log('about not active');
+			$('#work-link').removeClass('nav-link-active');
+		}
+	}
+
+	// Populate the popup with the right content and show it.
+	function showPopup(cssId){
+		console.log("show popup called on " + cssId);
+		//populate the popup with the info
+		document.getElementById("popup-title").innerHTML = content[cssId].detailTitle;
+		document.getElementById("popup-content").innerHTML = content[cssId].detailContent;
+		//show the popup
+		$('#popup-background').fadeIn(200);
+		$('#popup').fadeIn(200);
+		$('body').css({'overflow':'hidden'});
+	}
+
+	// Hide the popup divs
+	function hidePopup(){
+		console.log("hide popup called");
+		$('#popup-background').fadeOut(200);
+		$('#popup').fadeOut(200);
+		$('body').css({'overflow':'auto'});
+	}
+
+	// This function populates the map
+	function populateLinkedInData(){
+		// var latlngs = new Array();
+		var thisProfile;
+		var latlngs = new Array();
+		for(profile in linkedInData){
+			if(linkedInData.hasOwnProperty(profile)){
+				if (linkedInData[profile].hasOwnProperty('mapLocation')){
+					thisProfile = linkedInData[profile];
+					var thisLocation = new Array(thisProfile.mapLocation.lat, thisProfile.mapLocation.lng);
+					if(containsLocation(latlngs, thisLocation)){
+						thisLocation = offset(thisLocation); //TODO make function
+					} else{
+						latlngs.push(thisLocation);
+					}
+					thisProfile.marker = new google.maps.Marker({
+						position: new google.maps.LatLng(thisLocation[0],thisLocation[1]),
+						map: map,
+						title: thisProfile.headline,
+						animation: google.maps.Animation.DROP
+	  				});
+	  				thisProfile.marker.setVisible(false);
+					thisProfile.contentString = "<div class='info-window'>" + "<h1>" + thisProfile.headline + "</h1>" + "<p>Industry: " + thisProfile.industry + "</p>" + "<p>name: " + thisProfile.name + "</p>" + "<p>Location: " + thisProfile.location + "</p>" + "</div>";
+					thisProfile.infoWindow = new google.maps.InfoWindow({
+						content: thisProfile.contentString
+					});
+					google.maps.event.addListener(thisProfile.marker, 'click', makeInfoWindow(thisProfile, map));
+					linkedInArray.push(thisProfile);
+				} else {
+					console.log('Point did not have map location :(');
+				}
+			}
+		}
+	}
+
+	function showLinkedInMap(){
+		for(var i = 0; i < linkedInArray.length; i++){
+			linkedInArray[i].marker.setVisible(true);
+		}
+		document.getElementById('linkedin-data').className = 'toggle-active';
+	}
+
+	function hideLinkedInMap(){
+		for(var i = 0; i < linkedInArray.length; i++){
+			linkedInArray[i].marker.setVisible(false);
+		}
+		document.getElementById('linkedin-data').className = 'toggle';
+	}
+
+	function populateCoopData(){
+		// var latlngs = new Array();
+		var thisProfile;
+		var latlngs = new Array();
+		// For each profile
+		for (p in coopData){
+			if(coopData.hasOwnProperty(p)){
+				//For each term
+				var profile = coopData[p];
+				for (term in profile){
+					if(profile.hasOwnProperty(term)){
+						if(profile[term].hasOwnProperty('mapLocation')){
+							thisProfile = profile[term];
+							var thisLocation = new Array(thisProfile.mapLocation.lat,thisProfile.mapLocation.lng)
+							if(containsLocation(latlngs, thisLocation)){
+								thisLocation = offset(thisLocation); //TODO make function
+							} else{
+								latlngs.push(thisLocation);
+							}
+							//make point
+							thisProfile.marker = new google.maps.Marker({
+								position: new google.maps.LatLng(thisLocation[0],thisLocation[1]),
+								map: map,
+								title: thisProfile.headline,
+								animation: google.maps.Animation.DROP
+			  				});
+			  				thisProfile.marker.setVisible(false);
+			  				thisProfile.contentString = "<div class='info-window'>" + "<h1>" + thisProfile.title + "</h1>" + "<p>" + thisProfile.employer + "</p>" + "<p class='location-text'>" + thisProfile.city + ', ' + thisProfile.province + ', ' + thisProfile.country + "</p>" + "</div>";
+			  				thisProfile.infoWindow = new google.maps.InfoWindow({
+								content: thisProfile.contentString
+							});
+							//add listener
+							google.maps.event.addListener(thisProfile.marker, 'click', makeInfoWindow(thisProfile, map));
+							coopArray.push(thisProfile);
+						} else {
+							console.log('Could not map the co-op location :(');
+						}
+					}
+				}
+			}
+		}
+	}
+
+	function showCoopMap(){
+		for(var i = 0; i < coopArray.length; i++){
+			coopArray[i].marker.setVisible(true);
+		}
+		document.getElementById('coop-data').className = 'toggle-active';
+	}
+
+	function hideCoopMap(){
+		for(var i = 0; i < coopArray.length; i++){
+			coopArray[i].marker.setVisible(false);
+		}
+		document.getElementById('coop-data').className = 'toggle';
+	}
+
+	function makeInfoWindow(profile, map){
+		return function(){
+			profile.infoWindow.open(map, profile.marker);
+		}
+	}
+
+	function containsLocation(array, location){
+		for(var i = 0; i < array.length; i++){
+			if (isEqual(array[i], location)){
+				return true;
+			}
+		}
+		return false;
+	}
+
+	function isEqual(one, two){
+		if(one.length !== two.length){
+			return false;
+		}
+		for(var i = 0; i < one.length; i++){
+			if(one[i] !== two[i]){
+				return false;
+			}
+		}
+		return true;
+	}
+
+	function offset(location){
+		var offset = 0.01;
+		var newLocation = new Array();
+		for(var i = 0; i < location.length; i++){
+			newLocation[i] = location[i] + ((offset*Math.random())-(offset/2));
+		}
+		return newLocation;
+	}
+
+	</script>
+</body>
 </html>
