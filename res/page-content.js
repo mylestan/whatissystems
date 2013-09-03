@@ -9,7 +9,7 @@ var content = {
 		'section' : 'about',
 		'cssId' : "initiatives",
 		'detailTitle' : 'Initiatives',
-		'detailContent': '<p>The Systems Design Engineering program tends to attract innovative thinkers with a desire to make a dent in the world. Th eprogram\' on high-level thinking while allowing students to customize it to their interests accelerates their ability to follow their passions and make an impact. (Infographic)</p><h2>Janna Systems</h2><p>abt Janna</p><h2>Desire2Learn</h2><p>abt d2l</p><h2>NexJ Systems</h2><p>abt nexj</h2>'
+		'detailContent': '<p>The Systems Design Engineering program tends to attract innovative thinkers with a desire to make a dent in the world. The program\'s focus on high-level thinking while allowing students to customize it to their interests accelerates their ability to follow their passions and make an impact. Here are just a few of the successful companies started by systems graduates. </p><h2>Janna Systems</h2><p>abt Janna</p><h2>Desire2Learn</h2><p>abt d2l</p><h2>NexJ Systems</h2><p>abt nexj</h2>'
 	},
 	'syde-vs-the-rest' : {
 		'section' : 'about',
@@ -27,7 +27,7 @@ var content = {
 		'section' : 'experience',
 		'cssId' : 'the-6th-floor-of-e5',
 		'detailTitle' : 'The 6th Floor of E5',
-		'detailContent' : '<p>All classes in every year are in the top floor in Engineering 5, one of the newest buildings on campus. We\'re spoiled with vending machines, a lounge, and a sweet view. You\'ll be sure to bump into upper years in the hallway! (Images)</p>'
+		'detailContent' : '<p>All mandator classes in the program are in the highest floor of Engineering 5, one of the newest buildings on campus. We\'re spoiled with vending machines, a computer and design lab, a study lounge, and a sweet view. The small classrooms eliminate lecture halls and promote dicussion among classmates, and you\'ll be sure to bump into upper years! (Images)</p>'
 	},
 	'coffeehouse' : {
 		'section' : 'experience',
@@ -39,13 +39,7 @@ var content = {
 		'section' : 'experience',
 		'cssId' : 'all-systems-go',
 		'detailTitle' : 'All Systems Go',
-		'detailContent' : '<p>It\'s been said that systems students are among the most social engineers. We prove our point at the beginning of each term by running All Systems Go, a gathering of systems students at a residence of one of the students. It\'s a great opportunity to meet upper year students! Unfortunately to keep this site professional, we can\'t show pictures.<p>'
-	},
-	'iron-ring-festivities' : {
-		'section' : 'experience',
-		'cssId' : 'iron-ring-festivities',
-		'detailTitle' : 'Iron Ring Festivities',
-		'detailContent' : '<p>To celebrate receiving the coveted iron ring and 5 years of blood, sweat, and tears, systems graduates pull off pranks on the 6th floor of E5. (Images)</p>'
+		'detailContent' : '<p>It\'s been said that systems students are among the more social engineers. We validate this by launching the term running All Systems Go, a gathering of systems students across all years at a residence of one of the students. It\'s a great opportunity to meet upper year students! Unfortunately this is a professional site, so we can\'t show pictures.<p>'
 	},
 	'exchange' : {
 		'section' : 'experience',
