@@ -14,7 +14,7 @@ html, body {
 }
 
 body{
-	overflow: hidden;
+	overflow: hidden; /* Toggle between hidden and visible */
 }
 
 p{
@@ -320,6 +320,10 @@ p{
 	padding: 10px 10px;
 }
 
+#popup-content p{
+	color: #000;
+}
+
 #popup-title{
 	float: left;
 	width: 640px;
@@ -350,6 +354,18 @@ p{
 
 .location-text{
 	color: #CCC;
+}
+
+.info-window a{
+	font-size: 1.5em;
+}
+
+.info-window p{
+	color: #000;
+}
+
+p.location-text{
+	color: #AAA;
 }
 </style>
 
@@ -479,13 +495,18 @@ p{
 	// Globals :(
 	var coopData = {};
 	var linkedInData = {};
+
 	var coopArray = new Array();
 	var linkedInArray = new Array();
+
+	var infoWindow = new google.maps.InfoWindow();
+	var infoWindowArray = new Array();
 
 	// Ready function
 	$(document).ready(function(){
 		makeMap();
 
+		// Load the LinkedIn data
 		$.ajax({
 			url: "map-content/linkedin-data/profiles.txt",
 			isLocal: true,
@@ -503,7 +524,7 @@ p{
 			console.log(data);
 		})
 
-		// Load co-op data
+		// Load the co-op data
 		$.ajax({
 			url: "map-content/coop-data/coop-profiles.txt",
 			isLocal: true,
@@ -535,11 +556,12 @@ p{
 		var pbg = document.getElementById('popup-background');
 		pbg.addEventListener("click", function(){hidePopup()}, false);
 
-		// Event listener for thank you link
+		// Event listener for 'thank you' link
 		document.getElementById('thanks-to').addEventListener("click", function(){
 			showPopup('thanks-to');
 		});
 
+		// Event listener for 'x' out of popup
 		var p = document.getElementById('popup-exit');
 		p.addEventListener("click", function(){hidePopup()}, false);
 		$(document).keyup(function(evt){
@@ -563,6 +585,7 @@ p{
 		});
 	});
 
+	// Beta Login Info
 	function showBetaLogin(){
 		document.getElementById('beta-login').style.display = 'block';
 		document.getElementById('beta-link').onclick = function(){hideBetaLogin()};
@@ -655,19 +678,27 @@ p{
 
 	// This function populates the map
 	function populateLinkedInData(){
+
 		// var latlngs = new Array();
 		var thisProfile;
 		var latlngs = new Array();
+
 		for(profile in linkedInData){
 			if(linkedInData.hasOwnProperty(profile)){
 				if (linkedInData[profile].hasOwnProperty('mapLocation')){
+
 					thisProfile = linkedInData[profile];
+
 					var thisLocation = new Array(thisProfile.mapLocation.lat, thisProfile.mapLocation.lng);
+
+					// If there's already a marker at this location, offset it.
 					if(containsLocation(latlngs, thisLocation)){
-						thisLocation = offset(thisLocation); //TODO make function
+						thisLocation = offset(thisLocation);
 					} else{
 						latlngs.push(thisLocation);
 					}
+
+					// Make a new marker
 					thisProfile.marker = new google.maps.Marker({
 						position: new google.maps.LatLng(thisLocation[0],thisLocation[1]),
 						map: map,
@@ -675,31 +706,35 @@ p{
 						animation: google.maps.Animation.DROP
 	  				});
 	  				thisProfile.marker.setVisible(false);
-					thisProfile.contentString = "<div class='info-window'>" + "<h1>" + thisProfile.headline + "</h1>" + "<p>Industry: " + thisProfile.industry + "</p>" + "<p>name: " + thisProfile.name + "</p>" + "<p>Location: " + thisProfile.location + "</p>" + "</div>";
-					thisProfile.infoWindow = new google.maps.InfoWindow({
-						content: thisProfile.contentString
-					});
+					thisProfile.contentString = "<div class='info-window'>" + "<h1>" + thisProfile.headline + "</h1>" + "<p>" + thisProfile.industry + "</p>" + "<p>" + thisProfile.name + "</p>" + "<p>" + thisProfile.location + "</p>" + "</div>";
+
+					// Add listener
 					google.maps.event.addListener(thisProfile.marker, 'click', makeInfoWindow(thisProfile, map));
+
+					// Add to array
 					linkedInArray.push(thisProfile);
+
 				} else {
 					console.log('Point did not have map location :(');
 				}
+
 			}
 		}
 	}
 
+	// Show and hide functions for the LinkedIn data
 	function showLinkedInMap(){
 		for(var i = 0; i < linkedInArray.length; i++){
 			linkedInArray[i].marker.setVisible(true);
 		}
 		document.getElementById('linkedin-data').className = 'toggle-active';
 	}
-
 	function hideLinkedInMap(){
 		for(var i = 0; i < linkedInArray.length; i++){
 			linkedInArray[i].marker.setVisible(false);
 		}
 		document.getElementById('linkedin-data').className = 'toggle';
+		infoWindow.close();
 	}
 
 	function populateCoopData(){
@@ -709,19 +744,24 @@ p{
 		// For each profile
 		for (p in coopData){
 			if(coopData.hasOwnProperty(p)){
+
 				//For each term
 				var profile = coopData[p];
 				for (term in profile){
 					if(profile.hasOwnProperty(term)){
 						if(profile[term].hasOwnProperty('mapLocation')){
 							thisProfile = profile[term];
+							thisProfile.uuid = profile['id'];
+
+							// Check the location and offset if necessary
 							var thisLocation = new Array(thisProfile.mapLocation.lat,thisProfile.mapLocation.lng)
 							if(containsLocation(latlngs, thisLocation)){
-								thisLocation = offset(thisLocation); //TODO make function
+								thisLocation = offset(thisLocation);
 							} else{
 								latlngs.push(thisLocation);
 							}
-							//make point
+
+							// Create the Marker
 							thisProfile.marker = new google.maps.Marker({
 								position: new google.maps.LatLng(thisLocation[0],thisLocation[1]),
 								map: map,
@@ -729,13 +769,19 @@ p{
 								animation: google.maps.Animation.DROP
 			  				});
 			  				thisProfile.marker.setVisible(false);
-			  				thisProfile.contentString = "<div class='info-window'>" + "<h1>" + thisProfile.title + "</h1>" + "<p>" + thisProfile.employer + "</p>" + "<p class='location-text'>" + thisProfile.city + ', ' + thisProfile.province + ', ' + thisProfile.country + "</p>" + "</div>";
-			  				thisProfile.infoWindow = new google.maps.InfoWindow({
-								content: thisProfile.contentString
-							});
-							//add listener
+
+			  				//Make the content string, including the search URL
+			  				var searchURL = "https://www.google.com/?#q=" + thisProfile.employer.split(' ').join('+'); // make the google search string
+
+			  				thisProfile.contentString = "<div class='info-window'>" + "<h1>" + thisProfile.title + "</h1>" + "<a href=" + searchURL + " target='_blank'>" + thisProfile.employer + "</a>" + "<p>Term " + term + "/6 (<a href='#'>see all</a>).</p>" + "<p class='location-text'>" + thisProfile.city + ', ' + thisProfile.province + ', ' + thisProfile.country + "</p>" + "</div>";
+			  				//thisProfile.contentString = "<div class='info-window'><h1><a href='#'>4/6:</a> Software Engineer at <a href='#'>QualComm</a></h1><p>Boulder, Colorado, USA</p>";
+
+							// Add listener
 							google.maps.event.addListener(thisProfile.marker, 'click', makeInfoWindow(thisProfile, map));
+
+							// Add to array
 							coopArray.push(thisProfile);
+
 						} else {
 							console.log('Could not map the co-op location :(');
 						}
@@ -745,26 +791,35 @@ p{
 		}
 	}
 
+	// Show and hide functions for the co-op data on the map.
 	function showCoopMap(){
 		for(var i = 0; i < coopArray.length; i++){
 			coopArray[i].marker.setVisible(true);
 		}
 		document.getElementById('coop-data').className = 'toggle-active';
 	}
-
 	function hideCoopMap(){
 		for(var i = 0; i < coopArray.length; i++){
 			coopArray[i].marker.setVisible(false);
 		}
 		document.getElementById('coop-data').className = 'toggle';
+		infoWindow.close();
 	}
 
+	// Creates the info window when a marker is clicked
 	function makeInfoWindow(profile, map){
 		return function(){
-			profile.infoWindow.open(map, profile.marker);
+			infoWindow.setContent(profile.contentString);
+			infoWindow.open(map, profile.marker);
 		}
 	}
 
+	// Shows all info windows for a specific person
+	function showPath(profile){
+
+	}
+
+	// Simple f'n for searching an array for another array
 	function containsLocation(array, location){
 		for(var i = 0; i < array.length; i++){
 			if (isEqual(array[i], location)){
@@ -774,6 +829,7 @@ p{
 		return false;
 	}
 
+	// Equal function...I don't know.
 	function isEqual(one, two){
 		if(one.length !== two.length){
 			return false;
@@ -786,6 +842,7 @@ p{
 		return true;
 	}
 
+	// Provie an offset location for a marker to prevent stacking
 	function offset(location){
 		var offset = 0.01;
 		var newLocation = new Array();
@@ -797,5 +854,4 @@ p{
 
 	</script>
 </body>
-
 </html>
