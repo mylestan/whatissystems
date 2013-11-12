@@ -14,7 +14,7 @@ html, body {
 }
 
 body{
-	overflow: hidden; /* Toggle between hidden and visible */
+	overflow: visible; /* Toggle between hidden and visible */
 }
 
 p{
@@ -326,7 +326,7 @@ p{
 
 #popup-title{
 	float: left;
-	width: 900px;
+	width: 900	px;
 	padding: 10px;
 	margin: 0;
 	font-size: 1.5em;
@@ -660,13 +660,27 @@ p.location-text{
 
 	// Populate the popup with the right content and show it.
 	function showPopup(cssId){
-		console.log("show popup called on " + cssId);
+		var cssTag = "#" + content[cssId].section;
+
+		console.log("show popup called on " + cssTag);
 		//populate the popup with the info
 		document.getElementById("popup-title").innerHTML = content[cssId].detailTitle;
 		document.getElementById("popup-content").innerHTML = content[cssId].detailContent;
-		//show the popup
-		$('#popup-background').fadeIn(200);
-		$('#popup').fadeIn(200);
+		// Scroll to over the tilepage to which the content belongs
+		console.log('offset of the section is: ' + $(cssTag).offset().top);
+		console.log('scrollTop is: ' + $(window).scrollTop());
+		console.log($(cssTag).offset().top - $(window).scrollTop());
+
+		if (($(window).scrollTop() - $(cssTag).offset().top) != 0){ // We scroll to the section first
+			$.scrollTo('#' + content[cssId].section, 300);
+			$('#popup-background').delay(300).fadeIn(200);
+			$('#popup').delay(300).fadeIn(200);
+		} else { // No delay
+			$.scrollTo('#' + content[cssId].section, 500);
+			$('#popup-background').fadeIn(200);
+			$('#popup').fadeIn(200);
+		}
+		
 		$('body').css({'overflow':'hidden'});
 	}
 
