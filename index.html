@@ -21,6 +21,11 @@ p{
 	margin: 0px;
 }
 
+/* Webkit fix to hide all scrollbars. Mozilla still needs one. Grr.*/
+::-webkit-scrollbar {
+    display: none;
+}
+
 #background{
 	background: url(res/space_earth_background.png);
 	background-repeat: repeat;
@@ -680,7 +685,7 @@ p.location-text{
 			$('#popup-background').fadeIn(200);
 			$('#popup').fadeIn(200);
 		}
-		
+
 		$('body').css({'overflow':'hidden'});
 	}
 
