@@ -15,115 +15,20 @@ typeOfWork	Type of Work
 industry	Industry	
 sector	Sector (Public/Private)	Public oe Private
 reading a new line
-getting map location
-	company: NexJ Systems Inc.
-	location: Toronto, Ontario, Canada
-gmaps request for string: NexJ Systems Inc., Toronto, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=NexJ+Systems+Inc.,+Toronto,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: Polar Bear WSHP
-	location: Toronto, Ontario, Canada
-gmaps request for string: Polar Bear WSHP, Toronto, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Polar+Bear+WSHP,+Toronto,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response no results, trying again for location
-getting map location
-	location: Toronto, Ontario, Canada
-gmaps request for string: Toronto, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Toronto,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: TD Bank
-	location: Mississuaga, Ontario, Canada
-gmaps request for string: TD Bank, Mississuaga, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=TD+Bank,+Mississuaga,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: NexJ Systems Inc.
-	location: Toronto, Ontario, Canada
-gmaps request for string: NexJ Systems Inc., Toronto, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=NexJ+Systems+Inc.,+Toronto,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: Awareness, Inc.
-	location: Burlington, Ontario, Canada
-gmaps request for string: Awareness, Inc., Burlington, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Awareness,+Inc.,+Burlington,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: General Dynamics Canada
-	location: Ottawa, Ontario, Canada
-gmaps request for string: General Dynamics Canada, Ottawa, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=General+Dynamics+Canada,+Ottawa,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: TD Securities
-	location: Toronto, Ontario, Canada
-gmaps request for string: TD Securities, Toronto, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=TD+Securities,+Toronto,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: Careerify
-	location: Toronto, Ontario, Canada
-gmaps request for string: Careerify, Toronto, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Careerify,+Toronto,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: CPCS Transcom Ltd.
-	location: Ottawa, Ontario, Canada
-gmaps request for string: CPCS Transcom Ltd., Ottawa, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=CPCS+Transcom+Ltd.,+Ottawa,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: Imason inc.
-	location: Toronto, Ontario, Canada
-gmaps request for string: Imason inc., Toronto, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Imason+inc.,+Toronto,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: TsingHua University
-	location: Beijing, , China.P.R
-gmaps request for string: TsingHua University, Beijing, , China.P.R
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=TsingHua+University,+Beijing,+,+China.P.R&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: Rich Media
-	location: Toronto, Ontario, Canada
-gmaps request for string: Rich Media, Toronto, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Rich+Media,+Toronto,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: Apotex
-	location: Toronto, Ontario, Canada
-gmaps request for string: Apotex, Toronto, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Apotex,+Toronto,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: MyPlanet Digital
-	location: Markham, Ontario, Canada
-gmaps request for string: MyPlanet Digital, Markham, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=MyPlanet+Digital,+Markham,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: AGFA Healthcare
-	location: Waterloo, Ontario, Canada
-gmaps request for string: AGFA Healthcare, Waterloo, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=AGFA+Healthcare,+Waterloo,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
 getting map location
 	company: CommSequence, Inc.
@@ -137,89 +42,17 @@ gmaps request for string: Sudbury, Ontario, Canada
 request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Sudbury,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
 	response OK
 reading a new line
-getting map location
-	company: Public Works and Government Services Canada
-	location: Toronto, Ontario, Canada
-gmaps request for string: Public Works and Government Services Canada, Toronto, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Public+Works+and+Government+Services+Canada,+Toronto,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: NexJ Systems Inc.
-	location: Toronto, Ontario, Canada
-gmaps request for string: NexJ Systems Inc., Toronto, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=NexJ+Systems+Inc.,+Toronto,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: Xtreme Mobility
-	location: Toronto, Ontario, Canada
-gmaps request for string: Xtreme Mobility, Toronto, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Xtreme+Mobility,+Toronto,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: RIM
-	location: Waterloo, Ontario, Canada
-gmaps request for string: RIM, Waterloo, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=RIM,+Waterloo,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: RIM
-	location: Waterloo, Ontario, Canada
-gmaps request for string: RIM, Waterloo, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=RIM,+Waterloo,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: imason inc.
-	location: Toronto, Ontario, Canada
-gmaps request for string: imason inc., Toronto, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=imason+inc.,+Toronto,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: Ontario Teachers' Pension Plan
-	location: Toronto, Ontario, Canada
-gmaps request for string: Ontario Teachers' Pension Plan, Toronto, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Ontario+Teachers'+Pension+Plan,+Toronto,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: CGI Group Inc.
-	location: Markham, Ontario, Canada
-gmaps request for string: CGI Group Inc., Markham, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=CGI+Group+Inc.,+Markham,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: Agviro Inc.
-	location: Guelph (the best), Ontario, Canada
-gmaps request for string: Agviro Inc., Guelph (the best), Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Agviro+Inc.,+Guelph+(the+best),+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: NexJ Systems Inc.
-	location: Toronto, Ontario, Canada
-gmaps request for string: NexJ Systems Inc., Toronto, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=NexJ+Systems+Inc.,+Toronto,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: Agriculture and Agri-Food Canada
-	location: Ottawa, Ontario, Canada
-gmaps request for string: Agriculture and Agri-Food Canada, Ottawa, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Agriculture+and+Agri-Food+Canada,+Ottawa,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: Research In Motion
-	location: Waterloo, Ontario, Canada
-gmaps request for string: Research In Motion, Waterloo, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Research+In+Motion,+Waterloo,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading file: Systems Design Class of 2014 - Employment - Fall 2010 (1B).csv
 Ensuring that our info lines up. If the following dont align, theres an issue:
 name	Name	
@@ -237,94 +70,17 @@ typeOfWork	Type of Work
 industry	Industry	
 sector	Sector (Public/Private)	
 reading a new line
-getting map location
-	company: General Dynamics Canada
-	location: Ottawa, Ontario, Canada
-gmaps request for string: General Dynamics Canada, Ottawa, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=General+Dynamics+Canada,+Ottawa,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: ITG Canada Corp.
-	location: Toronto, Ontario, Canada
-gmaps request for string: ITG Canada Corp., Toronto, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=ITG+Canada+Corp.,+Toronto,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: PriceWaterhouseCoopers
-	location: Toronto, Ontario, Canada
-gmaps request for string: PriceWaterhouseCoopers, Toronto, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=PriceWaterhouseCoopers,+Toronto,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: NexJ Systems Inc.
-	location: Toronto, Ontario, Canada
-gmaps request for string: NexJ Systems Inc., Toronto, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=NexJ+Systems+Inc.,+Toronto,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: Office of the Public Guardian and Trustee
-	location: Toronto, Ontario, Canada
-gmaps request for string: Office of the Public Guardian and Trustee, Toronto, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Office+of+the+Public+Guardian+and+Trustee,+Toronto,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: OpenText
-	location: Waterloo, ontario, Canada
-gmaps request for string: OpenText, Waterloo, ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=OpenText,+Waterloo,+ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: Office of the Public Guardian and Trustee
-	location: Toronto, Ontario, Canada
-gmaps request for string: Office of the Public Guardian and Trustee, Toronto, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Office+of+the+Public+Guardian+and+Trustee,+Toronto,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: Trustwave Pvt Ltd.
-	location: Cambridge, Ontario, Canada
-gmaps request for string: Trustwave Pvt Ltd., Cambridge, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Trustwave+Pvt+Ltd.,+Cambridge,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response no results, trying again for location
-getting map location
-	location: Cambridge, Ontario, Canada
-gmaps request for string: Cambridge, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Cambridge,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: Research in Motion
-	location: Waterloo, Ontario, Canada
-gmaps request for string: Research in Motion, Waterloo, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Research+in+Motion,+Waterloo,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: CIBC
-	location: Toronto, Ontario, Canada
-gmaps request for string: CIBC, Toronto, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=CIBC,+Toronto,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: Rich Media
-	location: Toronto, Ontario, Canada
-gmaps request for string: Rich Media, Toronto, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Rich+Media,+Toronto,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: Christie Digital Systems
-	location: Kitchener, Ontario, Canada
-gmaps request for string: Christie Digital Systems, Kitchener, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Christie+Digital+Systems,+Kitchener,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
 getting map location
 	company: Environment Canada
@@ -333,110 +89,20 @@ gmaps request for string: Environment Canada, Toronto, Ontario, Canada
 request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Environment+Canada,+Toronto,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
 	response OK
 reading a new line
-getting map location
-	company: Kobo Inc.
-	location: Toronto, Ontario, Canada
-gmaps request for string: Kobo Inc., Toronto, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Kobo+Inc.,+Toronto,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: NexJ Systems Inc.
-	location: Toronto, Ontario, Canada
-gmaps request for string: NexJ Systems Inc., Toronto, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=NexJ+Systems+Inc.,+Toronto,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: Research in Motion
-	location: Waterloo, Ontario, Canada
-gmaps request for string: Research in Motion, Waterloo, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Research+in+Motion,+Waterloo,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: Top Hat Monocle
-	location: Waterloo, Ontario, Canada
-gmaps request for string: Top Hat Monocle, Waterloo, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Top+Hat+Monocle,+Waterloo,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: RIM
-	location: Waterloo, Ontario, Canada
-gmaps request for string: RIM, Waterloo, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=RIM,+Waterloo,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: Xtreme Mobility
-	location: Toronto, Ontario, Canada
-gmaps request for string: Xtreme Mobility, Toronto, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Xtreme+Mobility,+Toronto,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: Ontario Teachers' Pension Plan
-	location: Toronto, Ontario, Canada
-gmaps request for string: Ontario Teachers' Pension Plan, Toronto, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Ontario+Teachers'+Pension+Plan,+Toronto,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: Bioinformatics Solutions Inc.
-	location: Waterloo, Ontario, Canada
-gmaps request for string: Bioinformatics Solutions Inc., Waterloo, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Bioinformatics+Solutions+Inc.,+Waterloo,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: General Dynamics Canada
-	location: Ottawa, Ontario, Canada
-gmaps request for string: General Dynamics Canada, Ottawa, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=General+Dynamics+Canada,+Ottawa,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: University of Waterloo
-	location: Waterloo, Ontario, Canada
-gmaps request for string: University of Waterloo, Waterloo, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=University+of+Waterloo,+Waterloo,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: Reputation.com Inc.
-	location: Redwood City, California, USA
-gmaps request for string: Reputation.com Inc., Redwood City, California, USA
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Reputation.com+Inc.,+Redwood+City,+California,+USA&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: Office of the Public Guardian and Trustee
-	location: Toronto, Ontario, Canada
-gmaps request for string: Office of the Public Guardian and Trustee, Toronto, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Office+of+the+Public+Guardian+and+Trustee,+Toronto,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: Rockwell Automation
-	location: Cambridge, Ontario, Canada
-gmaps request for string: Rockwell Automation, Cambridge, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Rockwell+Automation,+Cambridge,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: BMO
-	location: Toronto, Ontario, Canada
-gmaps request for string: BMO, Toronto, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=BMO,+Toronto,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: Qualcomm 
-	location: Boulder, Colorado, USA
-gmaps request for string: Qualcomm , Boulder, Colorado, USA
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Qualcomm+,+Boulder,+Colorado,+USA&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading file: Systems Design Class of 2014 - Employment - Summer 2011 (2A).csv
 Ensuring that our info lines up. If the following dont align, theres an issue:
 name	Name	
@@ -454,96 +120,18 @@ typeOfWork	Type of Work
 industry	Industry	
 sector	Sector (Public/Private)	
 reading a new line
-getting map location
-	company: FreshBooks
-	location: Toronto, Ontario, Canada
-gmaps request for string: FreshBooks, Toronto, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=FreshBooks,+Toronto,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: ITG Canada Corp (TriAct)
-	location: Toronto, Ontario, Canada
-gmaps request for string: ITG Canada Corp (TriAct), Toronto, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=ITG+Canada+Corp+(TriAct),+Toronto,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: Xtreme Mobility
-	location: Toronto, Ontario, Canada
-gmaps request for string: Xtreme Mobility, Toronto, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Xtreme+Mobility,+Toronto,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: NexJ Systems Inc.
-	location: Toronto, Ontario, Canada
-gmaps request for string: NexJ Systems Inc., Toronto, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=NexJ+Systems+Inc.,+Toronto,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: Achievers (formerly, I Love Rewards Inc.)
-	location: Toronto, Ontario, Canada
-gmaps request for string: Achievers (formerly, I Love Rewards Inc.), Toronto, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Achievers+(formerly,+I+Love+Rewards+Inc.),+Toronto,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: eHealth Ontario
-	location: Toronto, Ontario, Canada
-gmaps request for string: eHealth Ontario, Toronto, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=eHealth+Ontario,+Toronto,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: CIBC
-	location: Toronto, Ontario, Canada
-gmaps request for string: CIBC, Toronto, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=CIBC,+Toronto,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: AMD
-	location: Markham, Ontario, Canada
-gmaps request for string: AMD, Markham, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=AMD,+Markham,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: CIBC
-	location: Toronto, Ontario, Canada
-gmaps request for string: CIBC, Toronto, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=CIBC,+Toronto,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: NexJ Systems Inc.
-	location: Toronto, Ontario, Canada
-gmaps request for string: NexJ Systems Inc., Toronto, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=NexJ+Systems+Inc.,+Toronto,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: General Motors
-	location: Oshawa, Ontario, Canada
-gmaps request for string: General Motors, Oshawa, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=General+Motors,+Oshawa,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: Facebook
-	location: Palo Alto, California, United States
-gmaps request for string: Facebook, Palo Alto, California, United States
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Facebook,+Palo+Alto,+California,+United+States&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: Environment Canada
-	location: Ottawa, Ontario, Canada
-gmaps request for string: Environment Canada, Ottawa, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Environment+Canada,+Ottawa,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
 getting map location
 	company: Engineers Without Borders
@@ -557,106 +145,18 @@ gmaps request for string: Karaga, Northern Region, Ghana
 request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Karaga,+Northern+Region,+Ghana&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
 	response OK
 reading a new line
-getting map location
-	company: Desire2Learn Inc.
-	location: Kitchener, Ontario, Canada
-gmaps request for string: Desire2Learn Inc., Kitchener, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Desire2Learn+Inc.,+Kitchener,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: Desire2Learn Inc.
-	location: Kitchener, Ontario, Canada
-gmaps request for string: Desire2Learn Inc., Kitchener, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Desire2Learn+Inc.,+Kitchener,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: Cisco Systems
-	location: Toronto, Ontario, Canada
-gmaps request for string: Cisco Systems, Toronto, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Cisco+Systems,+Toronto,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: Mozilla
-	location: Mountain View, California, United States
-gmaps request for string: Mozilla, Mountain View, California, United States
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Mozilla,+Mountain+View,+California,+United+States&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: Public Mobile
-	location: Toronto, Ontario, Canada
-gmaps request for string: Public Mobile, Toronto, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Public+Mobile,+Toronto,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: Economical Insurance Group
-	location: Waterloo, Ontario, Canada
-gmaps request for string: Economical Insurance Group, Waterloo, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Economical+Insurance+Group,+Waterloo,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: SkyGrid
-	location: Sunnyvale, California, United States
-gmaps request for string: SkyGrid, Sunnyvale, California, United States
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=SkyGrid,+Sunnyvale,+California,+United+States&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response no results, trying again for location
-getting map location
-	location: Sunnyvale, California, United States
-gmaps request for string: Sunnyvale, California, United States
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Sunnyvale,+California,+United+States&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: Skura Corp
-	location: Oakville, Ontario, Canada
-gmaps request for string: Skura Corp, Oakville, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Skura+Corp,+Oakville,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: The Corporation of the City of Brampton
-	location: Brampton, Ontario, Canada
-gmaps request for string: The Corporation of the City of Brampton, Brampton, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=The+Corporation+of+the+City+of+Brampton,+Brampton,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response no results, trying again for location
-getting map location
-	location: Brampton, Ontario, Canada
-gmaps request for string: Brampton, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Brampton,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: MTS Allstream
-	location: Toronto, Ontario, Canada
-gmaps request for string: MTS Allstream, Toronto, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=MTS+Allstream,+Toronto,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: Open Text Corporation
-	location: Kitchener, Ontario, Canada
-gmaps request for string: Open Text Corporation, Kitchener, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Open+Text+Corporation,+Kitchener,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: RIM
-	location: Waterloo, Ontario, Canada
-gmaps request for string: RIM, Waterloo, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=RIM,+Waterloo,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: Qualcomm
-	location: San Diego, California, USA
-gmaps request for string: Qualcomm, San Diego, California, USA
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Qualcomm,+San+Diego,+California,+USA&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading file: Systems Design Class of 2014 - Employment - Winter 2012 (2B).csv
 Ensuring that our info lines up. If the following dont align, theres an issue:
 name	Name	
@@ -674,85 +174,15 @@ typeOfWork	Type of Work
 industry	Industry	
 sector	Sector (Public/Private)	
 reading a new line
-getting map location
-	company: Allerta Inc.
-	location: Palo Alto, California, USA
-gmaps request for string: Allerta Inc., Palo Alto, California, USA
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Allerta+Inc.,+Palo+Alto,+California,+USA&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response no results, trying again for location
-getting map location
-	location: Palo Alto, California, USA
-gmaps request for string: Palo Alto, California, USA
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Palo+Alto,+California,+USA&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: Environment Canada
-	location: Ottawa, Ontario, Canada
-gmaps request for string: Environment Canada, Ottawa, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Environment+Canada,+Ottawa,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: SkyGrid
-	location: Palo Alto, California, USA
-gmaps request for string: SkyGrid, Palo Alto, California, USA
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=SkyGrid,+Palo+Alto,+California,+USA&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response no results, trying again for location
-getting map location
-	location: Palo Alto, California, USA
-gmaps request for string: Palo Alto, California, USA
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Palo+Alto,+California,+USA&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: Baylis Medical
-	location: Mississauga, Ontario, Canada
-gmaps request for string: Baylis Medical, Mississauga, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Baylis+Medical,+Mississauga,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: Kaleidescape
-	location: Waterloo, Ontario, Canada
-gmaps request for string: Kaleidescape, Waterloo, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Kaleidescape,+Waterloo,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: Brass Rails
-	location: Toronto, Ontario, Canada
-gmaps request for string: Brass Rails, Toronto, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Brass+Rails,+Toronto,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: BelAir Networks
-	location: Kanata, Ontario, Canada
-gmaps request for string: BelAir Networks, Kanata, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=BelAir+Networks,+Kanata,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: Microsoft Corporation
-	location: Seattle, Washington, USA
-gmaps request for string: Microsoft Corporation, Seattle, Washington, USA
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Microsoft+Corporation,+Seattle,+Washington,+USA&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: PWC
-	location: Toronto, Ontario, Canada
-gmaps request for string: PWC, Toronto, Ontario, Canada
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=PWC,+Toronto,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
-getting map location
-	company: None
-	location: , , Australia/New Zealand
-gmaps request for string: None, , , Australia/New Zealand
-request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=None,+,+,+Australia/New+Zealand&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response OK
 reading a new line
 getting map location
 	company: Rocscience
@@ -766,343 +196,358 @@ getting map location
 	location: Toronto, Ontario, Canada
 gmaps request for string: Careerify, Toronto, Ontario, Canada
 request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Careerify,+Toronto,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response error: OVER_QUERY_LIMIT
+	response OK
 reading a new line
 getting map location
 	company: Ooyala
 	location: Mountain View, California, USA
 gmaps request for string: Ooyala, Mountain View, California, USA
 request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Ooyala,+Mountain+View,+California,+USA&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response error: OVER_QUERY_LIMIT
+	response OK
 reading a new line
 getting map location
 	company: SkyGrid
 	location: Palo Alto, California, USA
 gmaps request for string: SkyGrid, Palo Alto, California, USA
 request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=SkyGrid,+Palo+Alto,+California,+USA&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response error: OVER_QUERY_LIMIT
+	response no results, trying again for location
+getting map location
+	location: Palo Alto, California, USA
+gmaps request for string: Palo Alto, California, USA
+request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Palo+Alto,+California,+USA&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
+	response OK
 reading a new line
 getting map location
 	company: Square, Inc.
 	location: San Fransisco, California, USA
 gmaps request for string: Square, Inc., San Fransisco, California, USA
 request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Square,+Inc.,+San+Fransisco,+California,+USA&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response error: OVER_QUERY_LIMIT
+	response OK
 reading a new line
 getting map location
 	company: CIBC
 	location: Toronto, Ontario, Canada
 gmaps request for string: CIBC, Toronto, Ontario, Canada
 request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=CIBC,+Toronto,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response error: OVER_QUERY_LIMIT
+	response OK
 reading a new line
 getting map location
 	company: Open Text
 	location: Waterloo, Ontario, Canada
 gmaps request for string: Open Text, Waterloo, Ontario, Canada
 request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Open+Text,+Waterloo,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response error: OVER_QUERY_LIMIT
+	response OK
 reading a new line
 getting map location
 	company: Broadcom
 	location: Sunnyvale, California, USA
 gmaps request for string: Broadcom, Sunnyvale, California, USA
 request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Broadcom,+Sunnyvale,+California,+USA&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response error: OVER_QUERY_LIMIT
+	response OK
 reading a new line
 getting map location
 	company: École Nationale de l'Aviation Civile
 	location: Toulouse, , France
 gmaps request for string: École Nationale de l'Aviation Civile, Toulouse, , France
 request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=École+Nationale+de+l'Aviation+Civile,+Toulouse,+,+France&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response error: OVER_QUERY_LIMIT
+	response OK
 reading a new line
 getting map location
 	company: OLG
 	location: Toronto, Ontario, Canada
 gmaps request for string: OLG, Toronto, Ontario, Canada
 request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=OLG,+Toronto,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response error: OVER_QUERY_LIMIT
+	response OK
 reading a new line
 getting map location
 	company: NexJ Systems Inc.
 	location: Toronto, Ontario, Canada
 gmaps request for string: NexJ Systems Inc., Toronto, Ontario, Canada
 request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=NexJ+Systems+Inc.,+Toronto,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response error: OVER_QUERY_LIMIT
+	response OK
 reading a new line
 getting map location
 	company: Agfa HealthCare
 	location: Waterloo, Ontario, Canada
 gmaps request for string: Agfa HealthCare, Waterloo, Ontario, Canada
 request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Agfa+HealthCare,+Waterloo,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response error: OVER_QUERY_LIMIT
+	response OK
 reading a new line
 getting map location
 	company: Qualcomm
 	location: San Diego, California, USA
 gmaps request for string: Qualcomm, San Diego, California, USA
 request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Qualcomm,+San+Diego,+California,+USA&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response error: OVER_QUERY_LIMIT
+	response OK
 reading a new line
 getting map location
 	company: Research In Motion
 	location: Waterloo, Ontario, Canada
 gmaps request for string: Research In Motion, Waterloo, Ontario, Canada
 request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Research+In+Motion,+Waterloo,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response error: OVER_QUERY_LIMIT
+	response OK
 reading a new line
 getting map location
 	company: Apple
 	location: Cupertino, California, USA
 gmaps request for string: Apple, Cupertino, California, USA
 request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Apple,+Cupertino,+California,+USA&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response error: OVER_QUERY_LIMIT
+	response OK
 reading a new line
 getting map location
 	company: Pitney Bowes
 	location: Shelton, Conneticut, USA
 gmaps request for string: Pitney Bowes, Shelton, Conneticut, USA
 request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Pitney+Bowes,+Shelton,+Conneticut,+USA&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response error: OVER_QUERY_LIMIT
+	response OK
 reading a new line
 getting map location
 	company: PCL Constructors
 	location: Missisauga, Ontario, Canada
 gmaps request for string: PCL Constructors, Missisauga, Ontario, Canada
 request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=PCL+Constructors,+Missisauga,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response error: OVER_QUERY_LIMIT
+	response OK
 reading a new line
 getting map location
 	company: OLG
 	location: Toronto, Ontario, Canada
 gmaps request for string: OLG, Toronto, Ontario, Canada
 request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=OLG,+Toronto,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response error: OVER_QUERY_LIMIT
+	response OK
 reading a new line
 getting map location
 	company: MyPlanet Digital
 	location: Markham, Ontario, Canada
 gmaps request for string: MyPlanet Digital, Markham, Ontario, Canada
 request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=MyPlanet+Digital,+Markham,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response error: OVER_QUERY_LIMIT
+	response OK
 reading a new line
 getting map location
 	company: Environment Canada
 	location: Ottawa, Ontario, Canada
 gmaps request for string: Environment Canada, Ottawa, Ontario, Canada
 request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Environment+Canada,+Ottawa,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response error: OVER_QUERY_LIMIT
+	response OK
 reading a new line
 getting map location
 	company: Manulife Financial
 	location: Kitchener, Ontario, Canada
 gmaps request for string: Manulife Financial, Kitchener, Ontario, Canada
 request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Manulife+Financial,+Kitchener,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response error: OVER_QUERY_LIMIT
+	response OK
 reading a new line
 getting map location
 	company: RIM
 	location: Waterloo, Ontario, Canada
 gmaps request for string: RIM, Waterloo, Ontario, Canada
 request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=RIM,+Waterloo,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response error: OVER_QUERY_LIMIT
+	response OK
 reading a new line
 getting map location
 	company: CGI Group
 	location: Markham, Ontario, Canada
 gmaps request for string: CGI Group, Markham, Ontario, Canada
 request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=CGI+Group,+Markham,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response error: OVER_QUERY_LIMIT
+	response OK
 reading a new line
 getting map location
 	company: Google
 	location: Mountain View, California, USA
 gmaps request for string: Google, Mountain View, California, USA
 request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Google,+Mountain+View,+California,+USA&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response error: OVER_QUERY_LIMIT
+	response OK
 reading a new line
 getting map location
 	company: Manulife Financial
 	location: Waterloo, Ontario, Canada
 gmaps request for string: Manulife Financial, Waterloo, Ontario, Canada
 request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Manulife+Financial,+Waterloo,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response error: OVER_QUERY_LIMIT
+	response OK
 reading a new line
 getting map location
 	company: PWC
 	location: Toronto, Ontario, Canada
 gmaps request for string: PWC, Toronto, Ontario, Canada
 request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=PWC,+Toronto,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response error: OVER_QUERY_LIMIT
+	response OK
 reading a new line
 getting map location
 	company: Procter & Gamble
 	location: Brockville, Ontario, Canada
 gmaps request for string: Procter & Gamble, Brockville, Ontario, Canada
 request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Procter+&+Gamble,+Brockville,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response error: OVER_QUERY_LIMIT
+	response OK
 reading a new line
 getting map location
 	company: Nulogy
 	location: Toronto, Ontario, Canada
 gmaps request for string: Nulogy, Toronto, Ontario, Canada
 request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Nulogy,+Toronto,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response error: OVER_QUERY_LIMIT
+	response OK
 reading a new line
 getting map location
 	company: SGGG Portfolio Systems
 	location: Toronto, Ontario, Canada
 gmaps request for string: SGGG Portfolio Systems, Toronto, Ontario, Canada
 request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=SGGG+Portfolio+Systems,+Toronto,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response error: OVER_QUERY_LIMIT
+	response OK
 reading a new line
 getting map location
 	company: IMVU
 	location: Palo Alto, California, Canada
 gmaps request for string: IMVU, Palo Alto, California, Canada
 request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=IMVU,+Palo+Alto,+California,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response error: OVER_QUERY_LIMIT
+	response OK
 reading a new line
 getting map location
 	company: Teledyne DALSA
 	location: Waterloo, Ontario, Canada
 gmaps request for string: Teledyne DALSA, Waterloo, Ontario, Canada
 request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Teledyne+DALSA,+Waterloo,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response error: OVER_QUERY_LIMIT
+	response OK
 reading a new line
 getting map location
 	company: Desire2Learn
 	location: Kitchener, Ontario, Canada
 gmaps request for string: Desire2Learn, Kitchener, Ontario, Canada
 request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Desire2Learn,+Kitchener,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response error: OVER_QUERY_LIMIT
+	response OK
 reading a new line
 getting map location
 	company: NexJ Systems Inc.
 	location: Toronto, Ontario, Canada
 gmaps request for string: NexJ Systems Inc., Toronto, Ontario, Canada
 request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=NexJ+Systems+Inc.,+Toronto,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response error: OVER_QUERY_LIMIT
+	response OK
 reading a new line
 getting map location
 	company: PCL Constructors
 	location: St.Catherines, Ontario, Canada
 gmaps request for string: PCL Constructors, St.Catherines, Ontario, Canada
 request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=PCL+Constructors,+St.Catherines,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response error: OVER_QUERY_LIMIT
+	response no results, trying again for location
+getting map location
+	location: St.Catherines, Ontario, Canada
+gmaps request for string: St.Catherines, Ontario, Canada
+request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=St.Catherines,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
+	response OK
 reading a new line
 getting map location
 	company: Baylis Medical
 	location: Mississauga, Ontario, Canada
 gmaps request for string: Baylis Medical, Mississauga, Ontario, Canada
 request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Baylis+Medical,+Mississauga,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response error: OVER_QUERY_LIMIT
+	response OK
 reading a new line
 getting map location
 	company: Mozilla
 	location: Mountain View, California, USA
 gmaps request for string: Mozilla, Mountain View, California, USA
 request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Mozilla,+Mountain+View,+California,+USA&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response error: OVER_QUERY_LIMIT
+	response OK
 reading a new line
 getting map location
 	company: RIM
 	location: Waterloo , Ontario, Canada
 gmaps request for string: RIM, Waterloo , Ontario, Canada
 request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=RIM,+Waterloo+,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response error: OVER_QUERY_LIMIT
+	response OK
 reading a new line
 getting map location
 	company: Qualcomm
 	location: San Diego, California, Canada
 gmaps request for string: Qualcomm, San Diego, California, Canada
 request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Qualcomm,+San+Diego,+California,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response error: OVER_QUERY_LIMIT
+	response OK
 reading a new line
 getting map location
 	company: RIM
 	location: Waterloo, Ontario, Canada
 gmaps request for string: RIM, Waterloo, Ontario, Canada
 request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=RIM,+Waterloo,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response error: OVER_QUERY_LIMIT
+	response OK
 reading a new line
 getting map location
 	company: Industry Canada
 	location: Ottawa, Ontario, Canada
 gmaps request for string: Industry Canada, Ottawa, Ontario, Canada
 request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Industry+Canada,+Ottawa,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response error: OVER_QUERY_LIMIT
+	response OK
 reading a new line
 getting map location
 	company: Self
 	location: , , 
 gmaps request for string: Self, , , 
 request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Self,+,+,+&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response error: OVER_QUERY_LIMIT
+	response OK
 reading a new line
 getting map location
 	company: Bank of America Merrill Lynch
 	location: Toronto, Ontario, Canada
 gmaps request for string: Bank of America Merrill Lynch, Toronto, Ontario, Canada
 request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Bank+of+America+Merrill+Lynch,+Toronto,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response error: OVER_QUERY_LIMIT
+	response OK
 reading a new line
 getting map location
 	company: NileCAT
 	location: Khartoum, , Sudan
 gmaps request for string: NileCAT, Khartoum, , Sudan
 request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=NileCAT,+Khartoum,+,+Sudan&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response error: OVER_QUERY_LIMIT
+	response OK
 reading a new line
 getting map location
 	company: University Health Network
 	location: Toronto, Ontario, Canada
 gmaps request for string: University Health Network, Toronto, Ontario, Canada
 request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=University+Health+Network,+Toronto,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response error: OVER_QUERY_LIMIT
+	response no results, trying again for location
+getting map location
+	location: Toronto, Ontario, Canada
+gmaps request for string: Toronto, Ontario, Canada
+request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Toronto,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
+	response OK
 reading a new line
 getting map location
 	company: Willow Garage
 	location: Palo Alto, California, USA
 gmaps request for string: Willow Garage, Palo Alto, California, USA
 request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Willow+Garage,+Palo+Alto,+California,+USA&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response error: OVER_QUERY_LIMIT
+	response OK
 reading a new line
 getting map location
 	company: BMO Capital Markets
 	location: Toronto, Ontario, Canada
 gmaps request for string: BMO Capital Markets, Toronto, Ontario, Canada
 request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=BMO+Capital+Markets,+Toronto,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response error: OVER_QUERY_LIMIT
+	response OK
 reading a new line
 getting map location
 	company: Transportation Canada
 	location: Ottawa, Ontario, Canada
 gmaps request for string: Transportation Canada, Ottawa, Ontario, Canada
 request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Transportation+Canada,+Ottawa,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response error: OVER_QUERY_LIMIT
+	response OK
 reading a new line
 getting map location
 	company: PWC
 	location: Toronto, Ontario, Canada
 gmaps request for string: PWC, Toronto, Ontario, Canada
 request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=PWC,+Toronto,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response error: OVER_QUERY_LIMIT
+	response OK
 reading a new line
 getting map location
 	company: Environment Canada
 	location: Ottawa, Ontario, Canada
 gmaps request for string: Environment Canada, Ottawa, Ontario, Canada
 request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Environment+Canada,+Ottawa,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response error: OVER_QUERY_LIMIT
+	response OK
 reading a new line
 getting map location
 	company: Facebook
 	location: Toronto, Ontario, Canada
 gmaps request for string: Facebook, Toronto, Ontario, Canada
 request string: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Facebook,+Toronto,+Ontario,+Canada&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk
-	response error: OVER_QUERY_LIMIT
+	response OK
 reading a new line
 getting map location
 	company: Reputation.com Inc. 
