@@ -2,6 +2,7 @@
 import simplejson as json
 from urllib2 import urlopen
 import csv
+import uuid
 
 # Open log
 log = open("log.txt", 'w')
@@ -49,7 +50,6 @@ def getLocation(city, prov, country, company = None):
 	else:
 		rec('\tresponse error: ' + status + '\n')
 		return None
-
 
 
 
@@ -116,6 +116,7 @@ for f in range(len(fileNames)):
 			# if name doesn't exist, make it
 			if not name in profiles:
 				profiles[name] = {}
+				profiles[name]['id'] = str(uuid.uuid1())
 
 			# Create an object for the term they are in
 			if not termNo in profiles[name]:
