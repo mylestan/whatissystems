@@ -9,19 +9,7 @@ var content = {
 		'section' : 'about',
 		'cssId' : "initiatives",
 		'detailTitle' : 'Initiatives',
-		'detailContent': '<p>The Systems Design Engineering program tends to attract innovative thinkers with a desire to make a dent in the world. The program\'s focus on high-level thinking while allowing students to customize it to their interests accelerates their ability to follow their passions and make an impact. Here are just a few of the successful companies started by systems graduates. </p>
-							<h2>Janna Systems</h2>
-							<p>Customer relationship management software for the financial industry. Acquired for $1.4 Billion, largest purchase of a Canadian company! Founder: Bill Tatham</p>
-							<h2>Desire2Learn</h2>
-							<p>Enterprise eLearning solutions and learning management systems. Founder: John Baker</p>
-							<h2>NexJ Systems</h2>
-							<p>Customer relationship management (CRM) solutions for financial services, insurance, and healthcare. Founder: Bill Tatham</p>
-							<h2>Vidyard</h2>
-							<p>Video marketing and sales enablement platform. Founder: Michael Litt</p>
-							<h2>Pebble</h2>
-							<p>Android and iPhone smartwatch. Founder: Eric Migicovsky</p>
-							<h2>Loose Button</h2>
-							<p>Discover, sample, and purchase beauty and lifestyle products online. Founder: Ray Cao</p>'
+		'detailContent': '<p>The Systems Design Engineering program tends to attract innovative thinkers with a desire to make a dent in the world. The program\'s focus on high-level thinking while allowing students to customize it to their interests accelerates their ability to follow their passions and make an impact. Here are just a few of the successful companies started by systems graduates. </p><h2>Janna Systems</h2><p>Customer relationship management software for the financial industry. Acquired for $1.4 Billion, largest purchase of a Canadian software company! Founder: Bill Tatham</p><br /><a href="http://www.desire2learn.com/" target="_blank"><img src="res/img/logos/d2l.jpg" height="50px"></a><p>Enterprise eLearning solutions and learning management systems. Founder: John Baker</p><br /><a href="http://www.nexj.com/" target="_blank"><img src="res/img/logos/nexj.png" height="40px"></a><p>Customer relationship management (CRM) solutions for financial services, insurance, and healthcare. Founder: Bill Tatham</p><br /><a href="http://www.vidyard.com/" target="_blank"><img src="res/img/logos/vidyard.jpg" height="40px"></a><p>Video marketing and sales enablement platform. Founder: Michael Litt</p><br /><a href="https://getpebble.com/" target="_blank"><img src="res/img/logos/pebble.png" height="40px"></a><p>Android and iPhone smartwatch. Founder: Eric Migicovsky</p><br /><a href="https://www.loosebutton.com" target="_blank"><img src="res/img/logos/loosebutton.png" height="40px"></a><p>Discover, sample, and purchase beauty and lifestyle products online. Founder: Ray Cao</p>'
 	},
 	'syde-vs-the-rest' : {
 		'section' : 'about',
