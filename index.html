@@ -253,6 +253,48 @@ p{
 	font-size: 1.5em;
 }
 
+
+/****** Timeline *****/
+.timeline-entry{
+	width: 100%;
+	margin-top: 15px;
+}
+
+.timeline-date{
+	width: 10%;
+	float: left;
+}
+
+.timeline-date p{
+	font-size: 3em;
+	font-weight: ;
+	color: #999 !important;
+	display: block;
+}
+
+.timeline-connector{
+	width: 10%;
+	float: left;
+	margin-top: 20px;
+	border-top-style: solid;
+	border-top-width: 2px;
+	border-top-color: #999;
+	display: block;
+}
+
+.timeline-content{
+	width: 75%;
+	float: left;
+
+	padding-left: 5px;
+
+	border-left-style: solid;
+	border-left-width: 2px;
+	border-left-color: #999;
+	display:block;
+}
+
+
 /****** Footer *****/
 #footer{
 	width: 960px;
@@ -327,6 +369,26 @@ p{
 
 #popup-content p{
 	color: #000;
+}
+
+#popup-content a:link{
+	color: #777;
+	text-decoration: none;
+}
+
+#popup-content a:visited{
+	color: #777;
+	text-decoration: none;
+}
+
+#popup-content a:hover{
+	color: #999;
+	text-decoration: none;
+}
+
+#popup-content a:active{
+	color: #777;
+	text-decoration: none;
 }
 
 #popup-title{
@@ -427,9 +489,13 @@ p.location-text{
 				<img src="res/design_symposium.jpg">
 				<h3>Design Projects</h3>
 			</div>
-			<div class="tile tile-wide" id="syde-vs-the-rest" onclick="showPopup('syde-vs-the-rest')">
+			<div class="tile tile-square" id="syde-vs-the-rest" onclick="showPopup('syde-vs-the-rest')">
 				<img src="res/systems_design_logo.png">
 				<h3>SYDE v.s. The Rest</h3>
+			</div>
+			<div class="tile tile-square" id="our-history" onclick="showPopup('our-history')">
+				<img src="res/tile-our-history.png">
+				<h3>Our History</h3>
 			</div>
 		</div>
 	</div> <!-- #about -->
@@ -480,7 +546,7 @@ p.location-text{
 	<!-- the popup that will store the content -->
 	<div id="popup-background"></div>
 	<div id="popup">
-		<h2 id="popup-title">[header]</h2>
+		<h2 id="popup-title"><!--[header]-->Our History</h2>
 		<h2 id="popup-exit">x</h2>
 		<div class="clear"></div>
 		<div id="popup-content">
@@ -668,9 +734,11 @@ p.location-text{
 		var cssTag = "#" + content[cssId].section;
 
 		console.log("show popup called on " + cssTag);
+
 		//populate the popup with the info
 		document.getElementById("popup-title").innerHTML = content[cssId].detailTitle;
 		document.getElementById("popup-content").innerHTML = content[cssId].detailContent;
+
 		// Scroll to over the tilepage to which the content belongs
 		console.log('offset of the section is: ' + $(cssTag).offset().top);
 		console.log('scrollTop is: ' + $(window).scrollTop());
