@@ -15,7 +15,7 @@ var content = {
 		'section' : 'about',
 		'cssId' : 'syde-vs-the-rest',
 		'detailTitle' : 'SYDE v.s. The Rest',
-		'detailContent': '<p>What makes us different from the traditional engineering disciplines? The numbers show it all. (Stats)</p>'
+		'detailContent': '<p>Systems Design Engineering has been said to be similar to Mechatronics, Software, Computer, and Management Engineering. In fact, they\'re quite different, and the numbers show it all!</p><img src="res/enrollment.png" /><p>Source: https://uwaterloo.ca/engineering/about/faculty-statistics</p>'
 	},
 	'design-projects' : {
 		'section' : 'about',
