@@ -794,7 +794,7 @@ p.location-text{
 			  				//Make the content string, including the search URL
 			  				var searchURL = "https://www.google.com/?#q=" + thisProfile.employer.split(' ').join('+'); // make the google search string
 
-			  				thisProfile.contentString = "<div class='info-window'>" + "<h1>" + thisProfile.title + "</h1>" + "<a href=" + searchURL + " target='_blank'>" + thisProfile.employer + "</a>" + "<p>Term " + term + "/6 (<a href='#'>see all</a>).</p>" + "<p class='location-text'>" + thisProfile.city + ', ' + thisProfile.province + ', ' + thisProfile.country + "</p>" + "</div>";
+			  				thisProfile.contentString = "<div class='info-window'>" + "<h1>" + thisProfile.title + "</h1>" + "<a href=" + searchURL + " target='_blank'>" + thisProfile.employer + "</a>" + "<p>Term " + thisProfile.termNumber + "/6 (<a href='#'>see all</a>).</p>" + "<p class='location-text'>" + thisProfile.city + ', ' + thisProfile.province + ', ' + thisProfile.country + "</p>" + "</div>";
 			  				//thisProfile.contentString = "<div class='info-window'><h1><a href='#'>4/6:</a> Software Engineer at <a href='#'>QualComm</a></h1><p>Boulder, Colorado, USA</p>";
 
 							// Add listener
