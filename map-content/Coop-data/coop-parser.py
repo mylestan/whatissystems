@@ -1,8 +1,8 @@
 # imports
 import simplejson as json
-from urllib2 import urlopen
+from urllib2 import urlopen, URLError
 import csv
-import uuid
+import hashlib
 
 # Open log
 log = open("log.txt", 'w')
@@ -19,8 +19,13 @@ def mapsRequest(string):
 	rec('gmaps request for string: ' + string + '\n')
 	request = url % string.replace(' ', '+')
 	rec('request string: ' + request + '\n')
-	response = urlopen(request)
-	return json.load(response)
+
+	try:
+		response = urlopen(request)
+	except URLError, e:
+		rec('URL request failed. Reason: ' + e.reason)
+	else:
+		return json.load(response)
 
 # function to return the map-location object for a co-op term, given the company and the location. keep this logic out of the main loop
 def getLocation(city, prov, country, company = None):
@@ -57,20 +62,38 @@ def getLocation(city, prov, country, company = None):
 url = 'https://maps.googleapis.com/maps/api/place/textsearch/json?query=%s&sensor=false&key=AIzaSyB0Ov2yUS0UKwn1gZZQHpkqCMh4n_iRhtk'
 
 fileNames = []
-fileNames.append("Systems Design Class of 2014 - Employment - Winter 2010 (1A).csv")
-fileNames.append("Systems Design Class of 2014 - Employment - Fall 2010 (1B).csv")
-fileNames.append("Systems Design Class of 2014 - Employment - Summer 2011 (2A).csv")
-fileNames.append("Systems Design Class of 2014 - Employment - Winter 2012 (2B).csv")
-fileNames.append("Systems Design Class of 2014 - Employment - Fall 2012 (3A).csv")
-fileNames.append("Systems Design Class of 2014 - Employment - Summer 2013 (3B).csv")
+
+# 2014
+fileNames.append("Systems Design Engineering Class of 2014 - Employment - Winter 2010 (1A).csv")
+fileNames.append("Systems Design Engineering Class of 2014 - Employment - Fall 2012 (3A).csv")
+fileNames.append("Systems Design Engineering Class of 2014 - Employment - Summer 2011 (2A).csv")
+fileNames.append("Systems Design Engineering Class of 2014 - Employment - Summer 2013 (3B).csv")
+fileNames.append("Systems Design Engineering Class of 2014 - Employment - Winter 2010 (1A).csv")
+fileNames.append("Systems Design Engineering Class of 2014 - Employment - Winter 2012 (2B).csv")
+
+# 2015
+fileNames.append("Systems Design Engineering Class of 2015 - Employment - %231 (1A, Winter 2011).csv")
+fileNames.append("Systems Design Engineering Class of 2015 - Employment - %232 (1B, Fall 2011).csv")
+fileNames.append("Systems Design Engineering Class of 2015 - Employment - %233 (2A, Summer 2012).csv")
+fileNames.append("Systems Design Engineering Class of 2015 - Employment - %234 (2B, Winter 2013).csv")
+fileNames.append("Systems Design Engineering Class of 2015 - Employment - %235 (3A, Fall 2013).csv")
+
+# 2016
+fileNames.append("Systems Design Engineering Class of 2016 - Employment - %231 (1A, Winter 2012).csv")
+fileNames.append("Systems Design Engineering Class of 2016 - Employment - %232 (1B, Fall 2012).csv")
+fileNames.append("Systems Design Engineering Class of 2016 - Employment - %233 (2A, Summer 2013).csv")
+fileNames.append("Systems Design Engineering Class of 2016 - Employment - %234 (2B, Winter 2014).csv")
+
+# 2017 (they haven't filled anything in yet...)
+
+# 2018
+fileNames.append("Systems Design Engineering Class of 2018 - Employment - %231 (1A, Winter 2014).csv")
 
 # Read the result data into an object
 with open('coop-profiles.txt') as pf:
 	profiles = json.loads(pf.read())
 	if not profiles:
 		profiles = {}
-
-
 
 # THE FUN BEGINS HERE!!!
 # Iterate through the co-op data files
@@ -79,67 +102,45 @@ for f in range(len(fileNames)):
 	with open(fileNames[f]) as csvFile:
 		fileReader = csv.reader(csvFile)
 		# Read first line, and print to confirm that these match:
-		cols = ['name', 'termNumber', 'isWorking', 'title', 'employer', 'jobPrevious', 'employerPrevious', 'latlng', 'city', 'province', 'country', 'typeOfWork', 'industry', 'sector']
-		fileCols = fileReader.next()
-		# rec('file columns: ' + fileCols + '\n')
-		# fileColsArray = fileCols.split(',')
+		#cols = ['name', 'termNumber', 'isWorking', 'title', 'employer', 'jobPrevious', 'employerPrevious', 'latlng', 'city', 'province', 'country', 'typeOfWork', 'industry', 'sector']
 
-		helperCols = fileReader.next()
-		# rec('helper columns: ' + helperCols + '\n')
-		# helperColsArray = helperCols.split(',')
-
-		rec('Ensuring that our info lines up. If the following dont align, theres an issue:\n')
-		for i in range(len(cols)):
-			rec(cols[i])
-			rec('\t')
-			rec(fileCols[i])
-			rec('\t')
-			rec(helperCols[i])
-			rec('\n')
+		fileCols = fileReader.next() # First row is the titles: ignore
+		propertyCols = fileReader.next() # second row is the technical property names: use this to build the properties!
+		helperCols = fileReader.next() # Third row is the helper text: ignore
 
 		# Iterate through every line in the data file
 		for infoArray in fileReader:
 			rec('reading a new line\n')
 
-			# Turn the CSV line into an array
-			name = infoArray[0]
-			termNo = infoArray[1]
-			working = True if infoArray[2] == 'Yes' else False
-			title = infoArray[3]
-			employer = infoArray[4]
-			jobPrevious = infoArray[5]
-			companyPrevious = infoArray[6]
-			city = infoArray[8]
-			prov = infoArray[9]
-			country = infoArray[10]
+			# Read the row into a dict
+			row={}
+			for colIndex in range(len(propertyCols)):
+				row[propertyCols[colIndex]] = infoArray[colIndex] # For each column in the sheet, we make a property for the 'row' with the appropriate property name.
 
-			# if name doesn't exist, make it
-			if not name in profiles:
-				profiles[name] = {}
-				profiles[name]['id'] = str(uuid.uuid1())
+			# We assume that the row has these properties. They are necessary for creating the JSON structure
+			name = row['name']
+			year = row['year']
+			term = row['term']
+			termNumber = row['termNumber']
 
-			# Create an object for the term they are in
-			if not termNo in profiles[name]:
-				profiles[name][termNo] = {}
+			nameHash = hashlib.sha224(name).digest().encode("hex") # hash the name
+			termHash = hashlib.sha224(year + term).digest().encode("hex") # Hash the time of the term
 
-			# Add the info. Overwrite in this case
-			profiles[name][termNo]['working'] = working
-			profiles[name][termNo]['termNumber'] = termNo
-			profiles[name][termNo]['title'] = title
-			profiles[name][termNo]['employer'] = employer
-			profiles[name][termNo]['jobPrevious'] = jobPrevious
-			profiles[name][termNo]['companyPrevious'] = companyPrevious
-			profiles[name][termNo]['city'] = city
-			profiles[name][termNo]['province'] = prov
-			profiles[name][termNo]['country'] = country
+			if not nameHash in profiles: # if name doesn't exist, make it
+				profiles[nameHash] = {}
 
-			# if map-location doesn't exist, write it
-			if not 'mapLocation' in profiles[name][termNo]:
-				location = getLocation(city, prov, country, employer)
+			if not termHash in profiles[nameHash]: # If term doesn't exist, make it
+				profiles[nameHash][termHash] = {}
+
+			for propertyKey in row: # Create or update all of the properties in the term
+				if propertyKey is not 'name': # We do not add their name to the list. PRIVACY!
+					profiles[nameHash][termHash][propertyKey] = row[propertyKey]
+
+			if not 'mapLocation' in profiles[nameHash][termHash]: # if map-location doesn't exist, write it
+				location = getLocation(row['city'], row['province'], row['country'], row['employer'])
 				if location:
-					profiles[name][termNo]['mapLocation'] = location
+					profiles[nameHash][termHash]['mapLocation'] = location
 
-			# End of if map-location
 		# End of infoArray in fileReader
 	# End of with statement for csv
 # End of file loop
@@ -152,8 +153,4 @@ pf.write(json.dumps(profiles))
 pf.close()
 
 log.close()
-
-# ???
-# PROFIT
-
-# TODO
+	
