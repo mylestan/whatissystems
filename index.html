@@ -230,6 +230,11 @@ p{
 	width: 620px;
 }
 
+.tile-half{
+	height: 520px;
+	width: 460px;
+}
+
 .tile-full{
 	position: relative;
 	height: 520px;
@@ -267,7 +272,7 @@ p{
 
 .timeline-date p{
 	font-size: 3em;
-	font-weight: ;
+	font-weight: normal;
 	color: #999 !important;
 	display: block;
 }
@@ -393,7 +398,7 @@ p{
 
 #popup-title{
 	float: left;
-	width: 900	px;
+	width: 900px;
 	padding: 10px;
 	margin: 0;
 	font-size: 1.5em;
@@ -481,21 +486,21 @@ p.location-text{
 				<img src="res/school_logo.jpg">
 				<h3>What the School Says</h3>
 			</div>
-			<div class="tile tile-square" id="initiatives" onclick="showPopup('initiatives')">
+			<!-- <div class="tile tile-square" id="initiatives" onclick="showPopup('initiatives')">
 				<img src="res/initiatives.jpg">
 				<h3>Initiatives</h3>
-			</div>
+			</div> -->
 			<div class="tile tile-square" id="design-projects" onclick="showPopup('design-projects')">
 				<img src="res/design_symposium.jpg">
 				<h3>Design Projects</h3>
 			</div>
-			<div class="tile tile-square" id="syde-vs-the-rest" onclick="showPopup('syde-vs-the-rest')">
-				<img src="res/systems_design_logo.png">
-				<h3>SYDE v.s. The Rest</h3>
-			</div>
 			<div class="tile tile-square" id="our-history" onclick="showPopup('our-history')">
 				<img src="res/tile-our-history.png">
 				<h3>Our History</h3>
+			</div>
+			<div class="tile tile-wide" id="syde-vs-the-rest" onclick="showPopup('syde-vs-the-rest')">
+				<img src="res/systems_design_logo.png">
+				<h3>SYDE v.s. The Rest</h3>
 			</div>
 		</div>
 	</div> <!-- #about -->
@@ -524,13 +529,22 @@ p.location-text{
 	<div class="clear"></div>
 	<div class="page" id="work">
 		<div class="content">
-			<div class="left">
+			<!-- <div class="left">
 				<h2 class="content-title">We build the world.</h2>
 			</div>
 			<div class="right content-controls" style="">
 				<p><a class="toggle-active" id="linkedin-data" onclick="hideCoopMap();showLinkedInMap();">All</a> | <a class="toggle" id="coop-data" onclick="hideLinkedInMap();showCoopMap();">Co-op</a></p>
 			</div>
 			<div class="tile-full" id="map-canvas">
+			</div> -->
+			<h2 class="content-title">We build the world.</h2>
+			<div class="tile tile-half" id="careers" onclick="">
+				<img src="res/img/tiles/careers.png">
+				<h3>Careers</h3>
+			</div>
+			<div class="tile tile-half" id="initiatives" onclick="showPopup('initiatives')">
+				<img src="res/img/tiles/innovation.png">
+				<h3>Initiatives</h3>
 			</div>
 		</div>
 	</div> <!-- #about -->
@@ -546,7 +560,7 @@ p.location-text{
 	<!-- the popup that will store the content -->
 	<div id="popup-background"></div>
 	<div id="popup">
-		<h2 id="popup-title"><!--[header]-->Our History</h2>
+		<h2 id="popup-title">[header]</h2>
 		<h2 id="popup-exit">x</h2>
 		<div class="clear"></div>
 		<div id="popup-content">
@@ -562,7 +576,6 @@ p.location-text{
 	<script type="text/javascript" src="res/jquery.localscroll-1.2.7.js"></script>
 	<script type="text/javascript" src="res/page-content.js"></script>
 	<script type="text/javascript" src="map-content/linkedIn-data/profiles.js"></script>
-	<script type="text/javascript" src="map-content/Coop-data/coop-profiles.js"></script>
 	<script type="text/javascript">
 
 	// Globals :(
@@ -577,7 +590,7 @@ p.location-text{
 
 	// Ready function
 	$(document).ready(function(){
-		makeMap();
+		//makeMap();
 
 		// Load the LinkedIn data
 		$.ajax({
@@ -863,7 +876,6 @@ p.location-text{
 			  				var searchURL = "https://www.google.com/?#q=" + thisProfile.employer.split(' ').join('+'); // make the google search string
 
 			  				thisProfile.contentString = "<div class='info-window'>" + "<h1>" + thisProfile.title + "</h1>" + "<a href=" + searchURL + " target='_blank'>" + thisProfile.employer + "</a>" + "<p>Term " + thisProfile.termNumber + "/6 (<a href='#'>see all</a>).</p>" + "<p class='location-text'>" + thisProfile.city + ', ' + thisProfile.province + ', ' + thisProfile.country + "</p>" + "</div>";
-			  				//thisProfile.contentString = "<div class='info-window'><h1><a href='#'>4/6:</a> Software Engineer at <a href='#'>QualComm</a></h1><p>Boulder, Colorado, USA</p>";
 
 							// Add listener
 							google.maps.event.addListener(thisProfile.marker, 'click', makeInfoWindow(thisProfile, map));
