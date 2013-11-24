@@ -299,6 +299,11 @@ p{
 	display:block;
 }
 
+#map-canvas{
+	width: 940px;
+	height: 520px;
+}
+
 
 /****** Footer *****/
 #footer{
@@ -674,7 +679,7 @@ p.location-text{
 					<h2 class="popup-exit" onclick="hidePopup()">x</h2>
 					<div class="clear"></div>
 					<div class="popup-content">
-						<p>MAPSONMAPSONMAPS</p>
+						<div class="" id="map-canvas"></div>
 					</div>
 				</div>
 			</div>
@@ -751,7 +756,6 @@ p.location-text{
 	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=visualization&sensor=false"></script>
 	<script type="text/javascript" src="res/jquery.scrollTo-1.4.3.1.js"></script>
 	<script type="text/javascript" src="res/jquery.localscroll-1.2.7.js"></script>
-	<script type="text/javascript" src="res/page-content.js"></script>
 	<script type="text/javascript" src="map-content/linkedIn-data/profiles.js"></script>
 	<script type="text/javascript">
 
@@ -767,7 +771,7 @@ p.location-text{
 
 	// Ready function
 	$(document).ready(function(){
-		//makeMap();
+		makeMap();
 
 		// Load the LinkedIn data
 		$.ajax({
@@ -779,7 +783,7 @@ p.location-text{
 			console.log("AJAX for linkedIn profiles - Success!");
 			console.log(data);
 			linkedInData = data;
-			populateLinkedInData();
+			// populateLinkedInData();
 			showLinkedInMap();
 		})
 		.fail(function(data){
@@ -797,7 +801,7 @@ p.location-text{
 			console.log("AJAX for co-op profiles - Success!");
 			console.log(data);
 			coopData = data;
-			populateCoopData();
+			// populateCoopData();
 		})
 		.fail(function(data){
 			console.log("AJAX for co-op profiles - Fail!");
@@ -870,7 +874,6 @@ p.location-text{
 		    mapTypeId: google.maps.MapTypeId.MAP
   		};
   		map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions); // map is global?
-  		// populateMap(map, mapData);
 	}
 
 	// This function moves the backgroud and repositions the splash header to ensure it stays at the top of the page.
@@ -930,6 +933,9 @@ p.location-text{
 		}
 
 		$('body').css({'overflow':'hidden'}); // prevents the main body from scrolling
+
+		// Call a redraw for the maps to properly render their size
+		google.maps.event.trigger(map, 'resize');
 	}
 
 	// Hide the popup divs
