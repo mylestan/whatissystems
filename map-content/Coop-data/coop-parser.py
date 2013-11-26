@@ -50,8 +50,12 @@ def getLocation(city, prov, country, company = None):
 		location['lng'] = first['geometry']['location']['lng']
 		return location
 	elif status == "ZERO_RESULTS":
-		rec('\tresponse no results, trying again for location\n')
-		return getLocation(city, prov, country)
+		if company:
+			rec('\tresponse no results, trying again for location\n')
+			return getLocation(city, prov, country)
+		else:
+			rec('\tresponse no results, and no company provided. returning none. Review this entry.\n')
+			return None
 	else:
 		rec('\tresponse error: ' + status + '\n')
 		return None
@@ -84,7 +88,9 @@ fileNames.append("Systems Design Engineering Class of 2016 - Employment - %232 (
 fileNames.append("Systems Design Engineering Class of 2016 - Employment - %233 (2A, Summer 2013).csv")
 fileNames.append("Systems Design Engineering Class of 2016 - Employment - %234 (2B, Winter 2014).csv")
 
-# 2017 (they haven't filled anything in yet...)
+# 2017
+fileNames.append("Systems Design Engineering Class of 2017 - Employment - %231 (1A, Winter 2013).csv")
+fileNames.append("Systems Design Engineering Class of 2017 - Employment - %232 (1B, Fall 2013).csv")
 
 # 2018
 fileNames.append("Systems Design Engineering Class of 2018 - Employment - %231 (1A, Winter 2014).csv")
@@ -140,6 +146,8 @@ for f in range(len(fileNames)):
 				location = getLocation(row['city'], row['province'], row['country'], row['employer'])
 				if location:
 					profiles[nameHash][termHash]['mapLocation'] = location
+				else:
+					rec('no location could be found for ' + row['name'] + ' at ' + ', '.join(row['company'], row['city'], row['province'], row['country']) + '. Please resolve this row.\n')
 
 		# End of infoArray in fileReader
 	# End of with statement for csv
