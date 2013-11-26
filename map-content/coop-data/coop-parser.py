@@ -147,7 +147,7 @@ for f in range(len(fileNames)):
 				if location:
 					profiles[nameHash][termHash]['mapLocation'] = location
 				else:
-					rec('no location could be found for ' + row['name'] + ' at ' + ', '.join(row['company'], row['city'], row['province'], row['country']) + '. Please resolve this row.\n')
+					rec('no location could be found for ' + row['name'] + '. Please resolve this row.\n')
 
 		# End of infoArray in fileReader
 	# End of with statement for csv
