@@ -27,7 +27,7 @@ p{
 }
 
 #background{
-	background: url(res/space_earth_background.png);
+	background: url(res/img/bg/space_earth_background.png);
 	background-repeat: repeat;
 	background-position: 0px 0px;
 	background-attachment: fixed;
@@ -36,7 +36,7 @@ p{
 
 /***** Splash page *****/
 #splash{
-	background: url(res/blurred_background_web.JPG);
+	background: url(res/img/bg/blurred_background_web.JPG);
 	background-repeat: no-repeat;
 	position: top left;
 	background-size: 100% 110%;
@@ -299,7 +299,7 @@ p{
 	display:block;
 }
 
-#map-canvas{
+.map-canvas{
 	width: 940px;
 	height: 520px;
 }
@@ -494,7 +494,7 @@ p.location-text{
 		<div class="content">
 			<h2 class="content-title">Systems design engineers use a design-oriented, interdisciplinary method to solve large, complex problems.</h2>
 			<div class="tile tile-tall" id="what-the-school-says" onclick="showPopup('what-the-school-says')">
-				<img src="res/school_logo.jpg">
+				<img src="res/img/tiles/school_logo.jpg">
 				<h3>What the School Says</h3>
 				<div class="popup" id="popup-what-the-school-says">
 					<h2 class="popup-title">What the School Says</h2>
@@ -510,7 +510,7 @@ p.location-text{
 				</div>
 			</div>
 			<div class="tile tile-square" id="design-projects" onclick="showPopup('design-projects')">
-				<img src="res/design_symposium.jpg">
+				<img src="res/img/tiles/design_symposium.jpg">
 				<h3>Design Projects</h3>
 				<div class="popup" id="popup-design-projects">
 					<h2 class="popup-title">Design Projects</h2>
@@ -524,7 +524,7 @@ p.location-text{
 				</div>
 			</div>
 			<div class="tile tile-square" id="our-history" onclick="showPopup('our-history')">
-				<img src="res/tile-our-history.png">
+				<img src="res/img/tiles/tile-our-history.png">
 				<h3>Our History</h3>
 				<div class="popup" id="popup-our-history">
 					<h2 class="popup-title">Our History</h2>
@@ -596,7 +596,7 @@ p.location-text{
 				</div>
 			</div>
 			<div class="tile tile-wide" id="syde-vs-the-rest" onclick="showPopup('syde-vs-the-rest')">
-				<img src="res/systems_design_logo.png">
+				<img src="res/img/tiles/systems_design_logo.png">
 				<h3>SYDE v.s. The Rest</h3>
 				<div class="popup" id="popup-syde-vs-the-rest">
 					<h2 class="popup-title">Systems Versus the rest</h2>
@@ -616,7 +616,7 @@ p.location-text{
 		<div class="content">
 			<h2 class="content-title">You'll have a blast here.</h2>
 			<div class="tile tile-wide" id="the-6th-floor-of-e5" onclick="showPopup('the-6th-floor-of-e5')">
-				<img src="res/e5.png">
+				<img src="res/img/tiles/e5.png">
 				<h3>Our Space</h3>
 				<div class="popup" id="popup-the-6th-floor-of-e5">
 					<h2 class="popup-title">The 6th Floor of E5</h2>
@@ -627,8 +627,8 @@ p.location-text{
 					</div>
 				</div>
 			</div>
-			<div class="tile tile-square" id="coffeehouse" onclick="showPopup('coffeehouse')">
-				<img src="res/coffeehouse.jpg">
+			<!-- <div class="tile tile-square" id="coffeehouse" onclick="showPopup('coffeehouse')">
+				<img src="res/img/tiles/coffeehouse.jpg">
 				<h3>Coffeehouse</h3>
 				<div class="popup" id="popup-coffeehouse">
 					<h2 class="popup-title">coffeehouse</h2>
@@ -638,9 +638,21 @@ p.location-text{
 						<p>The diversity and hidden talents of systems students are brought out during the Systems Coffeehouse, a talent show held apart from the one the Faculty of Engineering runs. It happens every term as a great break after midterms, and on occasion, teaching assistants and professors will showcase their talent! (Images)</p>
 					</div>
 				</div>
+			</div> -->
+			<div class="tile tile-square" id="coop" onclick="showPopup('coop')">
+				<img src="res/img/tiles/coop.png">
+				<h3>Co-op</h3>
+				<div class="popup" id="popup-coop">
+					<h2 class="popup-title">Go anywhere, try anything. For example:</h2>
+					<h2 class="popup-exit" onclick="hidePopup()">x</h2>
+					<div class="clear"></div>
+					<div class="popup-content">
+						<div class="map-canvas" id="coop-map-canvas"></div>
+					</div>
+				</div>
 			</div>
 			<div class="tile tile-square" id="all-systems-go" onclick="showPopup('all-systems-go')">
-				<img src="res/asg.jpg">
+				<img src="res/img/tiles/asg.jpg">
 				<h3>All Systems Go</h3>
 				<div class="popup" id="popup-all-systems-go">
 					<h2 class="popup-title">All Systems Go</h2>
@@ -652,7 +664,7 @@ p.location-text{
 				</div>
 			</div>
 			<div class="tile tile-wide" id="exchange" onclick="showPopup('exchange')">
-				<img src="res/exchange.jpg">
+				<img src="res/img/tiles/exchange.jpg">
 				<h3>Exchange</h3>
 				<div class="popup" id="popup-exchange">
 					<h2 class="popup-title">exchange</h2>
@@ -685,7 +697,7 @@ p.location-text{
 					<h2 class="popup-exit" onclick="hidePopup()">x</h2>
 					<div class="clear"></div>
 					<div class="popup-content">
-						<div class="" id="map-canvas"></div>
+						<!-- <div class="" id="map-canvas"></div> -->
 					</div>
 				</div>
 			</div>
@@ -761,8 +773,8 @@ p.location-text{
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=visualization&sensor=false"></script>
 
-	<script type="text/javascript" src="res/jquery.scrollTo-1.4.3.1.js"></script>
-	<script type="text/javascript" src="res/jquery.localscroll-1.2.7.js"></script>
+	<script type="text/javascript" src="res/js/jquery.scrollTo-1.4.3.1.js"></script>
+	<script type="text/javascript" src="res/js/jquery.localscroll-1.2.7.js"></script>
 
 	<script type="text/javascript" src="map-content/linkedIn-data/profiles.js"></script>
 	<script type="text/javascript" src="res/js/utils.js"></script>
@@ -775,7 +787,7 @@ p.location-text{
 	var linkedInData = {};
 
 	// var coopArray = new Array();
-	var coopMap = new CoopMap('map-canvas');
+	var coopMap = new CoopMap('coop-map-canvas');
 	var linkedInArray = new Array();
 
 	var infoWindow = new google.maps.InfoWindow();
