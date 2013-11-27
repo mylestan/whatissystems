@@ -698,7 +698,7 @@ p.location-text{
 				<h2 class="popup-exit" onclick="hidePopup()">x</h2>
 				<div class="clear"></div>
 				<div class="popup-content">
-					<!-- <div class="" id="map-canvas"></div> -->
+					<div class="map-canvas" id="linkedin-map-canvas"></div>
 				</div>
 			</div>
 			<div class="tile tile-half" id="initiatives" onclick="showPopup('initiatives')">
@@ -782,23 +782,19 @@ p.location-text{
 	<script type="text/javascript" src="map-content/linkedIn-data/profiles.js"></script>
 	<script type="text/javascript" src="res/js/utils.js"></script>
 	<script type="text/javascript" src="res/js/CoopMap.js"></script>
+	<script type="text/javascript" src="res/js/LinkedinMap.js"></script>
 
 	<script type="text/javascript">
 
 	// Globals :(
-	// var coopData = {};
-	var linkedInData = {};
-
-	// var coopArray = new Array();
+	var linkedinMap = new LinkedinMap('linkedin-map-canvas');
 	var coopMap = new CoopMap('coop-map-canvas');
-	var linkedInArray = new Array();
 
 	var infoWindow = new google.maps.InfoWindow();
 	var infoWindowArray = new Array();
 
 	// Ready function
 	$(document).ready(function(){
-		// makeMap();
 
 		// Load the LinkedIn data
 		$.ajax({
@@ -809,9 +805,8 @@ p.location-text{
 		.done(function(data){
 			console.log("AJAX for linkedIn profiles - Success!");
 			console.log(data);
-			linkedInData = data;
-			// populateLinkedInData();
-			showLinkedInMap();
+			linkedinMap.mapData = data;
+			linkedinMap.generatePoints();
 		})
 		.fail(function(data){
 			console.log("AJAX for linkedIn profiles - Fail!");
@@ -829,8 +824,6 @@ p.location-text{
 			console.log(data);
 			coopMap.mapData = data;
 			coopMap.generatePoints();
-			// coopData = data;
-			// populateCoopData();
 		})
 		.fail(function(data){
 			console.log("AJAX for co-op profiles - Fail!");
@@ -896,15 +889,6 @@ p.location-text{
 		return false;
 	}
 
-	// function makeMap(){
-	// 	var mapOptions = {
-	// 	    zoom: 2,
-	// 	    center: new google.maps.LatLng(43.4722,-80.5472),
-	// 	    mapTypeId: google.maps.MapTypeId.MAP
- //  		};
- //  		map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions); // map is global?
-	// }
-
 	// This function moves the backgroud and repositions the splash header to ensure it stays at the top of the page.
 	function scrollBG(){
 		// vars
@@ -965,6 +949,7 @@ p.location-text{
 
 		// Call a redraw for the maps to properly render their size
 		google.maps.event.trigger(coopMap.map, 'resize');
+		google.maps.event.trigger(linkedinMap.map, 'resize');
 	}
 
 	// Hide the popup divs
@@ -973,181 +958,6 @@ p.location-text{
 		$('#popup-background').fadeOut(200);
 		$('.popup').fadeOut(200);
 		$('body').css({'overflow':'auto'}); // Allows the page to scroll again
-	}
-
-	// This function populates the map
-	function populateLinkedInData(){
-
-		// var latlngs = new Array();
-		var thisProfile;
-		var latlngs = new Array();
-
-		for(profile in linkedInData){
-			if(linkedInData.hasOwnProperty(profile)){
-				if (linkedInData[profile].hasOwnProperty('mapLocation')){
-
-					thisProfile = linkedInData[profile];
-
-					var thisLocation = new Array(thisProfile.mapLocation.lat, thisProfile.mapLocation.lng);
-
-					// If there's already a marker at this location, offset it.
-					if(containsLocation(latlngs, thisLocation)){
-						thisLocation = offset(thisLocation);
-					} else{
-						latlngs.push(thisLocation);
-					}
-
-					// Make a new marker
-					thisProfile.marker = new google.maps.Marker({
-						position: new google.maps.LatLng(thisLocation[0],thisLocation[1]),
-						map: map,
-						title: thisProfile.headline,
-						animation: google.maps.Animation.DROP
-	  				});
-	  				thisProfile.marker.setVisible(false);
-					thisProfile.contentString = "<div class='info-window'>" + "<h1>" + thisProfile.headline + "</h1>" + "<p>" + thisProfile.industry + "</p>" + "<p>" + thisProfile.name + "</p>" + "<p>" + thisProfile.location + "</p>" + "</div>";
-
-					// Add listener
-					google.maps.event.addListener(thisProfile.marker, 'click', makeInfoWindow(thisProfile, map));
-
-					// Add to array
-					linkedInArray.push(thisProfile);
-
-				} else {
-					console.log('Point did not have map location :(');
-				}
-
-			}
-		}
-	}
-
-	// Show and hide functions for the LinkedIn data
-	function showLinkedInMap(){
-		for(var i = 0; i < linkedInArray.length; i++){
-			linkedInArray[i].marker.setVisible(true);
-		}
-		document.getElementById('linkedin-data').className = 'toggle-active';
-	}
-	function hideLinkedInMap(){
-		for(var i = 0; i < linkedInArray.length; i++){
-			linkedInArray[i].marker.setVisible(false);
-		}
-		document.getElementById('linkedin-data').className = 'toggle';
-		infoWindow.close();
-	}
-
-	// function populateCoopData(){
-	// 	// var latlngs = new Array();
-	// 	var thisProfile;
-	// 	var latlngs = new Array();
-	// 	// For each profile
-	// 	for (p in coopData){
-	// 		if(coopData.hasOwnProperty(p)){
-
-	// 			//For each term
-	// 			var profile = coopData[p];
-	// 			for (term in profile){
-	// 				if(profile.hasOwnProperty(term)){
-	// 					if(profile[term].hasOwnProperty('mapLocation')){
-	// 						thisProfile = profile[term];
-	// 						thisProfile.uuid = profile['id'];
-
-	// 						// Check the location and offset if necessary
-	// 						var thisLocation = new Array(thisProfile.mapLocation.lat,thisProfile.mapLocation.lng)
-	// 						if(containsLocation(latlngs, thisLocation)){
-	// 							thisLocation = offset(thisLocation);
-	// 						} else{
-	// 							latlngs.push(thisLocation);
-	// 						}
-
-	// 						// Create the Marker
-	// 						thisProfile.marker = new google.maps.Marker({
-	// 							position: new google.maps.LatLng(thisLocation[0],thisLocation[1]),
-	// 							map: map,
-	// 							title: thisProfile.headline,
-	// 							animation: google.maps.Animation.DROP
-	// 		  				});
-	// 		  				thisProfile.marker.setVisible(false);
-
-	// 		  				//Make the content string, including the search URL
-	// 		  				var searchURL = "https://www.google.com/?#q=" + thisProfile.employer.split(' ').join('+'); // make the google search string
-
-	// 		  				thisProfile.contentString = "<div class='info-window'>" + "<h1>" + thisProfile.title + "</h1>" + "<a href=" + searchURL + " target='_blank'>" + thisProfile.employer + "</a>" + "<p>Term " + thisProfile.termNumber + "/6 (<a href='#'>see all</a>).</p>" + "<p class='location-text'>" + thisProfile.city + ', ' + thisProfile.province + ', ' + thisProfile.country + "</p>" + "</div>";
-
-	// 						// Add listener
-	// 						google.maps.event.addListener(thisProfile.marker, 'click', makeInfoWindow(thisProfile, map));
-
-	// 						// Add to array
-	// 						coopArray.push(thisProfile);
-
-	// 					} else {
-	// 						console.log('Could not map the co-op location :(');
-	// 					}
-	// 				}
-	// 			}
-	// 		}
-	// 	}
-	// }
-
-	// Show and hide functions for the co-op data on the map.
-	// function showCoopMap(){
-	// 	for(var i = 0; i < coopArray.length; i++){
-	// 		coopArray[i].marker.setVisible(true);
-	// 	}
-	// 	document.getElementById('coop-data').className = 'toggle-active';
-	// }
-	// function hideCoopMap(){
-	// 	for(var i = 0; i < coopArray.length; i++){
-	// 		coopArray[i].marker.setVisible(false);
-	// 	}
-	// 	document.getElementById('coop-data').className = 'toggle';
-	// 	infoWindow.close();
-	// }
-
-	// Creates the info window when a marker is clicked
-	function makeInfoWindow(profile, map){
-		return function(){
-			infoWindow.setContent(profile.contentString);
-			infoWindow.open(map, profile.marker);
-		}
-	}
-
-	// Shows all info windows for a specific person
-	function showPath(profile){
-
-	}
-
-	// Simple f'n for searching an array for another array
-	function containsLocation(array, location){
-		for(var i = 0; i < array.length; i++){
-			if (isEqual(array[i], location)){
-				return true;
-			}
-		}
-		return false;
-	}
-
-	// Equal function...I don't know.
-	function isEqual(one, two){
-		if(one.length !== two.length){
-			return false;
-		}
-		for(var i = 0; i < one.length; i++){
-			if(one[i] !== two[i]){
-				return false;
-			}
-		}
-		return true;
-	}
-
-	// Provie an offset location for a marker to prevent stacking
-	function offset(location){
-		var offset = 0.01;
-		var newLocation = new Array();
-		for(var i = 0; i < location.length; i++){
-			newLocation[i] = location[i] + ((offset*Math.random())-(offset/2));
-		}
-		return newLocation;
 	}
 
 	</script>
