@@ -20,3 +20,36 @@ ordinate = function(num){
     }
     return num.toString() + ord;
 };
+
+// Simple f'n for searching an array for another array
+function containsLocation(array, location){
+    for(var i = 0; i < array.length; i++){
+        if (isEqual(array[i], location)){
+            return true;
+        }
+    }
+    return false;
+}
+
+// Equal function...I don't know.
+function isEqual(one, two){
+    if(one.length !== two.length){
+        return false;
+    }
+    for(var i = 0; i < one.length; i++){
+        if(one[i] !== two[i]){
+            return false;
+        }
+    }
+    return true;
+}
+
+// Provie an offset location for a marker to prevent stacking
+function offset(location){
+    var offset = 0.01;
+    var newLocation = new Array();
+    for(var i = 0; i < location.length; i++){
+        newLocation[i] = location[i] + ((offset*Math.random())-(offset/2));
+    }
+    return newLocation;
+}
