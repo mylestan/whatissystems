@@ -1,6 +1,7 @@
 # imports
 import simplejson as json
 from urllib2 import urlopen, URLError
+from datetime import datetime
 import csv
 import hashlib
 
@@ -101,6 +102,10 @@ with open('coop-profiles.txt') as pf:
 	if not profiles:
 		profiles = {}
 
+# Create a csv writer for putting the data into a csv
+pfcsv = open("coop-profiles.csv", "wb")
+pfwriter = csv.writer(pfcsv, delimiter = ",", quotechar = '"', quoting = csv.QUOTE_MINIMAL)
+
 # THE FUN BEGINS HERE!!!
 # Iterate through the co-op data files
 for f in range(len(fileNames)):
@@ -138,6 +143,7 @@ for f in range(len(fileNames)):
 			if not termHash in profiles[nameHash]: # If term doesn't exist, make it
 				profiles[nameHash][termHash] = {}
 
+			# Write all the properties into an object.
 			for propertyKey in row: # Create or update all of the properties in the term
 				if propertyKey is not 'name': # We do not add their name to the list. PRIVACY!
 					profiles[nameHash][termHash][propertyKey] = row[propertyKey]
@@ -148,6 +154,20 @@ for f in range(len(fileNames)):
 					profiles[nameHash][termHash]['mapLocation'] = location
 				else:
 					rec('no location could be found for ' + row['name'] + '. Please resolve this row.\n')
+
+			if 'mapLocation' in profiles[nameHash][termHash]:
+				# write all of the important into into a the csv file as well - this is for trasferring into a database if you wanted.
+				p = profiles[nameHash][termHash] # for ease
+				# calculate the iso date time format
+				if p['term'] == 'winter':
+					m = 1
+				elif p['term'] == 'summer':
+					m = 5
+				else:
+					m = 9
+				isoDateTime = datetime(int(p['year']), m, 1).isoformat("T") + "+00:00"
+				pString = [nameHash, termHash, p['classYear'], isoDateTime, p['termNumber'], p['mapLocation']['lat'], p['mapLocation']['lng'], p['title'], p['employer'], p['employerUrl'], p['city'], p['province'], p['country'], p['industry'], p['description']]
+				pfwriter.writerow(pString)
 
 		# End of infoArray in fileReader
 	# End of with statement for csv
@@ -160,5 +180,7 @@ pf = open('coop-profiles.txt', 'w')
 pf.write(json.dumps(profiles))
 pf.close()
 
+# close the csv
+pfcsv.close()
+
 log.close()
-	
