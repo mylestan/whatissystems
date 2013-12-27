@@ -301,6 +301,13 @@ p{
 	height: 520px;
 }
 
+/***** Pano *****/
+.pano{
+	width: 640px; /* the width we ask for the panos in*/
+	margin: 0 auto; /* so it centers */
+	font-size: 0.8em;
+}
+
 
 /****** Footer *****/
 #footer{
