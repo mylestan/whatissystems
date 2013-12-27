@@ -264,7 +264,7 @@ p{
 }
 
 .timeline-date p{
-	font-size: 3em;
+	font-size: 3em !important;
 	font-weight: normal;
 	color: #999 !important;
 	display: block;
@@ -378,6 +378,8 @@ p{
 
 .popup-content p{
 	color: #000;
+	font-size: 1.2em;
+	margin-bottom: 10px;
 }
 
 .popup-content a:link{
