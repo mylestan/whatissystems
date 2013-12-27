@@ -1,0 +1,453 @@
+html, body {
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+	font: 12px "Century Gothic", "Arial", monospace;
+}
+
+body{
+	overflow: visible; /* Toggle between hidden and visible */
+}
+
+p{
+	margin: 0px;
+}
+
+/* Webkit fix to hide all scrollbars. Mozilla still needs one. Grr.*/
+::-webkit-scrollbar {
+    display: none;
+}
+
+#background{
+	background: url(../img/bg/space_earth_background.png);
+	background-repeat: repeat;
+	background-position: 0px 0px;
+	background-attachment: fixed;
+	position: relative;
+}
+
+/***** Splash page *****/
+#splash{
+	background: url(../img/bg/blurred_background_web.JPG);
+	background-repeat: no-repeat;
+	position: top left;
+	background-size: 100% 110%;
+
+	background-color: gray;	
+	width: 100%;
+	height: 100%;
+
+	z-index: 1000;
+}
+
+#splash h1{
+	color: #fff;
+}
+
+#splash a, #splash p{
+	color: #fff;
+}
+
+#splash #text{
+	margin-top: 20%;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+}
+
+#beta-link{
+	padding-top: 10px;
+	color: #fff;
+}
+
+#beta-login{
+	display: none;
+	margin-top: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+}
+
+/***** NAV *****/
+#nav{
+	width: 100%;
+	height: 50px;
+	background-color: rgb(0,0,0);
+	position: absolute;
+	top: 100%;
+	z-index: 800;
+}
+
+#nav-content{
+	width: 960px;
+	height: 100%;
+	margin: 0 auto;
+}
+
+#nav-content ul{
+	margin-top: 12px;
+}
+
+.nav-link{
+	font-size: 1.5em;
+}
+
+.nav-link:link{
+	color: #CCC;
+	text-decoration: none;
+}
+
+.nav-link:visited{
+	color: #CCC;
+	text-decoration: none;
+}
+
+.nav-link:hover{
+	color: #FFF;
+	text-decoration: none;
+}
+
+.nav-link-active{
+	color: #FFF !important;
+	text-decoration: none;
+}
+
+#title{
+	width: 50%;
+	float:left;
+}
+
+#title p{
+	margin-top: 12px;
+	font-size: 1.5em;
+	color: #FFF;
+}
+
+#links{
+	width: 50%;
+	float:right;
+}
+
+#links ul{
+	list-style-type: none;
+	float:right;
+}
+
+#links li{
+	display: table-cell;
+	padding: 0px 10px;
+}
+
+.page{
+	width: 100%;
+	height: 100%;
+	min-height: 700px; /* height of content + content top margin */
+	min-width: 960px;
+	background:transparent;
+	display: inline-block;
+}
+
+.content{
+	height: 580px;
+	width: 960px;
+	margin:75px auto 0 auto;
+	background-color: rgba(0,0,0,0.5);
+	display: block;
+}
+.content-title{
+	color: #FFF;
+	height: 30px;
+	margin: 0px;
+	padding: 10px 10px 0px 10px;
+	font-weight: normal;
+}
+
+.content-controls{
+	height: 30px;
+	margin: 0px;
+	padding: 10px 10px 0px 0px;
+	font-weight: normal;
+	display: inline-block;
+}
+
+.content-controls{
+	font-size: 18px;
+	color: #CCC;
+}
+
+.content-controls a:link{
+	color: #CCC;
+}
+
+.content-controls a:visited{
+	color: #CCC;
+}
+
+.content-controls a:hover{
+	color: #FFF;
+}
+
+.content-controls a:active{
+	color: #CCC;
+}
+
+.toggle{
+	color: #CCC;
+}
+
+.toggle-active{
+	color: #FFF;
+}
+
+/* To loop through all tile elements */
+.tile{
+	position: relative;
+	margin: 10px 10px;
+	float: left;
+	background-color: rgba(0,0,0,0.5);
+}
+
+.tile-square{
+	height: 250px;
+	width: 300px;
+}
+
+.tile-tall{
+	height: 520px;
+	width: 300px;
+}
+
+.tile-wide{
+	height: 250px;
+	width: 620px;
+}
+
+.tile-half{
+	height: 520px;
+	width: 460px;
+}
+
+.tile-full{
+	position: relative;
+	height: 520px;
+	width: 940px;
+	margin: 10px 10px;
+	float: left;
+	background-color: rgba(0,0,0,0.5);
+}
+
+.tile h3, .tile-tall h3, .tile-wide h3, .tile-full h3{
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	overflow: hidden;
+	margin: 0px 0px;
+	padding: 10px 10px;
+	background-color: rgba(0,0,0,0.5);
+	font-weight: normal;
+
+	color: #FFF;
+	font-size: 1.5em;
+}
+
+
+/****** Timeline *****/
+.timeline-entry{
+	width: 100%;
+	margin-top: 10px;
+	display: block;
+}
+
+.timeline-date{
+	width: 10%;
+	float: left;
+}
+
+.timeline-date p{
+	font-size: 3em !important;
+	font-weight: normal;
+	color: #999 !important;
+	display: block;
+}
+
+.timeline-connector{
+	width: 10%;
+	float: left;
+	margin-top: 20px;
+	border-top-style: solid;
+	border-top-width: 2px;
+	border-top-color: #999;
+	display: block;
+}
+
+.timeline-content{
+	width: 75%;
+	float: left;
+
+	padding-left: 5px;
+
+	border-left-style: solid;
+	border-left-width: 2px;
+	border-left-color: #999;
+	display:block;
+}
+
+.timeline-content p{
+	margin-bottom: 10px;
+}
+
+.map-canvas{
+	width: 940px;
+	height: 520px;
+}
+
+
+/****** Footer *****/
+#footer{
+	width: 960px;
+	height: 25px;
+	margin: 100px auto 0 auto;
+	background: rgba(0,0,0,0.5);
+}
+
+#footer p{
+	color: #fff;
+	height: 100%;
+	margin: 5px 10px;
+}
+
+#footer a{
+	color: #CCC;
+	height: 100%;
+	margin: 5px 10px;
+	text-decoration: none;
+
+}
+#footer a:hover{
+	color: #FFF;
+}
+
+/***** Utility *****/
+.left{
+	float: left;
+}
+
+.right{
+	float: right;
+}
+
+.clear{
+	clear:both;
+}
+
+/***** popup ******/
+#popup-background{
+	display: none;
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+
+	background-color: rgba(0,0,0,0.5);
+	z-index: 400;
+}
+
+.popup{
+	display: none;
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	height: 580px;
+	width: 960px;
+	margin:75px auto 0 auto;
+	/*overflow: scroll;*/
+
+	background-color: #fff;
+	z-index: 600;
+}
+
+.popup-content{
+	height: 518px;
+	width: 940px;
+	padding: 10px 10px;
+	overflow: scroll;
+}
+
+.popup-content p{
+	color: #000;
+	font-size: 1.2em;
+	margin-bottom: 10px;
+}
+
+.popup-content a:link{
+	color: #777;
+	text-decoration: none;
+}
+
+.popup-content a:visited{
+	color: #777;
+	text-decoration: none;
+}
+
+.popup-content a:hover{
+	color: #999;
+	text-decoration: none;
+}
+
+.popup-content a:active{
+	color: #777;
+	text-decoration: none;
+}
+
+.popup-title{
+	float: left;
+	width: 900px;
+	padding: 10px;
+	margin: 0;
+	font-size: 1.5em;
+
+}
+
+.popup-title h2 {
+	margin: 0px;
+}
+
+.popup-exit{
+	float: right;
+	width: 30px;
+	padding: 10px 10px 0 0;
+	margin: 0px;
+	font-size: 1.5em;
+	cursor: pointer;
+}
+
+
+/***** Map Stuff *****/
+.info-window h1{
+	font-size: 1.5em;
+}
+
+.location-text{
+	color: #CCC;
+}
+
+.info-window a{
+	font-size: 1.5em;
+}
+
+.info-window p{
+	color: #000;
+}
+
+.info-window p strong{
+	font-weight: normal;
+	text-decoration: italic;
+	color: #777;
+}
+
+p.location-text{
+	color: #AAA;
+}
