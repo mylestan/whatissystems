@@ -160,8 +160,10 @@
 		$('body').css({'overflow':'hidden'}); // prevents the main body from scrolling
 
 		// Call a redraw for the maps to properly render their size
-		google.maps.event.trigger(coopMap.map, 'resize');
-		google.maps.event.trigger(linkedinMap.map, 'resize');
+		setTimeout(function(){
+			google.maps.event.trigger(coopMap.map, 'resize');
+			google.maps.event.trigger(linkedinMap.map, 'resize');
+		}, 300);
 	}
 
 	// Hide the popup divs

@@ -383,7 +383,7 @@ p{
 	overflow: scroll;
 }
 
-.popup-content p{
+.popup-content p, .popup-content li{
 	color: #000;
 	font-size: 1.2em;
 	margin-bottom: 10px;
