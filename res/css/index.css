@@ -19,7 +19,8 @@ p{
 }
 
 #background{
-	background: url(../img/bg/space_earth_background.png);
+	/*background: url(../img/bg/space_earth_background.png);*/
+	background: url(../img/bg/tweed.png);
 	background-repeat: repeat;
 	background-position: 0px 0px;
 	background-attachment: fixed;
@@ -66,6 +67,31 @@ p{
 	margin-left: auto;
 	margin-right: auto;
 	width: 50%;
+}
+
+#down-container{
+	position: absolute;
+	bottom: 50px;
+	width: 100%;
+	text-align: center;
+}
+
+#down-link{
+	position: relative;
+	margin: 0 auto;
+	opacity: 0.7;
+}
+
+#down-container a{
+	opacity: 0.7;
+}
+
+#down-container a:hover{
+	opacity: 1.0;
+}
+
+#down-icon{
+
 }
 
 /***** NAV *****/
@@ -317,8 +343,9 @@ p{
 	background: rgba(0,0,0,0.5);
 }
 
-.footer-content p{
-	color: #000;
+#footer-content p{
+	margin: 5px 10px;
+	color: #FFF;
 }
 
 #footer-content a{
